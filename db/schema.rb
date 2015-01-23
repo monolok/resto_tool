@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150123210905) do
+ActiveRecord::Schema.define(version: 20150123212116) do
 
   create_table "employees", force: true do |t|
     t.string   "name"
@@ -25,6 +25,35 @@ ActiveRecord::Schema.define(version: 20150123210905) do
   create_table "scores", force: true do |t|
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer  "qu1"
+    t.integer  "qu2"
+    t.integer  "qu3"
+    t.integer  "qu4"
+    t.integer  "qu5"
+    t.integer  "qu6"
+    t.integer  "qu7"
+    t.integer  "qu8"
+    t.integer  "qu9"
+    t.integer  "qu10"
+    t.integer  "qu11"
+    t.integer  "qu12"
+    t.integer  "qu13"
+    t.integer  "qu14"
+    t.integer  "qu15"
+    t.integer  "qu16"
+    t.integer  "qu17"
+    t.integer  "qu18"
+    t.integer  "qu19"
+    t.integer  "qu20"
+    t.integer  "qu21"
+    t.integer  "qu22"
+    t.integer  "qu23"
+    t.integer  "qu24"
+    t.integer  "qu25"
+    t.integer  "qu26"
+    t.integer  "qu27"
+    t.integer  "qu28"
+    t.integer  "qu29"
   end
 
   create_table "users", force: true do |t|
