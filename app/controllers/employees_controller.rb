@@ -13,7 +13,7 @@ class EmployeesController < ApplicationController
   end
 
   def new
-    @employee = Employee.new
+    @employee = current_user.employees.build
     respond_with(@employee)
   end
 
@@ -21,7 +21,7 @@ class EmployeesController < ApplicationController
   end
 
   def create
-    @employee = Employee.new(employee_params)
+    @employee = current_user.employees.build(employee_params)
     @employee.save
     respond_with(@employee)
   end
@@ -42,6 +42,6 @@ class EmployeesController < ApplicationController
     end
 
     def employee_params
-      params[:employee]
+      params.require(:employee).permit(:name, :position, :pom)
     end
 end
