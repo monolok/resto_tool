@@ -1,4 +1,5 @@
 class EmployeesController < ApplicationController
+  before_action :authenticate_user!
   before_action :set_employee, only: [:show, :edit, :update, :destroy]
 
   respond_to :html
@@ -9,7 +10,16 @@ class EmployeesController < ApplicationController
   end
 
   def show
-    respond_with(@employee)
+    # respond_with(@employee)
+
+    @scores = Score.where(employee_id: params[:id])
+
+    @results = Array.new
+    @scores.each do |q|
+      @results.push(q.qu1)
+    end
+
+    @sum = @results.inject(:+)
   end
 
   def new
