@@ -20,6 +20,13 @@
         <td><%= link_to 'Destroy', employee, method: :delete, data: { confirm: 'Are you sure?' } %></td>
         <td><%= link_to "Review #{employee.name}", employee_score_new_path(employee.id)%></td>
       </tr>
+      <tr>
+        <%if @kf > 2.5 %>
+          <td>KEEP</td>
+        <%else%>
+          <td class="bg-danger">FIRE</td>
+        <%end%>
+      </tr>
     <% end %>
   </tbody>
 </table>

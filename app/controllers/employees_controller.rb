@@ -6,20 +6,22 @@ class EmployeesController < ApplicationController
 
   def index
     @employees = Employee.all
-    respond_with(@employees)
+    #respond_with(@employees)
+
+    @list_s = Array.new
+    @employees.each do |e|
+      @n = 0
+      e.scores.each do |s|
+        @n = @n +1
+        @list_s.push(s.average)
+        @kf_sum = @list_s.inject(:+)
+        @kf = @kf_sum/@n
+      end
+    end
   end
 
   def show
-    # respond_with(@employee)
-
-    @scores = Score.where(employee_id: params[:id])
-
-    @results = Array.new
-    @scores.each do |q|
-      @results.push(q.qu1)
-    end
-
-    @sum = @results.inject(:+)
+    respond_with(@employee)
   end
 
   def new
@@ -55,11 +57,17 @@ class EmployeesController < ApplicationController
   def score_create
     @employee = Employee.find(params[:employee_id])
     @score = @employee.scores.build(score_params)
+
+    @values = Array.new
+    @values.push(@score.qu1, @score.qu2, @score.qu3, @score.qu4, @score.qu5, @score.qu6, @score.qu7, @score.qu8, @score.qu9, @score.qu10, @score.qu11, @score.qu12, @score.qu13, @score.qu14, @score.qu15, @score.qu16, @score.qu17, @score.qu18, @score.qu19, @score.qu20, @score.qu21, @score.qu22, @score.qu23, @score.qu24, @score.qu25, @score.qu26, @score.qu27, @score.qu28, @score.qu29)
+    @sum = @values.inject(:+)
+
+    @score.average = ((@sum.to_f/145)*5).round(2)
     if @score.save
       respond_with(@employee)
     else
       flash[:notice] = "Not saved"
-    end
+    end    
   end
 
 

@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150124230506) do
+ActiveRecord::Schema.define(version: 20150125184128) do
 
   create_table "employees", force: true do |t|
     t.string   "name"
@@ -24,8 +24,8 @@ ActiveRecord::Schema.define(version: 20150124230506) do
   end
 
   create_table "scores", force: true do |t|
-    t.datetime "created_at",  null: false
-    t.datetime "updated_at",  null: false
+    t.datetime "created_at",                           null: false
+    t.datetime "updated_at",                           null: false
     t.integer  "qu1"
     t.integer  "qu2"
     t.integer  "qu3"
@@ -56,6 +56,7 @@ ActiveRecord::Schema.define(version: 20150124230506) do
     t.integer  "qu28"
     t.integer  "qu29"
     t.integer  "employee_id"
+    t.decimal  "average",     precision: 16, scale: 2
   end
 
   create_table "users", force: true do |t|
