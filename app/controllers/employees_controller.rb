@@ -7,17 +7,6 @@ class EmployeesController < ApplicationController
   def index
     @employees = Employee.all
     #respond_with(@employees)
-
-    @list_s = Array.new
-    @employees.each do |e|
-      @n = 0
-      e.scores.each do |s|
-        @n = @n +1
-        @list_s.push(s.average)
-        @kf_sum = @list_s.inject(:+)
-        @kf = @kf_sum/@n
-      end
-    end
   end
 
   def show

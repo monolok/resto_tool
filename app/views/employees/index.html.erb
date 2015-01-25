@@ -2,38 +2,55 @@
 
 <h1>Listing Employees</h1>
 
-<table>
-  <thead>
-    <tr>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
+<div class="container-fluid">
+<% @employees.each do |employee| %>
 
-  <tbody>
-    <% @employees.each do |employee| %>
-      <tr>
-        <td><%= employee.name%></td>
-        <td><%= employee.position%></td>
-        <td><%= employee.user.email%></td>
-        <td><%= link_to 'Show', employee %></td>
-        <td><%= link_to 'Edit', edit_employee_path(employee) %></td>
-        <td><%= link_to 'Destroy', employee, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-        <td><%= link_to "Review #{employee.name}", employee_score_new_path(employee.id)%></td>
-      </tr>
-      <tr>
-      <%= @kf%>
+  <%@list_s = Array.new%>
+  <%if not employee.scores.blank?%>
+    <%employee.scores.each do |s|%>
+      <%@list_s.push(s.average)%>
+      <%@kf_sum = @list_s.inject(:+)%>
+      <%@kf = @kf_sum/employee.scores.count%>
+    <%end%>
+  <%else%>
+    <%@kf = 0%>
+  <%end%> 
+
+  <div class="row pad">
+    <div class="col-sm-4">
+      <div class="row">
+        <%= link_to employee.name, employee%>
+      </div>
+      <div class="row">
         <%if @kf > 2.5 %>
-          <td>KEEP</td>
-        <%elsif @kf == 0%>
-          <td>No review yet</td>
+          <p class="bg-success">KEEP</p>
+        <%elsif @kf == 0 %>
+          <p>No review</p>
         <%else%>
-          <td class="bg-danger">FIRE</td>
+          <p class="bg-danger">FIRE</p>
         <%end%>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
+      </div>
+    </div>
+    <div class="col-sm-4">
+      <div class="row">
+        <%= employee.position%>
+      </div>
+      <div class="row">
+        <%= employee.user.email%>
+      </div>
+    </div>
+    <div class="col-sm-4">
+      <div class="row">
+        <%= link_to 'Destroy', employee, method: :delete, data: { confirm: 'Are you sure?' } %>        
+      </div>
+      <div class="row">
+        <%= link_to "Review #{employee.name}", employee_score_new_path(employee.id)%>        
+      </div>
+    </div>
+  </div>
+<% end %>
+</div>
+      
 
-<br>
 
 <%= link_to 'New Employee', new_employee_path %>
