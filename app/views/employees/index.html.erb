@@ -18,6 +18,7 @@
         <td><%= link_to 'Show', employee %></td>
         <td><%= link_to 'Edit', edit_employee_path(employee) %></td>
         <td><%= link_to 'Destroy', employee, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= link_to "Review #{employee.name}", employee_score_new_path(employee.id)%></td>
       </tr>
     <% end %>
   </tbody>

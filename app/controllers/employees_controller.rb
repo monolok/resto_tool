@@ -36,6 +36,22 @@ class EmployeesController < ApplicationController
     respond_with(@employee)
   end
 
+  def score_new
+    @employee = Employee.find(params[:employee_id])
+    @score = @employee.scores.build
+  end
+
+  def score_create
+    @employee = Employee.find(params[:employee_id])
+    @score = @employee.scores.build(score_params)
+    if @score.save
+      respond_with(@employee)
+    else
+      flash[:notice] = "Not saved"
+    end
+  end
+
+
   private
     def set_employee
       @employee = Employee.find(params[:id])
@@ -43,5 +59,9 @@ class EmployeesController < ApplicationController
 
     def employee_params
       params.require(:employee).permit(:name, :position, :pom)
+    end
+
+    def score_params
+      params.require(:score).permit(:qu1, :qu2, :qu3, :qu4, :qu5, :qu6, :qu7, :qu8, :qu9, :qu10, :qu11, :qu12, :qu13, :qu14, :qu15, :qu16, :qu17, :qu18, :qu19, :qu20, :qu21, :qu22, :qu23, :qu24, :qu25, :qu26,:qu27, :qu28, :qu29)
     end
 end

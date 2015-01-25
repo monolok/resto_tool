@@ -1,7 +1,9 @@
 Rails.application.routes.draw do
   root 'welcome#index'
-
-  resources :employees
+  resources :employees do
+    get "score_new"
+    post "score_new", to: "employees#score_create" 
+  end
 
   devise_for :users
 
