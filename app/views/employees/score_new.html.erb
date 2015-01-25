@@ -2,269 +2,277 @@
 
 <%= form_for @score, url: employee_score_new_path(@employee.id), html: { method: :post } do |f| %>
 
-  <div class="field">
-    <%= f.label :Predictable  %><br>
-    <%= f.select(:qu1) do %>
-      <% @mood.each do |c| %>
-    <%= content_tag(:option, c.first, value: c.last) %>
+<div class="row">
+  <div class="col-sm-4">
+    <div class="field">
+      <%= f.label :Predictable  %><br>
+      <%= f.select(:qu1) do %>
+        <% @mood.each do |c| %>
+      <%= content_tag(:option, c.first, value: c.last) %>
+      <% end %>
     <% end %>
-  <% end %>
+    </div>
+
+    <div class="field">
+      <%= f.label :Ponctuality %><br>
+      <%= f.select(:qu2) do %>
+        <% @mood.each do |c| %>
+      <%= content_tag(:option, c.first, value: c.last) %>
+      <% end %>
+    <% end %>
+    </div>
+
+    <div class="field">
+      <%= f.label :Personal_life %><br>
+      <%= f.select(:qu3) do %>
+        <% @mood.each do |c| %>
+      <%= content_tag(:option, c.first, value: c.last) %>
+      <% end %>
+    <% end %>
+    </div>
+
+    <div class="field">
+      <%= f.label :Pay_check_in_avance %><br>
+      <%= f.select(:qu4) do %>
+        <% @mood.each do |c| %>
+      <%= content_tag(:option, c.first, value: c.last) %>
+      <% end %>
+    <% end %>
+    </div>
+
+    <div class="field">
+      <%= f.label :Respecting_rules %><br>
+      <%= f.select(:qu5) do %>
+        <% @mood.each do |c| %>
+      <%= content_tag(:option, c.first, value: c.last) %>
+      <% end %>
+    <% end %>
+    </div>
+
+    <div class="field">
+      <%= f.label :Get_the_work_done %><br>
+      <%= f.select(:qu6) do %>
+        <% @mood.each do |c| %>
+      <%= content_tag(:option, c.first, value: c.last) %>
+      <% end %>
+    <% end %>
+    </div>
+
+    <div class="field">
+      <%= f.label :Time_efficient %><br>
+      <%= f.select(:qu7) do %>
+        <% @mood.each do |c| %>
+      <%= content_tag(:option, c.first, value: c.last) %>
+      <% end %>
+    <% end %>
+    </div>
+
+    <div class="field">
+      <%= f.label :Do_the_police %><br>
+      <%= f.select(:qu8) do %>
+        <% @mood.each do |c| %>
+      <%= content_tag(:option, c.first, value: c.last) %>
+      <% end %>
+    <% end %>
+    </div>
+
+    <div class="field">
+      <%= f.label :Trustworthy %><br>
+      <%= f.select(:qu9) do %>
+        <% @mood.each do |c| %>
+      <%= content_tag(:option, c.first, value: c.last) %>
+      <% end %>
+    <% end %>
+    </div>
+
+    <div class="field">
+      <%= f.label :room_for_improvment %><br>
+      <%= f.select(:qu10) do %>
+        <% @mood.each do |c| %>
+      <%= content_tag(:option, c.first, value: c.last) %>
+      <% end %>
+    <% end %>
+    </div>    
   </div>
-
-  <div class="field">
-    <%= f.label :Ponctuality %><br>
-    <%= f.select(:qu2) do %>
-      <% @mood.each do |c| %>
-    <%= content_tag(:option, c.first, value: c.last) %>
+  <div class="col-sm-4">
+    <div class="field">
+      <%= f.label :Rush_hours %><br>
+      <%= f.select(:qu11) do %>
+        <% @mood.each do |c| %>
+      <%= content_tag(:option, c.first, value: c.last) %>
+      <% end %>
     <% end %>
-  <% end %>
+    </div>
+
+    <div class="field">
+      <%= f.label :Focused %><br>
+      <%= f.select(:qu12) do %>
+        <% @mood.each do |c| %>
+      <%= content_tag(:option, c.first, value: c.last) %>
+      <% end %>
+    <% end %>
+    </div>
+
+    <div class="field">
+      <%= f.label :Consistency %><br>
+      <%= f.select(:qu13) do %>
+        <% @mood.each do |c| %>
+      <%= content_tag(:option, c.first, value: c.last) %>
+      <% end %>
+    <% end %>
+    </div>
+
+    <div class="field">
+      <%= f.label :Relation_with_others %><br>
+      <%= f.select(:qu14) do %>
+        <% @mood.each do |c| %>
+      <%= content_tag(:option, c.first, value: c.last) %>
+      <% end %>
+    <% end %>
+    </div>
+
+    <div class="field">
+      <%= f.label :Positive_attitude %><br>
+      <%= f.select(:qu15) do %>
+        <% @mood.each do |c| %>
+      <%= content_tag(:option, c.first, value: c.last) %>
+      <% end %>
+    <% end %>
+    </div>
+
+    <div class="field">
+      <%= f.label :Open_to_critics %><br>
+      <%= f.select(:qu16) do %>
+        <% @mood.each do |c| %>
+      <%= content_tag(:option, c.first, value: c.last) %>
+      <% end %>
+    <% end %>
+    </div>
+
+    <div class="field">
+      <%= f.label :To_sure_of_him_self %><br>
+      <%= f.select(:qu17) do %>
+        <% @mood.each do |c| %>
+      <%= content_tag(:option, c.first, value: c.last) %>
+      <% end %>
+    <% end %>
+    </div>
+
+    <div class="field">
+      <%= f.label :Extra_mile %><br>
+      <%= f.select(:qu18) do %>
+        <% @mood.each do |c| %>
+      <%= content_tag(:option, c.first, value: c.last) %>
+      <% end %>
+    <% end %>
+    </div>
+
+    <div class="field">
+      <%= f.label :Attitude_and_behaviour %><br>
+      <%= f.select(:qu19) do %>
+        <% @mood.each do |c| %>
+      <%= content_tag(:option, c.first, value: c.last) %>
+      <% end %>
+    <% end %>
+    </div>
+
+    <div class="field">
+      <%= f.label :Team_work %><br>
+      <%= f.select(:qu20) do %>
+        <% @mood.each do |c| %>
+      <%= content_tag(:option, c.first, value: c.last) %>
+      <% end %>
+    <% end %>
+    </div>
   </div>
-
-  <div class="field">
-    <%= f.label :Personal_life %><br>
-    <%= f.select(:qu3) do %>
-      <% @mood.each do |c| %>
-    <%= content_tag(:option, c.first, value: c.last) %>
+  <div class="col-sm-4">
+    <div class="field">
+      <%= f.label :Blend_in %><br>
+      <%= f.select(:qu21) do %>
+        <% @mood.each do |c| %>
+      <%= content_tag(:option, c.first, value: c.last) %>
+      <% end %>
     <% end %>
-  <% end %>
+    </div>
+
+    <div class="field">
+      <%= f.label :Counting_hours %><br>
+      <%= f.select(:qu22) do %>
+        <% @mood.each do |c| %>
+      <%= content_tag(:option, c.first, value: c.last) %>
+      <% end %>
+    <% end %>
+    </div>
+
+    <div class="field">
+      <%= f.label :Pressure_on_pay_check_or_schedule %><br>
+      <%= f.select(:qu23) do %>
+        <% @mood.each do |c| %>
+      <%= content_tag(:option, c.first, value: c.last) %>
+      <% end %>
+    <% end %>
+    </div>
+
+    <div class="field">
+      <%= f.label :Legal_pressure %><br>
+      <%= f.select(:qu24) do %>
+        <% @mood.each do |c| %>
+      <%= content_tag(:option, c.first, value: c.last) %>
+      <% end %>
+    <% end %>
+    </div>  
+
+    <div class="field">
+      <%= f.label :Customer_drive %><br>
+      <%= f.select(:qu25) do %>
+        <% @mood.each do |c| %>
+      <%= content_tag(:option, c.first, value: c.last) %>
+      <% end %>
+    <% end %>
+    </div>
+
+    <div class="field">
+      <%= f.label :Operational_changes %><br>
+      <%= f.select(:qu26) do %>
+        <% @mood.each do |c| %>
+      <%= content_tag(:option, c.first, value: c.last) %>
+      <% end %>
+    <% end %>
+    </div>
+
+    <div class="field">
+      <%= f.label :Unpredictable_situations %><br>
+      <%= f.select(:qu27) do %>
+        <% @mood.each do |c| %>
+      <%= content_tag(:option, c.first, value: c.last) %>
+      <% end %>
+    <% end %>
+    </div>
+
+    <div class="field">
+      <%= f.label :Flexibility %><br>
+      <%= f.select(:qu28) do %>
+        <% @mood.each do |c| %>
+      <%= content_tag(:option, c.first, value: c.last) %>
+      <% end %>
+    <% end %>
+    </div>   
+
+    <div class="field">
+      <%= f.label :Good_to_work_with %><br>
+      <%= f.select(:qu29) do %>
+        <% @mood.each do |c| %>
+      <%= content_tag(:option, c.first, value: c.last) %>
+      <% end %>
+    <% end %>
+    </div>  
   </div>
+</div>
 
-  <div class="field">
-    <%= f.label :Pay_check_in_avance %><br>
-    <%= f.select(:qu4) do %>
-      <% @mood.each do |c| %>
-    <%= content_tag(:option, c.first, value: c.last) %>
-    <% end %>
-  <% end %>
-  </div>
-
-  <div class="field">
-    <%= f.label :Respecting_rules %><br>
-    <%= f.select(:qu5) do %>
-      <% @mood.each do |c| %>
-    <%= content_tag(:option, c.first, value: c.last) %>
-    <% end %>
-  <% end %>
-  </div>
-
-  <div class="field">
-    <%= f.label :Get_the_work_done %><br>
-    <%= f.select(:qu6) do %>
-      <% @mood.each do |c| %>
-    <%= content_tag(:option, c.first, value: c.last) %>
-    <% end %>
-  <% end %>
-  </div>
-
-  <div class="field">
-    <%= f.label :Time_efficient %><br>
-    <%= f.select(:qu7) do %>
-      <% @mood.each do |c| %>
-    <%= content_tag(:option, c.first, value: c.last) %>
-    <% end %>
-  <% end %>
-  </div>
-
-  <div class="field">
-    <%= f.label :Do_the_police %><br>
-    <%= f.select(:qu8) do %>
-      <% @mood.each do |c| %>
-    <%= content_tag(:option, c.first, value: c.last) %>
-    <% end %>
-  <% end %>
-  </div>
-
-  <div class="field">
-    <%= f.label :Trustworthy %><br>
-    <%= f.select(:qu9) do %>
-      <% @mood.each do |c| %>
-    <%= content_tag(:option, c.first, value: c.last) %>
-    <% end %>
-  <% end %>
-  </div>
-
-  <div class="field">
-    <%= f.label :room_for_improvment %><br>
-    <%= f.select(:qu10) do %>
-      <% @mood.each do |c| %>
-    <%= content_tag(:option, c.first, value: c.last) %>
-    <% end %>
-  <% end %>
-  </div>
-
-  <div class="field">
-    <%= f.label :Rush_hours %><br>
-    <%= f.select(:qu11) do %>
-      <% @mood.each do |c| %>
-    <%= content_tag(:option, c.first, value: c.last) %>
-    <% end %>
-  <% end %>
-  </div>
-
-  <div class="field">
-    <%= f.label :Focused %><br>
-    <%= f.select(:qu12) do %>
-      <% @mood.each do |c| %>
-    <%= content_tag(:option, c.first, value: c.last) %>
-    <% end %>
-  <% end %>
-  </div>
-
-  <div class="field">
-    <%= f.label :Consistency %><br>
-    <%= f.select(:qu13) do %>
-      <% @mood.each do |c| %>
-    <%= content_tag(:option, c.first, value: c.last) %>
-    <% end %>
-  <% end %>
-  </div>
-
-  <div class="field">
-    <%= f.label :Relation_with_others %><br>
-    <%= f.select(:qu14) do %>
-      <% @mood.each do |c| %>
-    <%= content_tag(:option, c.first, value: c.last) %>
-    <% end %>
-  <% end %>
-  </div>
-
-  <div class="field">
-    <%= f.label :Positive_attitude %><br>
-    <%= f.select(:qu15) do %>
-      <% @mood.each do |c| %>
-    <%= content_tag(:option, c.first, value: c.last) %>
-    <% end %>
-  <% end %>
-  </div>
-
-  <div class="field">
-    <%= f.label :Open_to_critics %><br>
-    <%= f.select(:qu16) do %>
-      <% @mood.each do |c| %>
-    <%= content_tag(:option, c.first, value: c.last) %>
-    <% end %>
-  <% end %>
-  </div>
-
-  <div class="field">
-    <%= f.label :To_sure_of_him_self %><br>
-    <%= f.select(:qu17) do %>
-      <% @mood.each do |c| %>
-    <%= content_tag(:option, c.first, value: c.last) %>
-    <% end %>
-  <% end %>
-  </div>
-
-  <div class="field">
-    <%= f.label :Extra_mile %><br>
-    <%= f.select(:qu18) do %>
-      <% @mood.each do |c| %>
-    <%= content_tag(:option, c.first, value: c.last) %>
-    <% end %>
-  <% end %>
-  </div>
-
-  <div class="field">
-    <%= f.label :Attitude_and_behaviour %><br>
-    <%= f.select(:qu19) do %>
-      <% @mood.each do |c| %>
-    <%= content_tag(:option, c.first, value: c.last) %>
-    <% end %>
-  <% end %>
-  </div>
-
-  <div class="field">
-    <%= f.label :Team_work %><br>
-    <%= f.select(:qu20) do %>
-      <% @mood.each do |c| %>
-    <%= content_tag(:option, c.first, value: c.last) %>
-    <% end %>
-  <% end %>
-  </div>
-
-  <div class="field">
-    <%= f.label :Blend_in %><br>
-    <%= f.select(:qu21) do %>
-      <% @mood.each do |c| %>
-    <%= content_tag(:option, c.first, value: c.last) %>
-    <% end %>
-  <% end %>
-  </div>
-
-  <div class="field">
-    <%= f.label :Counting_hours %><br>
-    <%= f.select(:qu22) do %>
-      <% @mood.each do |c| %>
-    <%= content_tag(:option, c.first, value: c.last) %>
-    <% end %>
-  <% end %>
-  </div>
-
-  <div class="field">
-    <%= f.label :Pressure_on_pay_check_or_schedule %><br>
-    <%= f.select(:qu23) do %>
-      <% @mood.each do |c| %>
-    <%= content_tag(:option, c.first, value: c.last) %>
-    <% end %>
-  <% end %>
-  </div>
-
-  <div class="field">
-    <%= f.label :Legal_pressure %><br>
-    <%= f.select(:qu24) do %>
-      <% @mood.each do |c| %>
-    <%= content_tag(:option, c.first, value: c.last) %>
-    <% end %>
-  <% end %>
-  </div>  
-
-  <div class="field">
-    <%= f.label :Customer_drive %><br>
-    <%= f.select(:qu25) do %>
-      <% @mood.each do |c| %>
-    <%= content_tag(:option, c.first, value: c.last) %>
-    <% end %>
-  <% end %>
-  </div>
-
-  <div class="field">
-    <%= f.label :Operational_changes %><br>
-    <%= f.select(:qu26) do %>
-      <% @mood.each do |c| %>
-    <%= content_tag(:option, c.first, value: c.last) %>
-    <% end %>
-  <% end %>
-  </div>
-
-  <div class="field">
-    <%= f.label :Unpredictable_situations %><br>
-    <%= f.select(:qu27) do %>
-      <% @mood.each do |c| %>
-    <%= content_tag(:option, c.first, value: c.last) %>
-    <% end %>
-  <% end %>
-  </div>
-
-  <div class="field">
-    <%= f.label :Flexibility %><br>
-    <%= f.select(:qu28) do %>
-      <% @mood.each do |c| %>
-    <%= content_tag(:option, c.first, value: c.last) %>
-    <% end %>
-  <% end %>
-  </div>   
-
-  <div class="field">
-    <%= f.label :Good_to_work_with %><br>
-    <%= f.select(:qu29) do %>
-      <% @mood.each do |c| %>
-    <%= content_tag(:option, c.first, value: c.last) %>
-    <% end %>
-  <% end %>
-  </div>     
-  
+<div class="row center">
   <div class="actions">
-    <%= f.submit %>
+    <%= f.submit class: "btn btn-primary" %>
   </div>
+</div>
 
 <% end %>
