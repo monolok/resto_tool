@@ -10,7 +10,13 @@ class EmployeesController < ApplicationController
   end
 
   def show
-    respond_with(@employee)
+    @n = 29
+    @list = Hash.new
+    while @n != 0
+      @qu = Score.where(employee_id: @employee.id).average("qu#{@n}").to_f.round(2)
+      @list[@n] = @qu
+      @n = @n - 1
+    end
   end
 
   def new
