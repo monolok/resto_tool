@@ -1,14 +1,37 @@
-<%= @employee.name%>
-<%= @employee.position%>
+<div class="container-fluid">
+	<div class="row center">
+		<h3><%= @employee.name%></h3>
+		<h5><%= @employee.position%></h5>
+		<p><%= @employee.pom%></p>
+
+	</div>
+	<div class="row">
+		<div class="col-sm-4">
+			<h5>Latest scores:</h5>
+			<% @employee.scores.each do |r|%>
+				<%= r.created_at.strftime("%A %B %d")%>
+				<%if r.average > 2.5 %>
+				<p class="bg-success"><%= r.average%>/5</p>
+				<%else%>
+				<p class="bg-danger"><%= r.average%>/5</p>
+				<%end%>
+			<%end%>
+		</div>
+		<div class="col-sm-4">
+			<h5>Strengths:</h5>
+
+		</div>
+		<div class="col-sm-4">
+			<h5>Weaknesses:</h5>
+		</div>
+	</div>
+</div>
+
+
+
+
 </br>
-<% @employee.scores.each do |r|%>
-	<%= r.created_at.strftime("%A %B %d")%>
-	<%if r.average > 2.5 %>
-		<p class="bg-success"><%= r.average%></p>
-	<%else%>
-		<p class="bg-danger"><%= r.average%></p>
-	<%end%>
-<%end%>
+
 
 <%= link_to 'Edit', edit_employee_path(@employee) %> |
 <%= link_to 'Back', employees_path %>
