@@ -49,6 +49,7 @@ class EmployeesController < ApplicationController
   def score_new
     @employee = Employee.find(params[:employee_id])
     @score = @employee.scores.build
+    @mood = [['Very bad', 1], ['Bad', 2], ['Average', 3], ['Good', 4], ['Very good', 5]]
   end
 
   def score_create
