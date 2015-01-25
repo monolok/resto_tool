@@ -21,8 +21,11 @@
         <td><%= link_to "Review #{employee.name}", employee_score_new_path(employee.id)%></td>
       </tr>
       <tr>
+      <%= @kf%>
         <%if @kf > 2.5 %>
           <td>KEEP</td>
+        <%elsif @kf == 0%>
+          <td>No review yet</td>
         <%else%>
           <td class="bg-danger">FIRE</td>
         <%end%>

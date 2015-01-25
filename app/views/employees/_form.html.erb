@@ -20,8 +20,12 @@
     <%= f.text_field :position%>
   </div>
   <div>
-    <%= f.label :pom%>
-    <%= f.number_field :pom%>
+    <%= f.label :Degree_of_responsibility%>
+    <%= f.select(:pom) do %>
+      <% @pom_mood.each do |c| %>
+        <%= content_tag(:option, c.first, value: c.last) %>
+      <% end %>
+    <% end %>
   </div>
   <div class="actions">
     <%= f.submit %>
