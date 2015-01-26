@@ -11,10 +11,15 @@ class EmployeesController < ApplicationController
 
   def show
     @n = 29
-    @list = Hash.new
+    @list_qa = Hash.new
+    @list_pb = Hash.new
     while @n != 0
       @qu = Score.where(employee_id: @employee.id).average("qu#{@n}").to_f.round(2)
-      @list[@n] = @qu
+      if @qu > 2.5
+      @list_qa[@n] = @qu
+      else
+      @list_pb[@n] = @qu
+      end
       @n = @n - 1
     end
   end

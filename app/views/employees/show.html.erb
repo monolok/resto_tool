@@ -19,10 +19,137 @@
 		</div>
 		<div class="col-sm-4">
 			<h5>Strengths:</h5>
-			<p><%= @list%></p>
+			<p><% @list_qa.each do |k, v|%></p>
+					<%case k%>
+					<%when 1%>
+						<p>Predictable</p>
+					<%when 2%>
+						<p>Ponctuality</p>
+					<%when 3%>
+						<p>Personal life</p>
+					<%when 4%>
+						<p>Pay check in advance</p>
+					<%when 5%>
+						<p>Respecting rules</p>
+					<%when 6%>
+						<p>Get the work done</p>
+					<%when 7%>
+						<p>Time efficient</p>
+					<%when 8%>
+						<p>Do the police</p>
+					<%when 9%>
+						<p>Trustworthy</p>
+					<%when 10%>
+						<p>Room for improvment</p>
+					<%when 11%>
+						<p>Rush hours</p>
+					<%when 12%>
+						<p>Focused</p>
+					<%when 13%>
+						<p>Consistency</p>
+					<%when 14%>
+						<p>Relation with others</p>
+					<%when 15%>
+						<p>Positive attitude</p>
+					<%when 16%>
+						<p>Open to critics</p>
+					<%when 17%>
+						<p>To sure of him self</p>
+					<%when 18%>
+						<p>Extra mile</p>
+					<%when 19%>
+						<p>Attitude and behaviour</p>
+					<%when 20%>
+						<p>Team work</p>
+					<%when 21%>
+						<p>Blend in</p>
+					<%when 22%>
+						<p>Counting hours</p>
+					<%when 23%>
+						<p>Pressure on pay check or schedule</p>
+					<%when 24%>
+						<p>Legal pressure</p>
+					<%when 25%>
+						<p>Customer Drive</p>
+					<%when 26%>
+						<p>Operational change</p>
+					<%when 27%>
+						<p>Unpredictable situation</p>
+					<%when 28%>
+						<p>Flexibility</p>
+					<%when 29%>
+						<p>Good to work with</p>
+					<%else%>
+						<p>Error</p>
+					<%end%>
+				<%end%>
 		</div>
 		<div class="col-sm-4">
 			<h5>Weaknesses:</h5>
+			<p><% @list_pb.each do |k ,v|%></p>
+					<%case k%>
+					<%when 1%>
+						<p>Predictable</p>
+					<%when 2%>
+						<p>Ponctuality</p>
+					<%when 3%>
+						<p>Personal life</p>
+					<%when 4%>
+						<p>Pay check in advance</p>
+					<%when 5%>
+						<p>Respecting rules</p>
+					<%when 6%>
+						<p>Get the work done</p>
+					<%when 7%>
+						<p>Time efficient</p>
+					<%when 8%>
+						<p>Do the police</p>
+					<%when 9%>
+						<p>Trustworthy</p>
+					<%when 10%>
+						<p>Room for improvment</p>
+					<%when 11%>
+						<p>Rush hours</p>
+					<%when 12%>
+						<p>Focused</p>
+					<%when 13%>
+						<p>Consistency</p>
+					<%when 14%>
+						<p>Relation with others</p>
+					<%when 15%>
+						<p>Positive attitude</p>
+					<%when 16%>
+						<p>Open to critics</p>
+					<%when 17%>
+						<p>To sure of him self</p>
+					<%when 18%>
+						<p>Extra mile</p>
+					<%when 19%>
+						<p>Attitude and behaviour</p>
+					<%when 20%>
+						<p>Team work</p>
+					<%when 21%>
+						<p>Blend in</p>
+					<%when 22%>
+						<p>Counting hours</p>
+					<%when 23%>
+						<p>Pressure on pay check or schedule</p>
+					<%when 24%>
+						<p>Legal pressure</p>
+					<%when 25%>
+						<p>Customer Drive</p>
+					<%when 26%>
+						<p>Operational change</p>
+					<%when 27%>
+						<p>Unpredictable situation</p>
+					<%when 28%>
+						<p>Flexibility</p>
+					<%when 29%>
+						<p>Good to work with</p>
+					<%else%>
+						<p>Error</p>
+					<%end%>
+				<%end%>
 		</div>
 	</div>
 </div>
