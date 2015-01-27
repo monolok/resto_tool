@@ -22,6 +22,14 @@ class EmployeesController < ApplicationController
       end
       @n = @n - 1
     end
+
+    @l = 29
+    @last_qu = Score.where(employee_id: @employee.id).last
+    @last_qu_hash = Hash.new
+    while @l != 0
+      @last_qu_hash[@l] = @last_qu.attribute_for_inspect("qu#{@l}")
+      @l = @l -1
+    end
   end
 
   def new
