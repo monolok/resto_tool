@@ -1,0 +1,11 @@
+<div class="modal fade bs-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-lg">
+    <div class="modal-content">
+	    <%= area_chart Score.where(employee_id: @employee.id).group(:created_at).sum(:qu1), :library => {hAxis: {title: "Time", discrete: true, format: "dd/MM/yy"}, vAxis: {title: "Score", discrete: true}, title: "History of score for question 1"}, max: 6%>
+    </div>
+  </div>
+</div>
+
+<!-- strftime("%A %B %d") -->
+
+<!--  area_chart [{:name => "Sold items", data: @items.group(:created_at).count}], :library => {hAxis: {title: "Period"}, vAxis: {title: "Amounts in UDS"}, title: "History Of Sales"}   -->

@@ -4,9 +4,9 @@
 		<% @i = @list_qa[k].to_i%>
 		<% @u = @last_qu_hash[k].to_i%>
 		<%if @u > @i %>
-			<p>Predictable <i class="fa fa-arrow-up green"></i></p>
+			<p data-toggle="modal" data-target=".bs-example-modal-lg">Predictable <i class="fa fa-arrow-up green"></i></p>
 		<%else%>
-			<p>Predictable <i class="fa fa-arrow-down red"></i></p>
+			<p data-toggle="modal" data-target=".bs-example-modal-lg">Predictable <i class="fa fa-arrow-down red"></i></p>
 		<%end%>					
 	<%when 2%>
 		<% @i = @list_qa[k].to_i%>
