@@ -5,7 +5,12 @@ class EmployeesController < ApplicationController
   respond_to :html
 
   def index
-    @employees = Employee.all
+    if params[:pom].blank?
+      @employees = Employee.all
+    else
+      @pom_clicked = params[:pom]
+      @employees = Employee.where(pom: @pom_clicked)
+    end
     #respond_with(@employees)
   end
 
@@ -23,12 +28,16 @@ class EmployeesController < ApplicationController
       @n = @n - 1
     end
 
-    @l = 29
-    @last_qu = Score.where(employee_id: @employee.id).last
-    @last_qu_hash = Hash.new
-    while @l != 0
-      @last_qu_hash[@l] = @last_qu.attribute_for_inspect("qu#{@l}")
-      @l = @l -1
+    if Score.where(employee_id: @employee.id).last.nil?
+      
+    else
+      @l = 29
+      @last_qu = Score.where(employee_id: @employee.id).last
+      @last_qu_hash = Hash.new
+      while @l != 0
+        @last_qu_hash[@l] = @last_qu.attribute_for_inspect("qu#{@l}")
+        @l = @l -1
+      end
     end
   end
 

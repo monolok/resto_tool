@@ -3,6 +3,14 @@
 <h1>Listing Employees</h1>
 
 <div class="container-fluid">
+
+  <div class="row">
+    <%= link_to "All employees", employees_path%>
+    <% Category.all.each do |cat| %>
+      <%= link_to cat.name, employees_path(pom: cat.pom)%>
+    <%end%>
+  </div>
+
 <% @employees.each do |employee| %>
 
   <%@list_s = Array.new%>
