@@ -1,14 +1,31 @@
 <h1>Welcome#index</h1>
 
-<% if user_signed_in? -%>
+<!-- Admin -->
+
+<% if user_signed_in? %>
+
 <ul>
-	<li><%= link_to 'Account', edit_user_registration_path %></li>
-	<li><%= link_to 'Sign out', destroy_user_session_path, :method => :delete %></li>
+	<li><%= link_to 'Account Admin', edit_user_registration_path %></li>
+	<li><%= link_to 'Sign out Admin', destroy_user_session_path, :method => :delete %></li>
+	<li><%= link_to "Create an Employee", new_employee_path%></li>
+	<li><%= link_to "Add reviewer", new_reviewer_registration_path%></li>
 </ul>
+
 <% else -%>
-<ul>
-	<li><%= link_to 'Sign up', new_user_registration_path %></li>
-	<li><%= link_to 'Sign in', new_user_session_path %></li>
-</ul>
+
+	<%if reviewer_signed_in? %>
+	<ul>
+		<li><%= link_to 'Account reviewer', edit_reviewer_registration_path %></li>
+		<li><%= link_to 'Sign out Reviewer', destroy_reviewer_session_path, :method => :delete %></li>
+	</ul>
+
+	<%else%>
+
+	<ul>
+		<li><%= link_to 'Sign up Admin', new_user_registration_path %></li>
+		<li><%= link_to 'Sign in Admin', new_user_session_path %></li>
+		<li><%= link_to 'Sign in Reviewer', new_reviewer_session_path %></li>
+	</ul>
+	<%end%>
+
 <% end -%>
-<%= link_to "Create an Employee", new_employee_path%>

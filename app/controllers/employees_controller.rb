@@ -1,5 +1,5 @@
 class EmployeesController < ApplicationController
-  before_action :authenticate_user!
+  before_action :authenticate_user!, only: [:edit, :update, :destroy]
   before_action :set_employee, only: [:show, :edit, :update, :destroy]
 
   respond_to :html
@@ -82,6 +82,13 @@ class EmployeesController < ApplicationController
     @sum = @values.inject(:+)
 
     @score.average = ((@sum.to_f/145)*5).round(2)
+
+    if user_signed_in?
+      @score.reviewer_id = nil
+    else
+      @score.reviewer_id = current_reviewer.id
+    end
+
     if @score.save
       respond_with(@employee)
     else
@@ -100,6 +107,6 @@ class EmployeesController < ApplicationController
     end
 
     def score_params
-      params.require(:score).permit(:qu1, :qu2, :qu3, :qu4, :qu5, :qu6, :qu7, :qu8, :qu9, :qu10, :qu11, :qu12, :qu13, :qu14, :qu15, :qu16, :qu17, :qu18, :qu19, :qu20, :qu21, :qu22, :qu23, :qu24, :qu25, :qu26,:qu27, :qu28, :qu29)
+      params.require(:score).permit(:qu1, :qu2, :qu3, :qu4, :qu5, :qu6, :qu7, :qu8, :qu9, :qu10, :qu11, :qu12, :qu13, :qu14, :qu15, :qu16, :qu17, :qu18, :qu19, :qu20, :qu21, :qu22, :qu23, :qu24, :qu25, :qu26,:qu27, :qu28, :qu29, :reviewer_id)
     end
 end

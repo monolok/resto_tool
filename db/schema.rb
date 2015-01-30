@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150130190730) do
+ActiveRecord::Schema.define(version: 20150130220627) do
 
   create_table "categories", force: true do |t|
     t.string   "name"
@@ -85,6 +85,7 @@ ActiveRecord::Schema.define(version: 20150130190730) do
     t.integer  "qu29"
     t.integer  "employee_id"
     t.decimal  "average",     precision: 16, scale: 2
+    t.integer  "reviewer_id"
   end
 
   create_table "users", force: true do |t|

@@ -18,6 +18,11 @@
 					<p class="bg-success"><%= r.average%>/5</p>
 					<%else%>
 					<p class="bg-danger"><%= r.average%>/5</p>
+					<% if r.reviewer_id.nil?%>
+						<p>Reviewed by Admin</p>
+					<%else%>
+						<p>Reviewed by: <%= Reviewer.find(r.reviewer_id).name%></p>	
+					<%end%>
 					<%end%>
 				<%end%>
 			</div>

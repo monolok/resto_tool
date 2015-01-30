@@ -13,12 +13,21 @@
 <ul>
 	<li><%= link_to 'Account', edit_user_registration_path %></li>
 	<li><%= link_to 'Sign out', destroy_user_session_path, :method => :delete %></li>
-	<li><%= link_to 'Add reviewer', new_reviewer_path%></li>
+	<li>Current User: <%= current_user.email%></li>
+	<%if current_user.reviewers.blank? %>
+		<li>No reviewers ! <%= link_to "Add one", new_reviewer_registration_path %></li>
+	<%else%>
+		<h4>User's reviewers: </h4>
+		<% current_user.reviewers.each do |r| %>
+			<li><%= r.name%></li>
+		<%end%>
+			<li><%= link_to 'Add reviewer', new_reviewer_registration_path%></li>
+	<%end%>
 </ul>
 <% else -%>
 <ul>
-	<li><%= link_to 'Sign up', new_user_registration_path %></li>
-	<li><%= link_to 'Sign in', new_user_session_path %></li>
+	<li><%= link_to 'Sign up Admin', new_user_registration_path %></li>
+	<li><%= link_to 'Sign in Admin', new_user_session_path %></li>
 </ul>
 <% end -%>
  <p class="notice"><%= notice %></p>
