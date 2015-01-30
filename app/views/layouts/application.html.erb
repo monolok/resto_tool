@@ -8,10 +8,12 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
+<p><%= link_to "ROOT", root_path%></p>
 <% if user_signed_in? -%>
 <ul>
 	<li><%= link_to 'Account', edit_user_registration_path %></li>
 	<li><%= link_to 'Sign out', destroy_user_session_path, :method => :delete %></li>
+	<li><%= link_to 'Add reviewer', new_reviewer_path%></li>
 </ul>
 <% else -%>
 <ul>

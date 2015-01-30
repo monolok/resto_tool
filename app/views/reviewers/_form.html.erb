@@ -1,0 +1,24 @@
+<%= form_for(@reviewer) do |f| %>
+  <% if @reviewer.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@reviewer.errors.count, "error") %> prohibited this reviewer from being saved:</h2>
+
+      <ul>
+      <% @reviewer.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+  <div>
+    <%= f.label :name%>
+    <%= f.text_field :name%>
+  </div>
+  <div>
+    <%= f.label :role%>
+    <%= f.text_field :role%>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>
