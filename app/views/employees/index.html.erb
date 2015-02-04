@@ -54,9 +54,13 @@
       </div>
     </div>
     <div class="col-sm-4">
+
+    <% if user_signed_in?%>
       <div class="row">
         <%= link_to 'Destroy', employee, method: :delete, data: { confirm: 'Are you sure?' } %>        
       </div>
+    <%end%>
+
       <div class="row">
         <%= link_to "Review #{employee.name}", employee_score_new_path(employee.id)%>        
       </div>
@@ -64,7 +68,3 @@
   </div>
 <% end %>
 </div>
-      
-
-
-<%= link_to 'New Employee', new_employee_path %>

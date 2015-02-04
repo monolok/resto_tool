@@ -14,6 +14,7 @@
 	<li><%= link_to 'Account', edit_user_registration_path %></li>
 	<li><%= link_to 'Sign out', destroy_user_session_path, :method => :delete %></li>
 	<li>Current User: <%= current_user.email%></li>
+	<li><%= link_to 'New Employee', new_employee_path %></li>
 
 	<%if current_user.reviewers.blank? %>
 		<li>No reviewers ! <%= link_to "Add one", new_reviewer_registration_path %></li>
