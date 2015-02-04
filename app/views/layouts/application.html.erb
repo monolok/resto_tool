@@ -8,12 +8,13 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
-<p><%= link_to "ROOT", root_path%></p>
+
 <% if user_signed_in? -%>
 <ul>
 	<li><%= link_to 'Account', edit_user_registration_path %></li>
 	<li><%= link_to 'Sign out', destroy_user_session_path, :method => :delete %></li>
 	<li>Current User: <%= current_user.email%></li>
+
 	<%if current_user.reviewers.blank? %>
 		<li>No reviewers ! <%= link_to "Add one", new_reviewer_registration_path %></li>
 	<%else%>
@@ -24,14 +25,19 @@
 			<li><%= link_to 'Add reviewer', new_reviewer_registration_path%></li>
 	<%end%>
 </ul>
-<% else -%>
-<ul>
-	<li><%= link_to 'Sign up Admin', new_user_registration_path %></li>
-	<li><%= link_to 'Sign in Admin', new_user_session_path %></li>
-</ul>
+
+<% elsif reviewer_signed_in?%>
+	<li><%= link_to 'Account', edit_reviewer_registration_path %></li>
+	<li><%= link_to 'Sign out', destroy_reviewer_session_path, :method => :delete %></li>
+	<li>Your company: <%= current_reviewer.user.email%></li>
+
+<% else%>
+	<h4>Welcome to the restool app</h4>
 <% end -%>
+
  <p class="notice"><%= notice %></p>
  <p class="alert"><%= alert %></p>
+ 
 <%= yield %>
 
 </body>
