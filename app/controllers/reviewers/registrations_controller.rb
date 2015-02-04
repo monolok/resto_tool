@@ -3,7 +3,16 @@ before_filter :configure_sign_up_params, only: [:create]
 before_filter :configure_account_update_params, only: [:update]
 
   # GET /resource/sign_up
-  def new
+  def new     
+     @permit_employees = Hash.new
+     @select_employees = current_user.employees.to_a
+     n = 0 
+     while n < @select_employees.count
+     @permit_employees[@select_employees[n].name] = @select_employees[n].id
+      n = n+1
+     end
+
+     #@permit_employees = [[name,id],[name,id]] 
      super
   end
 

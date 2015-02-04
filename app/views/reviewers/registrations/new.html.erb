@@ -7,10 +7,26 @@
     <%= f.label :name%>
     <%= f.text_field :name%>
   </div>
+<!--      @permit = [['Very low', 1], ['Low', 2], ['Medium', 3], ['High', 4], ['Very high', 5]]
+ -->
+  <div>
+    <%= f.label :category_not_permited%>
+    <ul>
+      <li>Very Low <%= f.check_box :permit, value: 1%></li>
+      <li>Low <%= f.check_box :permit, value: 2%></li>
+      <li>Medium <%= f.check_box :permit, value: 3%></li>
+      <li>High <%= f.check_box :permit, value: 4%></li>
+      <li>Very High <%= f.check_box :permit, value: 5%></li>
+    </ul>
+  </div>
 
   <div>
-    <%= f.label :role%>
-    <%= f.text_field :role%>
+    <%= f.label :employee_not_permited_for_access%>
+    <%= f.select(:spec) do %>
+      <% @permit_employees.each do |c| %>
+        <%= content_tag(:option, c.first, value: c.last) %>
+      <% end %>
+    <% end %>
   </div>
 
   <div class="field">

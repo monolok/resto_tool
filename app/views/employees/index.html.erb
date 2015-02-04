@@ -45,7 +45,11 @@
       </div>
 
       <div class="row">
-        <% @last_time_reviewer_id = employee.scores.last.reviewer_id %>
+      <% if employee.scores.last.nil?%>
+      <%else%>
+      <%@last_time_reviewer_id = employee.scores.last.reviewer_id%>      
+      <%end%>
+
         <% if @last_time_reviewer_id.nil?%>
           <p>Last review by: Admin</p>
         <%else%>
