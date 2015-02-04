@@ -6,10 +6,10 @@ class EmployeesController < ApplicationController
 
   def index
     if params[:pom].blank?
-      @employees = Employee.all
+      @employees = current_user.employees
     else
       @pom_clicked = params[:pom]
-      @employees = Employee.where(pom: @pom_clicked)
+      @employees = current_user.employees.where(pom: @pom_clicked)
     end
     #respond_with(@employees)
   end
