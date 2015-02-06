@@ -20,15 +20,6 @@
     </ul>
   </div>
 
-  <div>
-    <%= f.label :employee_not_permited_for_access%>
-    <%= f.select(:spec) do %>
-      <% @permit_employees.each do |c| %>
-        <%= content_tag(:option, c.first, value: c.last) %>
-      <% end %>
-    <% end %>
-  </div>
-
   <div class="field">
     <%= f.label :email %><br />
     <%= f.email_field :email, autofocus: true %>

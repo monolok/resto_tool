@@ -12,11 +12,10 @@ class EmployeesController < ApplicationController
         @employees = current_reviewer.user.employees
       end
     else
-      @pom_clicked = params[:pom]
       if user_signed_in?
-        @employees = current_user.employees.where(pom: @pom_clicked)
-      else
-        @employees = current_reviewer.user.employees.where(pom: @pom_clicked)
+        @employees = current_user.employees.where(pom: params[:pom])
+      else 
+        @employees = current_reviewer.user.employees.where(pom: params[:pom])          
       end
     end
     #respond_with(@employees)
