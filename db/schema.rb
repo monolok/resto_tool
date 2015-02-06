@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150204182331) do
+ActiveRecord::Schema.define(version: 20150205235606) do
 
   create_table "categories", force: true do |t|
     t.string   "name"
@@ -44,8 +44,12 @@ ActiveRecord::Schema.define(version: 20150204182331) do
     t.datetime "last_sign_in_at"
     t.string   "current_sign_in_ip"
     t.string   "last_sign_in_ip"
-    t.integer  "permit"
     t.integer  "spec"
+    t.integer  "vl"
+    t.integer  "l"
+    t.integer  "m"
+    t.integer  "h"
+    t.integer  "vh"
   end
 
   add_index "reviewers", ["email"], name: "index_reviewers_on_email", unique: true
