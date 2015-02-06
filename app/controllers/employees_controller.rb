@@ -5,6 +5,7 @@ class EmployeesController < ApplicationController
   respond_to :html
 
   def index
+
     if params[:pom].blank?
       if user_signed_in?
         @employees = current_user.employees
@@ -15,7 +16,7 @@ class EmployeesController < ApplicationController
       if user_signed_in?
         @employees = current_user.employees.where(pom: params[:pom])
       else 
-        @employees = current_reviewer.user.employees.where(pom: params[:pom])          
+        @employees = current_reviewer.user.employees.where(pom: params[:pom])         
       end
     end
     #respond_with(@employees)
@@ -105,6 +106,7 @@ class EmployeesController < ApplicationController
 
 
   private
+
     def set_employee
       @employee = Employee.find(params[:id])
     end
