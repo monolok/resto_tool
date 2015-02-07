@@ -5,7 +5,7 @@ Rails.application.routes.draw do
     post "score_new", to: "employees#score_create" 
   end
 
-  devise_for :users
+  devise_for :users, controllers: { registrations: "users/registrations"}
   devise_for :reviewers, controllers: { registrations: "reviewers/registrations"}
 
   #resources :reviewers
