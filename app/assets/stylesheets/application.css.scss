@@ -18,12 +18,24 @@
 @import "bootstrap";
 @import "font-awesome";
 
+.navbar {
+	background-color: transparent;
+}
+
 .center {
 	text-align: center;
 }
 
+.right {
+	text-align: right;
+}
+
 .pad {
 	padding: 5%;
+}
+
+.pad-top {
+	padding-top: 5%;
 }
 
 .red {
@@ -36,4 +48,20 @@
 
 .click {
 	cursor: pointer;
+}
+
+.red {
+	background-color: red;
+}
+
+.green {
+	background-color: green;
+}
+
+.blue {
+	background-color: blue;
+}
+
+.black {
+	background-color: black;
 }

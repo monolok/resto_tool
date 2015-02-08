@@ -33,7 +33,15 @@
 	<li>Your company: <%= current_reviewer.user.email%></li>
 
 <% else%>
-	<h4>Welcome to the restool app</h4>
+	<div class="row">
+		<div class="col-xs-4">
+			<h4>Restool app</h4>
+		</div>
+		<div class="col-xs-8 right">
+			<%= link_to 'Manager', new_user_session_path, class: "btn btn-default" %>
+			<%= link_to 'Reviewer', new_reviewer_session_path, class: "btn btn-default" %>
+		</div>
+	</div>
 <% end -%>
 
  <p class="notice"><%= notice %></p>
