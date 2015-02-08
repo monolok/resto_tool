@@ -1,31 +1,19 @@
+
+<div class="container-fluid">
+	<div class="row center">
+		<%= link_to 'Become a Manager', new_user_registration_path, class: "btn btn-default" %>
+	</div>
+	<div class="row center">
+		<div class="col-xs-6">
+			<%= link_to 'Connect as Manager', new_user_session_path, class: "btn btn-default" %>
+		</div>
+		<div class="col-xs-6">
+			<%= link_to 'Connect as Reviewer', new_reviewer_session_path, class: "btn btn-default" %>
+		</div>
+	</div>
+</div>
+
+
+
 <h1>Welcome#index</h1>
 
-<!-- Admin -->
-
-<% if user_signed_in? %>
-
-<ul>
-	<li><%= link_to 'Account Admin', edit_user_registration_path %></li>
-	<li><%= link_to 'Sign out Admin', destroy_user_session_path, :method => :delete %></li>
-	<li><%= link_to "Create an Employee", new_employee_path%></li>
-	<li><%= link_to "Add reviewer", new_reviewer_registration_path%></li>
-</ul>
-
-<% else -%>
-
-	<%if reviewer_signed_in? %>
-	<ul>
-		<li><%= link_to 'Account reviewer', edit_reviewer_registration_path %></li>
-		<li><%= link_to 'Sign out Reviewer', destroy_reviewer_session_path, :method => :delete %></li>
-	</ul>
-
-	<%else%>
-
-	<ul>
-		<li><%= link_to 'Sign up Admin', new_user_registration_path %></li>
-		<li><%= link_to 'Sign in Admin', new_user_session_path %></li>
-		<li><%= link_to 'Sign in Reviewer', new_reviewer_session_path %></li>
-	</ul>
-	<%end%>
-
-<% end -%>
