@@ -6,4 +6,5 @@ class WelcomeController < ApplicationController
   		redirect_to employees_path
   	end
   end
+  
 end
