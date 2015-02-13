@@ -6,6 +6,10 @@ Rails.application.routes.draw do
   end
 
   devise_for :users, controllers: { registrations: "users/registrations"}
+  devise_scope :user do
+    get 'new_basic', to: "users/registrations#new_basic"
+    get 'new_pro', to: "users/registrations#new_pro"
+  end
   devise_for :reviewers, controllers: { registrations: "reviewers/registrations"}
 
   #resources :reviewers
