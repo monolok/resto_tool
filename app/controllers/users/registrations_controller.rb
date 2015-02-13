@@ -10,6 +10,7 @@ class Users::RegistrationsController < Devise::RegistrationsController
   def new_basic
     if not user_signed_in?
       redirect_to new_user_registration_path
+      flash[:notice] = 'Sign up or Sign in to upgrade'
     else
       @user = current_user
     end
@@ -19,6 +20,7 @@ class Users::RegistrationsController < Devise::RegistrationsController
     @user = User.new 
     if not user_signed_in?
       redirect_to new_user_registration_path
+      flash[:notice] = 'Sign up or Sign in to upgrade'
     else
       @user = current_user
     end   
@@ -30,31 +32,37 @@ class Users::RegistrationsController < Devise::RegistrationsController
   end
 
   def create_new_basic
-   # Amount in cents
-  @amount = 500
 
   customer = Stripe::Customer.create(
     :email => current_user.email,
     :card  => params[:stripeToken],
-    :plan => "1"
+    :plan => "basic"
   )
 
-  charge = Stripe::Charge.create(
-    :customer    => customer.id,
-    :amount      => @amount,
-    :description => 'Rails Stripe customer',
-    :currency    => 'usd'
-  )
+  current_user.plan_id = "basic"
+  current_user.stripe_id = customer.id
+  current_user.save
 
-rescue Stripe::CardError => e
-  flash[:error] = e.message
-  redirect_to new_basic_path
-
-  current_user.update(plan_id: 1, stripe_id: customer.id)
+  rescue Stripe::CardError => e
+    flash[:error] = e.message
+    redirect_to new_basic_path
   end
 
   def create_new_pro
-    
+  
+  customer = Stripe::Customer.create(
+    :email => current_user.email,
+    :card  => params[:stripeToken],
+    :plan => "pro"
+  )
+
+  current_user.plan_id = "pro"
+  current_user.stripe_id = customer.id
+  current_user.save
+
+  rescue Stripe::CardError => e
+    flash[:error] = e.message
+    redirect_to new_basic_path  
   end
   # GET /resource/edit
   # def edit

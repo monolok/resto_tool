@@ -1,29 +1,22 @@
-<h2>Sign up Pro account</h2>
+<h2>Sign up Pro account: <%= @user.email%></h2>
 
-<%= form_for(@user, as: resource_name, url: registration_path(resource_name)) do |f| %>
-  <%= devise_error_messages! %>
+<%= form_tag new_pro_path do %>
+  <article>
+    <label class="amount">
+      <span>Amount: $20.00</span>
+    </label>
+  </article>
+<script 
 
-  <div class="field">
-    <%= f.label :email %><br />
-    <%= f.email_field :email, autofocus: true %>
-  </div>
+  src="https://checkout.stripe.com/checkout.js" class="stripe-button"
+  data-key="<%= Rails.configuration.stripe[:publishable_key] %>"
+  data-description="A month's subscription"
+  data-amount="5000" 
+  data-email="<%= @user.email%>" 
+  data-allow-remember-me="false"
 
-  <div class="field">
-    <%= f.label :password %>
-    <% if @validatable %>
-    <em>(<%= @minimum_password_length %> characters minimum)</em>
-    <% end %><br />
-    <%= f.password_field :password, autocomplete: "off" %>
-  </div>
 
-  <div class="field">
-    <%= f.label :password_confirmation %><br />
-    <%= f.password_field :password_confirmation, autocomplete: "off" %>
-  </div>
-
-  <div class="actions">
-    <%= f.submit "Sign up" %>
-  </div>
+  >
+</script>
 <% end %>
-
-<%= render "devise/shared/links" %>
+<!-- :url => {:action => "create_new_basic"} -->

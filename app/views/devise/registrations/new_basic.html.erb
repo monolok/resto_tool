@@ -3,7 +3,7 @@
 <%= form_tag new_basic_path do %>
   <article>
     <label class="amount">
-      <span>Amount: $5.00</span>
+      <span>Amount: $20.00</span>
     </label>
   </article>
 <script 
@@ -11,7 +11,7 @@
   src="https://checkout.stripe.com/checkout.js" class="stripe-button"
   data-key="<%= Rails.configuration.stripe[:publishable_key] %>"
   data-description="A month's subscription"
-  data-amount="500" 
+  data-amount="2000" 
   data-email="<%= @user.email%>" 
   data-allow-remember-me="false"
 
