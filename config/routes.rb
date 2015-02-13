@@ -8,7 +8,9 @@ Rails.application.routes.draw do
   devise_for :users, controllers: { registrations: "users/registrations"}
   devise_scope :user do
     get 'new_basic', to: "users/registrations#new_basic"
+    patch 'new_basic', to: "users/registrations#create_new_basic"
     get 'new_pro', to: "users/registrations#new_pro"
+    patch 'new_pro', to: "users/registrations#create_new_pro"
   end
   devise_for :reviewers, controllers: { registrations: "reviewers/registrations"}
 

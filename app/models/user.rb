@@ -6,4 +6,7 @@ class User < ActiveRecord::Base
          
   has_many :employees
   has_many :reviewers
+
+  attr_accessor :stripe_card_token
+  
 end

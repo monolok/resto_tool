@@ -8,18 +8,54 @@ class Users::RegistrationsController < Devise::RegistrationsController
   end
 
   def new_basic
-    @user = User.new
+    if not user_signed_in?
+      redirect_to new_user_registration_path
+    else
+      @user = current_user
+    end
   end
 
   def new_pro
     @user = User.new 
+    if not user_signed_in?
+      redirect_to new_user_registration_path
+    else
+      @user = current_user
+    end   
   end
 
   # POST /resource
-  # def create
-  #   super
-  # end
+  def create
+    super
+  end
 
+  def create_new_basic
+   # Amount in cents
+  @amount = 500
+
+  customer = Stripe::Customer.create(
+    :email => current_user.email,
+    :card  => params[:stripeToken],
+    :plan => "1"
+  )
+
+  charge = Stripe::Charge.create(
+    :customer    => customer.id,
+    :amount      => @amount,
+    :description => 'Rails Stripe customer',
+    :currency    => 'usd'
+  )
+
+rescue Stripe::CardError => e
+  flash[:error] = e.message
+  redirect_to new_basic_path
+
+  current_user.update(plan_id: 1, stripe_id: customer.id)
+  end
+
+  def create_new_pro
+    
+  end
   # GET /resource/edit
   # def edit
   #   super
@@ -49,14 +85,14 @@ class Users::RegistrationsController < Devise::RegistrationsController
   # protected
 
   # You can put the params you want to permit in the empty array.
-  # def configure_sign_up_params
-  #   devise_parameter_sanitizer.for(:sign_up) << :attribute
-  # end
+  def configure_sign_up_params
+    devise_parameter_sanitizer.for(:sign_up) << :attribute << :plan_id << :stripe_id
+  end
 
   # You can put the params you want to permit in the empty array.
-  # def configure_account_update_params
-  #   devise_parameter_sanitizer.for(:account_update) << :attribute
-  # end
+  def configure_account_update_params
+    devise_parameter_sanitizer.for(:account_update) << :attribute << :plan_id << :stripe_id
+  end
 
   # The path used after sign up.
   # def after_sign_up_path_for(resource)
