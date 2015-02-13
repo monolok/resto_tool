@@ -1,5 +1,11 @@
 <h2>Sign up Basic account: <%= @user.email%></h2>
 
+<%= form_tag new_basic_path do %>
+  <article>
+    <label class="amount">
+      <span>Amount: $5.00</span>
+    </label>
+  </article>
 <script 
 
   src="https://checkout.stripe.com/checkout.js" class="stripe-button"
@@ -12,5 +18,5 @@
 
   >
 </script>
-
+<% end %>
 <!-- :url => {:action => "create_new_basic"} -->
