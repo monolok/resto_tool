@@ -29,6 +29,9 @@ class Users::RegistrationsController < Devise::RegistrationsController
   # POST /resource
   def create
     super
+  current_user.plan_id = "free"
+  current_user.stripe_id = nil
+  current_user.save
   end
 
   def create_new_basic
