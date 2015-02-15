@@ -32,58 +32,64 @@
 <div class="container-fluid black" id="pricing">
 	<div class="row">
 		<div class="col-md-4">
-			<section>
-				<div class="container-img">
-					<i class="fa fa-smile-o fa-5x"></i>
-				</div>
-			</section>
-			<section>
-				<%= link_to "Free", new_user_registration_path, class: "btn btn-success"%>
-			</section>
-			<section>
-				<ul>
-					<li>0 Euro</li>
-					<li>1 Reviewers</li>
-					<li>5 employees</li>
-					<li>Forever free</li>
-				</ul>
-			</section>
+			<div class="border-price">
+				<section>
+					<div class="container-img pad-bot">
+						<i class="fa fa-smile-o fa-5x"></i>
+					</div>
+				</section>
+				<section class="pad-bot">
+					<%= link_to "Free", new_user_registration_path, class: "btn btn-success"%>
+				</section>
+				<section>
+					<ul class="plan-features">
+						<li class="price">0 Euro</li>
+						<li>1 Reviewers</li>
+						<li>5 employees</li>
+						<li>Forever free</li>
+					</ul>
+				</section>
+			</div>
 		</div>
 		<div class="col-md-4">
-			<section>
-				<div class="container-img">
-					<i class="fa fa-smile-o fa-5x"></i>
-				</div>
-			</section>
-			<section>
-				<%= link_to "Basic", new_basic_path, class: "btn btn-success"%>
-			</section>
-			<section>
-				<ul>
-					<li>29 Euro</li>
-					<li>5 Reviewers</li>
-					<li>25 employees</li>
-					<li>Support</li>
-				</ul>
-			</section>
+			<div class="border-price">
+				<section>
+					<div class="container-img pad-bot">
+						<i class="fa fa-smile-o fa-5x"></i>
+					</div>
+				</section>
+				<section class="pad-bot">
+					<%= link_to "Basic", new_basic_path, class: "btn btn-success"%>
+				</section>
+				<section>
+					<ul class="plan-features">
+						<li class="price">29 Euro</li>
+						<li>5 Reviewers</li>
+						<li>25 employees</li>
+						<li>Support</li>
+					</ul>
+				</section>
+			</div>
 		</div>
 		<div class="col-md-4">
-			<section>
-				<div class="container-img">
-					<i class="fa fa-smile-o fa-5x"></i>
-				</div>
-			</section>
-			<section>
-				<%= link_to "Pro", new_pro_path, class: "btn btn-success"%>
-			</section>
-			<section>
-				<ul>
-					<li>49 Euro</li>
-					<li>10 Reviewers</li>
-					<li>50 employees</li>
-					<li>Support</li>
-				</ul>
-			</section>
+			<div class="border-price">
+				<section>
+					<div class="container-img pad-bot">
+						<i class="fa fa-smile-o fa-5x"></i>
+					</div>
+				</section>
+				<section class="pad-bot">
+					<%= link_to "Pro", new_pro_path, class: "btn btn-success"%>
+				</section>
+				<section>
+					<ul class="plan-features">
+						<li class="price">49 Euro</li>
+						<li>10 Reviewers</li>
+						<li>50 employees</li>
+						<li>Support</li>
+					</ul>
+				</section>
+			</div>
 		</div>
 	</div>
 </div>
