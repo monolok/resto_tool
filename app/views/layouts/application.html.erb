@@ -35,7 +35,7 @@
 <% else%>
 	<div class="row">
 		<div class="col-xs-4">
-			<h4>Restool app</h4>
+			 <p><%= notice %><%= alert %></p>
 		</div>
 		<div class="col-xs-8 right">
 			<%= link_to 'Manager', new_user_session_path, class: "btn btn-default" %>
@@ -43,9 +43,6 @@
 		</div>
 	</div>
 <% end -%>
-
- <p class="notice"><%= notice %></p>
- <p class="alert"><%= alert %></p>
  
 <%= yield %>
 

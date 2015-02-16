@@ -18,8 +18,25 @@
 @import "bootstrap";
 @import "font-awesome";
 
+
+h3 {
+	font-size: 30px;
+	letter-spacing: 5px;
+}
+
+.bg {
+	background-image: url("home.png");
+	background-size: 100%;
+	background-repeat: no-repeat;
+	padding-bottom: 15%;
+	text-shadow: 1px 0px 5px;
+	color: rgb(255,249,241);
+} 
+
 .navbar {
 	background-color: transparent;
+	margin-bottom: 1px;
+	background-color: black;
 }
 
 .text-home{
@@ -41,6 +58,11 @@
 	padding: 5%;
 }
 
+/*.pad_nav {
+	background-color: black;
+	color: white;
+}*/
+
 .pad-top {
 	padding-top: 5%;
 }
@@ -61,20 +83,16 @@
 	cursor: pointer;
 }
 
-.red {
-	background-color: red;
-}
-
-.green {
-	background-color: green;
-}
-
 .blue {
-	background-color: blue;
+	background-color: rgb(170,200,227);
+}
+
+.redi {
+	background-color: rgb(227,130,128);
 }
 
 .black {
-	background-color: transparent;
+	background-color: rgb(227, 221,212);
 }
 
 .container-img {
@@ -105,13 +123,22 @@
 	border-radius: 7%;
 }
 
-.img-plan {
-	height: 100px;
-	width: 95px;
+.ul_style {
+	list-style: none;
 }
 
+.position_gears {
+	padding-left: 25%;
+}
 
+.title_sub {
+	padding-bottom: 5%;
+	padding-top: 5%;
+}
 
+.btn-primary {
+	background-color: transparent;
+}
 
 
 
