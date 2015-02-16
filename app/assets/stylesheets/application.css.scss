@@ -18,19 +18,25 @@
 @import "bootstrap";
 @import "font-awesome";
 
+h1 {
+	text-shadow: 1px 0px 5px;
+	color: rgb(255,249,241);
+}
 
 h3 {
 	font-size: 30px;
 	letter-spacing: 5px;
 }
 
+h4{
+	text-shadow: 1px 0px 5px;
+	color: rgb(255,249,241);
+} 
+
 .bg {
 	background-image: url("home.png");
 	background-size: 100%;
 	background-repeat: no-repeat;
-	padding-bottom: 10%;
-	text-shadow: 1px 0px 5px;
-	color: rgb(255,249,241);
 } 
 
 .navbar {
@@ -44,6 +50,8 @@ h3 {
     margin-left: 22%;
     line-height: 41px;
     text-align: justify;
+	text-shadow: 1px 0px 5px;
+	color: rgb(255,249,241);
 }
 
 .center {
@@ -136,10 +144,10 @@ h3 {
 	padding-top: 5%;
 }
 
-.btn-primary {
+/*.btn-primary {
 	background-color: aliceblue;
 	opacity: 0.8;
-}
+}*/
 
 .btn-lg {
 	font-size: 40px;

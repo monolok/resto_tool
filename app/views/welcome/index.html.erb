@@ -1,12 +1,12 @@
 <div class="container-fluid bg">
-	<div class="row center">
+	<div class="row center text-main">
 		<h1>Restool App</h1>
 	</div>
 	<div class="row center">
 		<h4>Keep valuable people and fire dead-weight.</h4>
 	</div>
 <%if user_signed_in?%>
-	<div class="row center pad-top">
+	<div class="row center pad">
 		<%= link_to "Dashboard", employees_path, class: "btn btn-primary btn-lg"%>
 	</div>
 <%else%>
@@ -14,18 +14,14 @@
 		<p class="text-home">Sign up by becoming a manager and start reviewing your people or create reviewer to review all of them or just some for you. Restool app povide you with a simple tool to improve your work environment, spirit and efficiency.</p>
 	</div>		
 
-	<div class="row center pad-top">
+	<div class="row center pad">
 		<%= link_to 'Become a Manager', new_user_registration_path, class: "btn btn-primary btn-lg" %>
 	</div>
-</div>
 
-<div class="container-fluid">
 	<div class="row">
 		<%= render "navbar"%>
 	</div>
-</div>
-
-<div class="container-fluid blue" id="concept">
+<div class="row blue" id="concept">
 	<h3 class="center title_sub">Concept</h3>
 	<div class="row center pad">
 		<div class="col-sm-4">
@@ -57,7 +53,7 @@
 	</div>
 </div>
 
-<div class="container-fluid redi" id="functioning">
+<div class="row redi" id="functioning">
 	<h3 class="center title_sub">Functioning</h3>
 	<div class="row position_gears">
 		<ul class="ul_style">
@@ -71,150 +67,145 @@
 	</div>
 </div>
 <%end%>
+</div>
 
-<% if user_signed_in? and current_user.plan_id == "free"%>
 <div class="container-fluid black" id="pricing">
 	<h3 class="center title_sub">Pricing</h3>
-	<div class="row">
-		<div class="col-md-6">
-			<div class="border-price">
-				<section>
-					<div class="container-img pad-bot">
-						<i class="fa fa-user fa-5x"></i>
-						<i class="fa fa-user fa-5x"></i>
-					</div>
-				</section>
-				<section class="pad-bot">
-					<%= link_to "Basic", new_basic_path, class: "btn btn-success"%>
-				</section>
-				<section>
-					<ul class="plan-features">
-						<li class="price">29 Euro</li>
-						<li>5 Reviewers</li>
-						<li>25 employees</li>
-						<li>Support</li>
-					</ul>
-				</section>
+	<% if user_signed_in? and current_user.plan_id == "free"%>
+		<div class="row">
+			<div class="col-md-6">
+				<div class="border-price">
+					<section>
+						<div class="container-img pad-bot">
+							<i class="fa fa-user fa-5x"></i>
+							<i class="fa fa-user fa-5x"></i>
+						</div>
+					</section>
+					<section class="pad-bot">
+						<%= link_to "Basic", new_basic_path, class: "btn btn-success"%>
+					</section>
+					<section>
+						<ul class="plan-features">
+							<li class="price">29 Euro</li>
+							<li>5 Reviewers</li>
+							<li>25 employees</li>
+							<li>Support</li>
+						</ul>
+					</section>
+				</div>
+			</div>
+			<div class="col-md-6">
+				<div class="border-price">
+					<section>
+						<div class="container-img pad-bot">
+							<i class="fa fa-users fa-5x"></i>
+						</div>
+					</section>
+					<section class="pad-bot">
+						<%= link_to "Pro", new_pro_path, class: "btn btn-success"%>
+					</section>
+					<section>
+						<ul class="plan-features">
+							<li class="price">49 Euro</li>
+							<li>10 Reviewers</li>
+							<li>50 employees</li>
+							<li>Support</li>
+						</ul>
+					</section>
+				</div>
 			</div>
 		</div>
-		<div class="col-md-6">
-			<div class="border-price">
-				<section>
-					<div class="container-img pad-bot">
-						<i class="fa fa-users fa-5x"></i>
-					</div>
-				</section>
-				<section class="pad-bot">
-					<%= link_to "Pro", new_pro_path, class: "btn btn-success"%>
-				</section>
-				<section>
-					<ul class="plan-features">
-						<li class="price">49 Euro</li>
-						<li>10 Reviewers</li>
-						<li>50 employees</li>
-						<li>Support</li>
-					</ul>
-				</section>
+	<%elsif user_signed_in? and current_user.plan_id == "basic"%>
+		<div class="row">
+			<div class="col-md-offset-6 col-md-6">
+				<div class="border-price">
+					<section>
+						<div class="container-img pad-bot">
+							<i class="fa fa-users fa-5x"></i>
+						</div>
+					</section>
+					<section class="pad-bot">
+						<%= link_to "Pro", new_pro_path, class: "btn btn-success"%>
+					</section>
+					<section>
+						<ul class="plan-features">
+							<li class="price">49 Euro</li>
+							<li>10 Reviewers</li>
+							<li>50 employees</li>
+							<li>Support</li>
+						</ul>
+					</section>
+				</div>
+			</div>
+		</div>	
+	<%elsif user_signed_in? and current_user.plan_id == "pro"%>
+	Upgrade more than a pro plan
+	<%else%>
+		<div class="row">
+			<div class="col-md-4">
+				<div class="border-price">
+					<section>
+						<div class="container-img pad-bot">
+							<i class="fa fa-user fa-5x"></i>
+						</div>
+					</section>
+					<section class="pad-bot">
+						<%= link_to "Free", new_user_registration_path, class: "btn btn-success"%>
+					</section>
+					<section>
+						<ul class="plan-features">
+							<li class="price">0 Euro</li>
+							<li>1 Reviewers</li>
+							<li>5 employees</li>
+							<li>Forever free</li>
+						</ul>
+					</section>
+				</div>
+			</div>
+			<div class="col-md-4">
+				<div class="border-price">
+					<section>
+						<div class="container-img pad-bot">
+							<i class="fa fa-user fa-5x"></i>
+							<i class="fa fa-user fa-5x"></i>
+						</div>
+					</section>
+					<section class="pad-bot">
+						<%= link_to "Basic", new_basic_path, class: "btn btn-success"%>
+					</section>
+					<section>
+						<ul class="plan-features">
+							<li class="price">29 Euro</li>
+							<li>5 Reviewers</li>
+							<li>25 employees</li>
+							<li>Support</li>
+						</ul>
+					</section>
+				</div>
+			</div>
+			<div class="col-md-4">
+				<div class="border-price">
+					<section>
+						<div class="container-img pad-bot">
+							<i class="fa fa-users fa-5x"></i>
+						</div>
+					</section>
+					<section class="pad-bot">
+						<%= link_to "Pro", new_pro_path, class: "btn btn-success"%>
+					</section>
+					<section>
+						<ul class="plan-features">
+							<li class="price">49 Euro</li>
+							<li>10 Reviewers</li>
+							<li>50 employees</li>
+							<li>Support</li>
+						</ul>
+					</section>
+				</div>
 			</div>
 		</div>
-	</div>
+	<%end%>	
 </div>
-<%elsif user_signed_in? and current_user.plan_id == "basic"%>
-<div class="container-fluid black" id="pricing">
-	<h3 class="center title_sub">Pricing</h3>
-	<div class="row">
-		<div class="col-md-offset-6 col-md-6">
-			<div class="border-price">
-				<section>
-					<div class="container-img pad-bot">
-						<i class="fa fa-users fa-5x"></i>
-					</div>
-				</section>
-				<section class="pad-bot">
-					<%= link_to "Pro", new_pro_path, class: "btn btn-success"%>
-				</section>
-				<section>
-					<ul class="plan-features">
-						<li class="price">49 Euro</li>
-						<li>10 Reviewers</li>
-						<li>50 employees</li>
-						<li>Support</li>
-					</ul>
-				</section>
-			</div>
-		</div>
-	</div>
-</div>
-<%elsif user_signed_in? and current_user.plan_id == "pro"%>
-Upgrade more than a pro plan
-<%else%>
-<div class="container-fluid black" id="pricing">
-	<h3 class="center title_sub">Pricing</h3>
-	<div class="row">
-		<div class="col-md-4">
-			<div class="border-price">
-				<section>
-					<div class="container-img pad-bot">
-						<i class="fa fa-user fa-5x"></i>
-					</div>
-				</section>
-				<section class="pad-bot">
-					<%= link_to "Free", new_user_registration_path, class: "btn btn-success"%>
-				</section>
-				<section>
-					<ul class="plan-features">
-						<li class="price">0 Euro</li>
-						<li>1 Reviewers</li>
-						<li>5 employees</li>
-						<li>Forever free</li>
-					</ul>
-				</section>
-			</div>
-		</div>
-		<div class="col-md-4">
-			<div class="border-price">
-				<section>
-					<div class="container-img pad-bot">
-						<i class="fa fa-user fa-5x"></i>
-						<i class="fa fa-user fa-5x"></i>
-					</div>
-				</section>
-				<section class="pad-bot">
-					<%= link_to "Basic", new_basic_path, class: "btn btn-success"%>
-				</section>
-				<section>
-					<ul class="plan-features">
-						<li class="price">29 Euro</li>
-						<li>5 Reviewers</li>
-						<li>25 employees</li>
-						<li>Support</li>
-					</ul>
-				</section>
-			</div>
-		</div>
-		<div class="col-md-4">
-			<div class="border-price">
-				<section>
-					<div class="container-img pad-bot">
-						<i class="fa fa-users fa-5x"></i>
-					</div>
-				</section>
-				<section class="pad-bot">
-					<%= link_to "Pro", new_pro_path, class: "btn btn-success"%>
-				</section>
-				<section>
-					<ul class="plan-features">
-						<li class="price">49 Euro</li>
-						<li>10 Reviewers</li>
-						<li>50 employees</li>
-						<li>Support</li>
-					</ul>
-				</section>
-			</div>
-		</div>
-	</div>
-</div>
-<%end%>
 
 
 
