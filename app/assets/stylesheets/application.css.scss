@@ -28,7 +28,7 @@ h3 {
 	background-image: url("home.png");
 	background-size: 100%;
 	background-repeat: no-repeat;
-	padding-bottom: 15%;
+	padding-bottom: 10%;
 	text-shadow: 1px 0px 5px;
 	color: rgb(255,249,241);
 } 
@@ -137,7 +137,12 @@ h3 {
 }
 
 .btn-primary {
-	background-color: transparent;
+	background-color: aliceblue;
+	opacity: 0.8;
+}
+
+.btn-lg {
+	font-size: 40px;
 }
 
 
