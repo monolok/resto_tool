@@ -81,6 +81,9 @@ class Users::RegistrationsController < Devise::RegistrationsController
   def destroy
     current_user.employees.destroy_all
     current_user.reviewers.destroy_all
+    customer = Stripe::Customer.retrieve("#{current_user.stripe_id}")
+    customer.subscriptions.retrieve("#{customer.subscriptions.data[0].id}").delete
+    customer.delete
     super
   end
 
