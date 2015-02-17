@@ -60,9 +60,14 @@ class EmployeesController < ApplicationController
   end
 
   def create
-    @employee = current_user.employees.build(employee_params)
-    @employee.save
-    respond_with(@employee)
+  @employee = current_user.employees.build(employee_params)
+    if not @employee.valid?
+      flash[:notice] = "Exceeded plan limit"
+      redirect_to employees_path
+    else
+      @employee.save
+      respond_with(@employee)
+    end
   end
 
   def update
