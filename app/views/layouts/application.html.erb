@@ -31,18 +31,7 @@
 	<li><%= link_to 'Account', edit_reviewer_registration_path %></li>
 	<li><%= link_to 'Sign out', destroy_reviewer_session_path, :method => :delete %></li>
 	<li>Your company: <%= current_reviewer.user.email%></li>
-
-<% else%>
-	<div class="row">
-		<div class="col-xs-4">
-			 <p><%= notice %><%= alert %></p>
-		</div>
-		<div class="col-xs-8 right">
-			<%= link_to 'Manager', new_user_session_path, class: "btn btn-default" %>
-			<%= link_to 'Reviewer', new_reviewer_session_path, class: "btn btn-default" %>
-		</div>
-	</div>
-<% end -%>
+<% end %>
  
 <%= yield %>
 

@@ -1,4 +1,15 @@
 <div class="container-fluid bg">
+	<% if not user_signed_in? and not reviewer_signed_in? %>
+		<div class="row">
+			<div class="col-xs-4">
+				<p><%= notice %><%= alert %></p>
+			</div>
+			<div class="col-xs-8 right">
+				<%= link_to 'Manager', new_user_session_path, class: "btn btn-default" %>
+				<%= link_to 'Reviewer', new_reviewer_session_path, class: "btn btn-default" %>
+			</div>
+		</div>
+	<%end%>
 	<div class="row center text-main">
 		<h1>Restool App</h1>
 	</div>
