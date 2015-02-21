@@ -40,9 +40,9 @@ h4{
 } 
 
 .navbar {
-	background-color: transparent;
 	margin-bottom: 1px;
 	background-color: black;
+	opacity: 0.7;
 }
 
 .text-home{
@@ -66,10 +66,9 @@ h4{
 	padding: 5%;
 }
 
-/*.pad_nav {
-	background-color: black;
+.white {
 	color: white;
-}*/
+}
 
 .pad-top {
 	padding-top: 5%;
@@ -100,7 +99,7 @@ h4{
 }
 
 .black {
-	background-color: rgb(227, 221,212);
+	color: rgb(170,200,227);
 }
 
 .container-img {
@@ -144,13 +143,33 @@ h4{
 	padding-top: 5%;
 }
 
-/*.btn-primary {
-	background-color: aliceblue;
+.btn-primary {
+	background-color: rgb(170,200,227);
 	opacity: 0.8;
-}*/
+}
+
+.btn-primary:hover {
+	background-color: rgb(227,130,128);
+}
+
+.btn-success {
+	background-color: rgb(227,130,128);
+	border-color: black;
+}
+
+.btn-success:hover {
+	background-color: rgb(227,130,128);
+	opacity: 0.8;
+}
 
 .btn-lg {
 	font-size: 40px;
+	color: black;
+}
+
+.btn-lg:hover {
+	font-size: 40px;
+	color: black;
 }
 
 .absolute {
