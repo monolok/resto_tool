@@ -20,6 +20,7 @@
 		<li>No reviewers ! <%= link_to "Add one", new_reviewer_registration_path %></li>
 	<%else%>
 		<h4>User's reviewers: </h4>
+		<p><%= alert %></p>
 		<% current_user.reviewers.each do |r| %>
 			<li><%= r.name%></li>
 		<%end%>
