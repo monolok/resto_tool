@@ -29,9 +29,9 @@ class Users::RegistrationsController < Devise::RegistrationsController
   # POST /resource
   def create
     super
-  current_user.plan_id = "free"
-  current_user.stripe_id = nil
-  current_user.save
+  #current_user.plan_id = "free"
+  #current_user.stripe_id = nil
+  #current_user.save
   end
 
   def create_new_basic
@@ -81,9 +81,11 @@ class Users::RegistrationsController < Devise::RegistrationsController
   def destroy
     current_user.employees.destroy_all
     current_user.reviewers.destroy_all
-    customer = Stripe::Customer.retrieve("#{current_user.stripe_id}")
-    customer.subscriptions.retrieve("#{customer.subscriptions.data[0].id}").delete
-    customer.delete
+    if not current_user.plan_id == nil
+      customer = Stripe::Customer.retrieve("#{current_user.stripe_id}")
+      customer.subscriptions.retrieve("#{customer.subscriptions.data[0].id}").delete
+      customer.delete
+    end
     super
   end
 

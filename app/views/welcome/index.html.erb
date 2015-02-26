@@ -82,7 +82,7 @@
 
 <div class="container-fluid" id="pricing">
 	<h3 class="center title_sub">Pricing</h3>
-	<% if user_signed_in? and current_user.plan_id == "free"%>
+	<% if user_signed_in? and current_user.plan_id == nil%>
 		<div class="row">
 			<div class="col-md-6">
 				<div class="border-price">
