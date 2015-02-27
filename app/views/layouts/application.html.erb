@@ -23,6 +23,8 @@
 		<p><%= alert %></p>
 		<% current_user.reviewers.each do |r| %>
 			<li><%= r.name%></li>
+			<li>Last sign in: <%= r.last_sign_in_at%></li>
+			<li>Last employee reviewed is: ' FINISH CODE '<%# r.scores.last.employee%></li>
 		<%end%>
 			<li><%= link_to 'Add reviewer', new_reviewer_registration_path%></li>
 	<%end%>
