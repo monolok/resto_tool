@@ -40,4 +40,8 @@ $('#pricing_start').click(function (event) {
 event.preventDefault();
 });
 
+// $('.modal').click(function () {
+
+// })
+
 })
