@@ -16,7 +16,7 @@
 	<div class="row center">
 		<h4>Keep valuable people and fire dead-weight.</h4>
 	</div>
-<%if user_signed_in?%>
+<%if user_signed_in? or reviewer_signed_in?%>
 	<div class="row center pad">
 		<%= link_to "Dashboard", employees_path, class: "btn btn-primary btn-lg"%>
 	</div>
@@ -79,6 +79,7 @@
 </div>
 <%end%>
 </div>
+
 
 <div class="container-fluid" id="pricing">
 	<h3 class="center title_sub">Pricing</h3>
@@ -151,6 +152,8 @@
 		</div>	
 	<%elsif user_signed_in? and current_user.plan_id == "pro"%>
 	Upgrade more than a pro plan
+	<%elsif reviewer_signed_in?%>
+		<p>Wecome reviewer</p>
 	<%else%>
 		<div class="row">
 			<div class="col-md-4">
