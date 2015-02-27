@@ -8,7 +8,7 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
-
+<%= @o %>
 <% if user_signed_in? -%>
 <ul>
 	<li><%= link_to 'Account', edit_user_registration_path %></li>
@@ -23,8 +23,13 @@
 		<p><%= alert %></p>
 		<% current_user.reviewers.each do |r| %>
 			<li><%= r.name%></li>
-			<li>Last sign in: <%= r.last_sign_in_at%></li>
-			<li>Last employee reviewed is: ' FINISH CODE '<%# r.scores.last.employee%></li>
+			<li>Last sign in: <%= r.updated_at%></li>
+			<%if r.scores.empty?%>
+				<li>No scores</li>
+			<%else%>
+				<li>Last employee reviewed is: <%= link_to r.scores.last.employee.name, employee_path(r.scores.last.employee.id) %></li>
+			<%end%>
+			<li><%= link_to "Delete reviewer#", "reviewer_delete/#{r.id}", :method => :delete %></li>
 		<%end%>
 			<li><%= link_to 'Add reviewer', new_reviewer_registration_path%></li>
 	<%end%>

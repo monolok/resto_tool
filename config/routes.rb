@@ -14,6 +14,8 @@ Rails.application.routes.draw do
   end
   devise_for :reviewers, controllers: { registrations: "reviewers/registrations"}
 
+  delete 'reviewer_delete/:id', to: "application#destroy_reviewer"
+
   #resources :reviewers
 
   # The priority is based upon order of creation: first created -> highest priority.
