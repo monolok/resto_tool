@@ -1,6 +1,7 @@
 class Reviewers::RegistrationsController < Devise::RegistrationsController
 before_filter :configure_sign_up_params, only: [:create]
 before_filter :configure_account_update_params, only: [:update]
+skip_before_action :verify_authenticity_token
 
   # GET /resource/sign_up
   def new     
@@ -21,16 +22,17 @@ before_filter :configure_account_update_params, only: [:update]
      super
      current_reviewer.update(user_id: current_user.id)
      sign_out current_reviewer
-     if current_user.plan_id == nil and current_user.reviewers.count >= 1
+     if current_user.plan_id == nil and current_user.reviewers.count > 1
       current_user.reviewers.last.destroy
       flash[:alert] = "upgrade your plan to add more reviewers"
-     elsif current_user.plan_id == "basic" and current_user.reviewers.count >= 5
+     elsif current_user.plan_id == "basic" and current_user.reviewers.count > 5
       current_user.reviewers.last.destroy
       flash[:alert] = "upgrade your plan to add more reviewers"
-     elsif current_user.plan_id == "pro" and current_user.reviewers.count >= 10
+     elsif current_user.plan_id == "pro" and current_user.reviewers.count > 10
       current_user.reviewers.last.destroy
       flash[:alert] = "upgrade your plan to add more reviewers"      
      else      
+      flash[:alert] = "Reviewer created"
      end
   end
 
