@@ -19,7 +19,7 @@
 @import "font-awesome";
 
 h1 {
-	text-shadow: 1px 0px 5px;
+	text-shadow: 1px 0px 5px black;
 	color: rgb(255,249,241);
 }
 
@@ -29,7 +29,7 @@ h3 {
 }
 
 h4{
-	text-shadow: 1px 0px 5px;
+	text-shadow: 1px 0px 5px black;
 	color: rgb(255,249,241);
 } 
 
@@ -50,8 +50,9 @@ h4{
     margin-left: 22%;
     line-height: 41px;
     text-align: justify;
-	text-shadow: 1px 0px 5px;
+	text-shadow: 1px 0px 5px black;
 	color: rgb(255,249,241);
+	font-size: 21px;
 }
 
 .center {
@@ -92,10 +93,27 @@ h4{
 
 .blue {
 	background-color: rgb(170,200,227);
+	border-bottom: solid black;
 }
 
 .redi {
 	background-color: rgb(227,130,128);
+	border-bottom: solid black;
+	padding-bottom: 8%;
+}
+
+.pad-bot2 {
+	padding-bottom: 2%;
+}
+
+.p-work {
+	display: inline;
+	font-size: 18px;
+	vertical-align: 28%;
+}
+
+.pad-right {
+	padding-right: 28px;
 }
 
 .black {
@@ -132,10 +150,6 @@ h4{
 
 .ul_style {
 	list-style: none;
-}
-
-.position_gears {
-	padding-left: 25%;
 }
 
 .title_sub {
@@ -176,6 +190,10 @@ h4{
 	position: absolute;
 }
 
+#concept_start{color:white;} 
+#functioning_start{color: white;}
+#pricing_start{color: white;}
+
 /*RESPONSIVE*/
 
 @media (max-width: 435px) {
@@ -190,6 +208,9 @@ h4{
 		font-size: 20px;
 		color: black;
 	}	
+	.text-home{
+		font-size: 12px;
+	}	
 }
 @media (min-width: 436px) and (max-width: 495px) {
 	.btn-lg {
@@ -203,6 +224,9 @@ h4{
 	.bg {
 		background-size: 200%;
 	} 	
+	.text-home{
+		font-size: 15px;
+	}	
 }
 
 
@@ -210,6 +234,9 @@ h4{
 	.bg {
 		background-size: 180%;
 	} 	
+	.text-home{
+		font-size: 18px;
+	}	
 }
 
 
@@ -217,5 +244,8 @@ h4{
 	.bg {
 		background-size: 150%;
 	} 
+	.text-home{
+		font-size: 22px;
+	}	
 
 }
