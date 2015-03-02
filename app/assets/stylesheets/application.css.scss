@@ -81,6 +81,8 @@ h4{
 
 .red {
 	color: red;
+	font-size: 16px;
+	font-family: bold;
 }
 
 .green {
@@ -155,8 +157,32 @@ a:hover {
 .border-price {
 	padding: 10px;
 	border: 5px solid gray;
-	margin: 75px;
+	margin: 58px;
 	border-radius: 7%;
+}
+
+.border-price-nil {
+	padding: 10px;
+	border: 5px solid gray;
+	margin: 58px;
+	border-radius: 7%;
+}
+
+.border-price-basic {
+	padding: 10px;
+	border: 5px solid gray;
+	margin: 58px;
+	border-radius: 7%;
+	margin-left: 30%;
+	margin-right: 30%;
+}
+
+.border-price-plan {
+	padding: 10px;
+	border: medium solid #808080;
+	border-radius: 7%;
+	margin: 5%;
+	font-size: 18px;
 }
 
 .ul_style {
@@ -238,6 +264,36 @@ a:hover {
 	.text-home{
 		font-size: 12px;
 	}	
+	.border-price-nil {
+		padding: 10px;
+		border: 5px solid gray;
+		margin: -5px;
+		border-radius: 7%;
+	}	
+	.border-price-plan {
+		padding: 10px;
+		border: solid #808080;
+		border-radius: 7%;
+		margin: -16%;
+		font-size: 10px;
+	}	
+	.price {
+		font-size: 18px;
+	}
+	.pad-right {
+		padding-right: 28px;
+		font-size: 25px;
+	}	
+	.p-work {
+	    display: inline;
+	    font-size: 13px;
+	    vertical-align: 28%;
+	}	
+	.blue {
+	    background-color: #AAC8E3;
+	    border-bottom: medium solid #000;
+	    font-size: 11px;
+	}	
 }
 @media (min-width: 436px) and (max-width: 495px) {
 	.btn-lg {
@@ -254,6 +310,22 @@ a:hover {
 	.text-home{
 		font-size: 15px;
 	}	
+	.border-price-nil {
+		padding: 10px;
+		border: 5px solid gray;
+		margin: 20px;
+		border-radius: 7%;
+	}
+	.border-price-plan {
+		padding: 10px;
+		border: medium solid #808080;
+		border-radius: 7%;
+		margin: -5%;
+		font-size: 12px;
+	}	
+	.price {
+		font-size: 20px;
+	}	
 }
 
 
@@ -264,14 +336,40 @@ a:hover {
 	.text-home{
 		font-size: 18px;
 	}	
+	.border-price-nil {
+		padding: 10px;
+		border: 5px solid gray;
+		margin: 30px;
+		border-radius: 7%;
+	}	
+	.border-price-plan {
+		padding: 10px;
+		border: medium solid #808080;
+		border-radius: 7%;
+		margin: -5%;
+		font-size: 15px;
+	}	
+	.price {
+		font-size: 22px;
+	}		
 }
 
 
 @media (min-width: 581px) and (max-width: 835px) {
 	.bg {
-		background-size: 150%;
+		background-size: 165%;
 	} 
 	.text-home{
+		font-size: 22px;
+	}	
+	.border-price-plan {
+		padding: 10px;
+		border: medium solid #808080;
+		border-radius: 7%;
+		margin: -5%;
+		font-size: 18px;
+	}	
+	.price {
 		font-size: 22px;
 	}	
 
