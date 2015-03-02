@@ -36,39 +36,39 @@
 	<h3 class="center title_sub">Concept</h3>
 	<div class="row center pad">
 		<div class="col-xs-4">
-			<i class="fa fa-check-square-o fa-5x"></i>
+			<i class="fa fa-check-square-o fa-5x click" data-toggle="modal" data-target=".bs-example-modal-lg"></i>
 			<p>Review</p>
 		</div>
 		<div class="col-xs-4">
-			<i class="fa fa-area-chart fa-5x"></i>
+			<i class="fa fa-area-chart fa-5x click" data-toggle="modal" data-target=".1"></i>
 			<p>Keep track</p>
 		</div>
 		<div class="col-xs-4">
-			<i class="fa fa-filter fa-5x"></i>
+			<i class="fa fa-filter fa-5x click" data-toggle="modal" data-target=".2"></i>
 			<p>Filter</p>	
 		</div>
 	</div>
 	<div class="row center pad">
 		<div class="col-xs-4">
-			<i class="fa fa-flag fa-5x"></i>		
-			<p>Notice when change happen</p>
+			<i class="fa fa-flag fa-5x click" data-toggle="modal" data-target=".3"></i>		
+			<p>Notice</p>
 		</div>
 		<div class="col-xs-4">
-			<i class="fa fa-comments fa-5x"></i>
+			<i class="fa fa-comments fa-5x click" data-toggle="modal" data-target=".4"></i>
 			<p>Feedback</p>		
 		</div>
 		<div class="col-xs-4">
-			<i class="fa fa-users fa-5x"></i>	
-			<p>Create reviewers</p>		
+			<i class="fa fa-users fa-5x click" data-toggle="modal" data-target=".5"></i>	
+			<p>Delegate</p>		
 		</div>					
 	</div>
 </div>
 
 <div class="row redi" id="functioning">
-	<h3 class="center title_sub">Functioning</h3>
+	<h3 class="center title_sub">Get started !</h3>
 	<div class="col-xs-offset-2 col-xs-8 col-xs-offset-2 pad-bot2">
 		<i class="fa fa-arrow-circle-right fa-3x pad-right"></i> 
-		<p class="p-work">Sign up for a free account</p>
+		<p class="p-work"><%= link_to "Sign up for a free account", new_user_registration_path, class: "text-deco-none"%></p>
 	</div>
 	<div class="col-xs-offset-2 col-xs-8 col-xs-offset-2 pad-bot2">
 		<i class="fa fa-arrow-circle-right fa-3x pad-right"></i> 
@@ -183,7 +183,7 @@
 					<section>
 						<ul class="plan-features">
 							<li class="price">0 Euro</li>
-							<li>1 Reviewers</li>
+							<li>1 Reviewer</li>
 							<li>5 employees</li>
 							<li>Forever free</li>
 						</ul>
@@ -235,6 +235,7 @@
 	<%end%>	
 </div>
 
+<%= render "modals"%>
 
 
 

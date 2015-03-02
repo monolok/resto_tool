@@ -158,12 +158,13 @@ h4{
 }
 
 .btn-primary {
-	background-color: rgb(170,200,227);
+	background-color: whitesmoke;
 	opacity: 0.8;
+	border-color: black;
 }
 
 .btn-primary:hover {
-	background-color: rgb(227,130,128);
+	background-color: white;
 }
 
 .btn-success {
@@ -193,6 +194,10 @@ h4{
 #concept_start{color:white;} 
 #functioning_start{color: white;}
 #pricing_start{color: white;}
+
+.text-deco-none:hover {
+	text-decoration: none;
+}
 
 /*RESPONSIVE*/
 
