@@ -112,6 +112,17 @@ h4{
 	vertical-align: 28%;
 }
 
+.p-acc {
+	display: inline;
+	font-size: 18px;
+	vertical-align: 28%;
+	padding-right: 20px;
+}
+
+a:hover {
+	text-decoration: none;
+}
+
 .pad-right {
 	padding-right: 28px;
 }
@@ -197,6 +208,17 @@ h4{
 
 .text-deco-none:hover {
 	text-decoration: none;
+}
+
+.border-employee {
+	border: 1px solid gray;
+	border-radius: 50%;
+	text-align: center;	
+}
+
+.border-reviewer {
+	border: 1px solid gray;
+	text-align: center;	
 }
 
 /*RESPONSIVE*/
