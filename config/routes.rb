@@ -12,7 +12,7 @@ Rails.application.routes.draw do
     get 'new_pro', to: "users/registrations#new_pro"
     post 'new_pro', to: "users/registrations#create_new_pro"
   end
-  devise_for :reviewers, controllers: { registrations: "reviewers/registrations"}
+  devise_for :reviewers, controllers: { registrations: "reviewers/registrations", sessions: "reviewers/sessions"}
 
   delete 'reviewer_delete/:id', to: "application#destroy_reviewer"
 
