@@ -29,7 +29,11 @@
 			    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
 			      <ul class="nav navbar-nav">
 					  <li role="presentation"><%= link_to current_user.email, edit_user_registration_path %></a></li>
-					  <li role="presentation"><%= link_to 'Sign out', destroy_user_session_path, :method => :delete %></li>
+					  <li role="presentation">
+					  	<%= link_to destroy_user_session_path, :method => :delete do%>
+					  		<i class="fa fa-power-off"></i>
+					  	<%end%>
+					  </li>
 				      <li role="presentation">
 				        <%= link_to new_employee_path do%>
 				          <i class="fa fa-plus"></i>
@@ -46,7 +50,16 @@
 				        <%= link_to employees_path do%>
 				          <i class="fa fa-database"></i>
 				        <%end%>
-				      </li>                        
+				      </li>
+				      <li role="presentation">
+				      	<%if current_user.plan_id == nil%>
+				        <%= link_to "#{alert}", new_basic_path, {style: "color: red;"} %>
+				        <%elsif current_user.plan_id == "basic"%>
+				        <%= link_to "#{alert}", new_pro_path, {style: "color: red;"} %>
+				        <%else%>
+				        <%= link_to "#{alert}", {style: "color: red;"} %>
+				        <%end%>
+				      </li>				      
 			      </ul>
 			    </div><!-- /.navbar-collapse -->
 			  </div><!-- /.container-fluid -->

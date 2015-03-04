@@ -1,6 +1,5 @@
 <h2 class="center pad">Connect as a Reviewer</h2>
 
-<form class="form-horizontal">
 <%= form_for(resource, as: resource_name, url: session_path(resource_name), html: {class: "form-horizontal"}) do |f| %>
   <div class="form-group">
     <%= f.label :email, class: "col-sm-2 col-xs-offset-1 col-xs-3 control-label" %>
@@ -21,19 +20,14 @@
     <div class="center">
       <%= f.check_box :remember_me %>
       <%= f.label :remember_me %>
-<!--       <div class="checkbox">
-        <label>
-          <input type="checkbox"> Remember me
-        </label>
-      </div> -->
     </div>
   </div>
   <div class="form-group">
     <div class="center">
-      <%= f.submit "Log in", class: "btn btn-default" %>
+      <%= f.submit "Connect", class: "btn btn-default" %>
+      </br>
       <%= render "reviewers/shared/links" %>
       <%= link_to "back", root_path%>
     </div>
   </div>
  <% end %> 
-</form>

@@ -24,13 +24,13 @@ skip_before_action :verify_authenticity_token
      sign_out current_reviewer
      if current_user.plan_id == nil and current_user.reviewers.count > 1
       current_user.reviewers.last.destroy
-      flash[:alert] = "upgrade your plan to add more reviewers"
+      flash[:alert] = "Reviewer not saved, UPGRADE PLAN"
      elsif current_user.plan_id == "basic" and current_user.reviewers.count > 5
       current_user.reviewers.last.destroy
-      flash[:alert] = "upgrade your plan to add more reviewers"
+      flash[:alert] = "Reviewer not saved, UPGRADE PLAN"
      elsif current_user.plan_id == "pro" and current_user.reviewers.count > 10
       current_user.reviewers.last.destroy
-      flash[:alert] = "upgrade your plan to add more reviewers"      
+      flash[:alert] = "Contact us for a custom plan"      
      else      
       flash[:alert] = "Reviewer created"
      end
