@@ -215,7 +215,7 @@ a:hover {
 
 .border-score {
 	border: 1px solid black;
-		
+
 }
 
 .ul_style {
@@ -334,6 +334,13 @@ a:hover {
 	    border-bottom: medium solid #000;
 	    font-size: 11px;
 	}	
+	.border-score {
+		border: 1px solid black;
+		font-size: 8px;	
+	}	
+	.responsive-text {
+		font-size: 10px;
+	}
 }
 @media (min-width: 436px) and (max-width: 495px) {
 	.btn-lg {
