@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150213231610) do
+ActiveRecord::Schema.define(version: 20150305194945) do
 
   create_table "categories", force: true do |t|
     t.string   "name"
@@ -22,9 +22,9 @@ ActiveRecord::Schema.define(version: 20150213231610) do
 
   create_table "employees", force: true do |t|
     t.string   "name"
-    t.string   "position"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.string   "position",   default: "No position"
+    t.datetime "created_at",                         null: false
+    t.datetime "updated_at",                         null: false
     t.integer  "pom"
     t.integer  "user_id"
   end
