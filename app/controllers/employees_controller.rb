@@ -19,6 +19,12 @@ class EmployeesController < ApplicationController
         @employees = current_reviewer.user.employees.where(pom: params[:pom])         
       end
     end
+
+    if not current_user.reviewers.empty?
+      current_user.reviewers.each do |r|
+        sign_in(:reviewer, r)
+      end
+    end
     #respond_with(@employees)
   end
 
@@ -62,7 +68,7 @@ class EmployeesController < ApplicationController
   def create
   @employee = current_user.employees.build(employee_params)
     if not @employee.valid?
-      flash[:notice] = "Exceeded plan limit: Click to upgrade!"
+      flash[:notice] = "Click to upgrade!"
       redirect_to employees_path
     else
       @employee.save

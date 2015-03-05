@@ -1,13 +1,3 @@
-<%if user_signed_in?%>
-  <%if current_user.plan_id == nil%>
-    <%= link_to "#{notice}", new_basic_path, {style: "color: red;"} %>
-  <%elsif current_user.plan_id == "basic"%>
-    <%= link_to "#{notice}", new_pro_path, {style: "color: red;"} %>
-  <%else%>
-    <%= link_to "#{notice}", {style: "color: red;"} %>
-  <%end%>
-<%end%>
-
 <div class="container-fluid">
   <div class="row center pad-bot">
     <h3 class="center pad-bot2">Your people</h3>
@@ -166,7 +156,7 @@
     </div>
 
     <div class="col-xs-offset-1 col-xs-3">
-      <p><%= alert %></p>  
+      </br>
       </br>
       <div class="row pad">     
         <ul class="col-xs-12 ul_style border-reviewer">

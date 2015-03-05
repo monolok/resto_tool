@@ -39,7 +39,7 @@ skip_before_action :verify_authenticity_token
 
   # GET /resource/edit
   def edit
-     super
+    super
   end
 
   # PUT /resource
@@ -74,9 +74,10 @@ skip_before_action :verify_authenticity_token
   end
 
   # The path used after sign up.
-  # def after_sign_up_path_for(resource)
-  #   super(resource)
-  # end
+  def after_sign_up_path_for(resource)
+    session["user_return_to"] || employees_url
+    #super(resource)
+  end
 
   # The path used after sign up for inactive accounts.
   # def after_inactive_sign_up_path_for(resource)

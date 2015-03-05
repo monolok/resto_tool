@@ -1,5 +1,13 @@
-<h1>New Employee</h1>
-
-<%= render 'form' %>
-
-<%= link_to 'Back', employees_path %>
+<div class="container-fluid">
+	<div class="row">
+		<div class="col-xs-12 center pad-top pad-bot">
+			<h3 class="p-score">New employee</h3>
+			<%= link_to employees_path do%>
+				<i class="fa fa-arrow-circle-o-left fa-2x"></i>
+			<%end%>			
+		</div>
+	</div>
+	<div class="row">
+		<%= render 'form' %>
+	</div>
+</div>

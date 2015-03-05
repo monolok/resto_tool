@@ -2,7 +2,7 @@
 	<% if not user_signed_in? and not reviewer_signed_in? %>
 		<div class="row">
 			<div class="col-xs-4 red">
-				<p><%= notice %><%= alert %></p>
+				<p><%= notice %></p>
 			</div>
 			<div class="col-xs-8 right">
 				<%= link_to 'Manager', new_user_session_path, class: "btn btn-default" %>

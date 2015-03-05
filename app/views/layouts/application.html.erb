@@ -51,6 +51,7 @@
 				          <i class="fa fa-database"></i>
 				        <%end%>
 				      </li>
+				      <%if flash[:alert].present?%>
 				      <li role="presentation">
 				      	<%if current_user.plan_id == nil%>
 				        <%= link_to "#{alert}", new_basic_path, {style: "color: red;"} %>
@@ -59,7 +60,18 @@
 				        <%else%>
 				        <%= link_to "#{alert}", {style: "color: red;"} %>
 				        <%end%>
-				      </li>				      
+				      </li>	
+				      <%elsif flash[:notice].present?%>
+				      <li role="presentation">
+				      	<%if current_user.plan_id == nil%>
+				        <%= link_to "#{notice}", new_basic_path, {style: "color: red;"} %>
+				        <%elsif current_user.plan_id == "basic"%>
+				        <%= link_to "#{notice}", new_pro_path, {style: "color: red;"} %>
+				        <%else%>
+				        <%= link_to "#{notice}", {style: "color: red;"} %>
+				        <%end%>
+				      </li>	
+				      <%end%>		      
 			      </ul>
 			    </div><!-- /.navbar-collapse -->
 			  </div><!-- /.container-fluid -->
@@ -97,6 +109,7 @@
 				      </li>
 				      <li role="presentation">
 				      	<%= alert%>
+				      	<%= notice %>
 				      </li>				      
 			      </ul>
 			    </div><!-- /.navbar-collapse -->
