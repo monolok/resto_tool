@@ -1,6 +1,7 @@
 <div class="row center pad-bot pad-top">
   <h3 class="p-score"><%= Employee.find(params["employee_id"]).name%></h3>
   <i class="fa fa-check-square-o fa-2x"></i>
+  <small id="inherit">Hover over evaluated skill to get an explanation</small>
 </div>
 
 <%= form_for @score, url: employee_score_new_path(@employee.id), html: { method: :post } do |f| %>
