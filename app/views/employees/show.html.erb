@@ -1,13 +1,54 @@
 <div class="container-fluid">
-	<div class="row center">
-		<h3><%= @employee.name%></h3>
-		<h5><%= @employee.position%></h5>
-		<p><%= @employee.pom%></p>
-
+	<div class="row center pad-bot">
+		<div class="pad-bot2">
+			<h3><%= @employee.name%></h3>
+			<strong class="inherit"><%= @employee.position%></strong>
+		</div>
+		<div class="letter-spacing pad-bot2">
+			<%= link_to employees_path do%>
+				<i class="fa fa-arrow-left fa-2x"></i>
+			<%end%>
+			<%= link_to employee_score_new_path(@employee.id) do%>
+				<i class="fa fa-check-square-o fa-2x"></i>
+			<%end%>
+			<%= link_to @employee, method: :delete, data: { confirm: 'Are you sure?' } do %>
+	        	<i class="fa fa-trash fa-2x"></i>
+	        <%end%>
+	        <%= link_to edit_employee_path(@employee) do%>
+	        	<i class="fa fa-pencil-square-o fa-2x"></i>
+	        <%end%>	
+        </div>
+        <div class="inherit">
+	        <%case @employee.pom%>
+	          <%when 1%>
+	          	<i class="fa fa-star"></i>
+	          <%when 2%>
+				<i class="fa fa-star"></i>
+				<i class="fa fa-star"></i>
+			  <%when 3%>
+				<i class="fa fa-star"></i>
+				<i class="fa fa-star"></i>
+				<i class="fa fa-star"></i>
+			  <%when 4%>
+			  	<i class="fa fa-star"></i>
+				<i class="fa fa-star"></i>
+				<i class="fa fa-star"></i>
+				<i class="fa fa-star"></i>
+			  <%when 5%>
+			  	<i class="fa fa-star"></i>
+				<i class="fa fa-star"></i>
+				<i class="fa fa-star"></i>
+				<i class="fa fa-star"></i>
+				<i class="fa fa-star"></i>
+			  <%else%>
+			<%end%>
+		</div>
 	</div>
 	<% if @last_qu_hash.nil?%>
-		<p>NO REVIEWS</p>
-		<%= link_to "Review #{@employee.name}", employee_score_new_path(@employee.id)%>
+	<div class="row center pad-top">
+		<mark>NO REVIEWS</mark>		
+		<%= link_to "Review #{@employee.name} now", employee_score_new_path(@employee.id), class: "inherit"%>
+	</div>
 	<%else%>
 		<div class="row">
 			<div class="col-sm-4">
@@ -37,10 +78,5 @@
 		</div>
 	<%end%>
 </div>
-
-</br>
-
-<%= link_to 'Edit', edit_employee_path(@employee) %> |
-<%= link_to 'Back', employees_path %>
 
 <%= render "modals"%>

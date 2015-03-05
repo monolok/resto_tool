@@ -33,8 +33,16 @@ h4{
 	color: rgb(255,249,241);
 } 
 
+.inherit {
+	display: inherit;
+}
+
 #inherit {
 	display: inherit;
+}
+
+.letter-spacing {
+	letter-spacing: 15px;
 }
 
 .bg {
