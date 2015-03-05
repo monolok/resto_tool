@@ -1,4 +1,10 @@
-<p id="notice"><%= notice %></p>
+<%if current_user.plan_id == nil%>
+  <%= link_to "#{notice}", new_basic_path, {style: "color: red;"} %>
+<%elsif current_user.plan_id == "basic"%>
+  <%= link_to "#{notice}", new_pro_path, {style: "color: red;"} %>
+<%else%>
+  <%= link_to "#{notice}", {style: "color: red;"} %>
+<%end%>
 
 <div class="container-fluid">
   <div class="row center pad-bot">
