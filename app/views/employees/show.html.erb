@@ -52,27 +52,49 @@
 	<%else%>
 		<div class="row">
 			<div class="col-sm-4">
-				<h5>Latest scores:</h5>
+				<h5 class="text-info">Latest scores:</h5>
 				<% @employee.scores.each do |r|%>
-					<%= r.created_at.strftime("%A %B %d")%>
+				<div class="border-score">
+					<div class="row">
+						<div class="col-offset-4 col-xs-8">
+							<%= r.created_at.strftime("%A %B %d")%>	
+						</div>
+					</div>
 					<%if r.average > 2.5 %>
-					<p class="bg-success"><%= r.average%>/5</p>
+						<div class="row">
+							<div class="col-offset-8 col-xs-4">
+								<p class="bg-success"><%= r.average%>/5</p>
+							</div>
+						</div>
 					<%else%>
-					<p class="bg-danger"><%= r.average%>/5</p>
+						<div class="row">
+							<div class="col-offset-8 col-xs-4">
+								<p class="bg-danger"><%= r.average%>/5</p>
+							</div>
+						</div>					
+					<%end%>
 					<% if r.reviewer_id.nil?%>
-						<p>Reviewed by Admin</p>
+						<div class="row">
+							<div class="col-xs-8">
+								<p>Reviewed by Admin</p>
+							</div>
+						</div>
 					<%else%>
-						<p>Reviewed by: <%= Reviewer.find(r.reviewer_id).name%></p>	
+						<div class="row">
+							<div class="col-xs-8">
+								<p>Reviewed by: <%= Reviewer.find(r.reviewer_id).name%></p>
+							</div>
+						</div>						
 					<%end%>
-					<%end%>
+				</div>
 				<%end%>
 			</div>
 			<div class="col-sm-4">
-				<h5>Strengths:</h5>
+				<h5 class="text-success">Strengths:</h5>
 				<%= render "case_for_qa"%>
 			</div>
 			<div class="col-sm-4">
-				<h5>Weaknesses:</h5>
+				<h5 class="text-danger">Weaknesses:</h5>
 				<%= render "case_for_pb"%>
 			</div>
 		</div>
