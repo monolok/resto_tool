@@ -1,4 +1,5 @@
-<%= form_for(@employee) do |f| %>
+
+<%= form_for(@employee, html: {class: "form-horizontal"}) do |f| %>
   <% if @employee.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(@employee.errors.count, "error") %> prohibited this employee from being saved:</h2>
@@ -10,24 +11,39 @@
       </ul>
     </div>
   <% end %>
-
-  <div>
-    <%= f.label :name%>
-    <%= f.text_field :name%>
-  </div>
-  <div>
-    <%= f.label :position%>
-    <%= f.text_field :position%>
-  </div>
-  <div>
-    <%= f.label :Degree_of_responsibility%>
-    <%= f.select(:pom) do %>
-      <% @pom_mood.each do |c| %>
-        <%= content_tag(:option, c.first, value: c.last) %>
+  <div class="form-group">
+    <%= f.label :name, class: "col-sm-2 col-xs-offset-1 col-xs-3 control-label" %>
+    <div class="col-xs-6 col-sm-6">
+      <div class="input-group">
+        <span class="input-group-addon" id="basic-addon1"></span>
+        <%= f.text_field :name, class: "form-control"%>
+      </div> 
+    </div>
+  </div> 
+  <div class="form-group">
+    <%= f.label :position, class: "col-sm-2 col-xs-offset-1 col-xs-3 control-label" %>
+    <div class="col-xs-6 col-sm-6">
+      <div class="input-group">
+        <span class="input-group-addon" id="basic-addon1"></span>
+        <%= f.text_field :position, class: "form-control"%>
+      </div> 
+    </div>
+  </div> 
+  <div class="form-group">
+    <%= f.label :Degree_of_responsibility, class: "col-sm-2 col-xs-offset-1 col-xs-3 control-label" %>
+    <div class="col-xs-6 col-sm-6">
+      <div class="input-group">
+      <%= f.select(:pom) do %>
+        <% @pom_mood.each do |c| %>
+          <%= content_tag(:option, c.first, value: c.last) %>
+        <% end %>
       <% end %>
-    <% end %>
+      </div> 
+    </div>
   </div>
-  <div class="actions">
-    <%= f.submit %>
+  <div class="form-group">
+    <div class="center">
+      <%= f.submit class: "btn btn-default" %>
+    </div>
   </div>
-<% end %>
+ <% end %>

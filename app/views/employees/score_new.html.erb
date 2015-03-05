@@ -1,5 +1,7 @@
 <div class="row center pad-bot pad-top">
-  <h3 class="p-score"><%= Employee.find(params["employee_id"]).name%></h3>
+  <%= link_to employee_path(Employee.find(params["employee_id"])) do%>
+    <h3 class="p-score"><%= Employee.find(params["employee_id"]).name%></h3>
+  <%end%>
   <i class="fa fa-check-square-o fa-2x"></i>
   <small id="inherit">Hover over evaluated skill to get an explanation</small>
 </div>
