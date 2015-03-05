@@ -34,6 +34,7 @@ skip_before_action :verify_authenticity_token
      else      
       flash[:alert] = "Reviewer created"
      end
+     #redirect_to employees_path
   end
 
   # GET /resource/edit

@@ -11,7 +11,7 @@
 <div class="container-fluid">
 	<div class="row">
 		<% if user_signed_in? -%>
-			<!-- NAV BAR -->
+			<!-- NAV BAR USER -->
 			<nav class="navbar navbar-default">
 			  <div class="container-fluid">
 			    <!-- Brand and toggle get grouped for better mobile display -->
@@ -65,9 +65,43 @@
 			  </div><!-- /.container-fluid -->
 			</nav>
 		<% elsif reviewer_signed_in?%>
-			<div><%= link_to 'Account', edit_reviewer_registration_path %></div>
-			<div><%= link_to 'Sign out', destroy_reviewer_session_path, :method => :delete %></div>
-			<div>Your company: <%= current_reviewer.user.email%></div>
+		<!-- NAV BAR REVIEWER-->
+			<nav class="navbar navbar-default">
+			  <div class="container-fluid">
+			    <!-- Brand and toggle get grouped for better mobile display -->
+			    <div class="navbar-header">
+			      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+			<!--         <span class="sr-only">Toggle navigation</span> -->
+			        <span class="icon-bar"></span>
+			        <span class="icon-bar"></span>
+			        <span class="icon-bar"></span>
+			      </button>
+			      <div class="navbar-brand" style="color: white;"><%= link_to 'Restool', root_path %></div>
+			    </div>
+
+			    <!-- Collect the nav links, forms, and other content for toggling -->
+			    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+			      <ul class="nav navbar-nav">
+				      <li role="presentation">
+				        <%= link_to employees_path do%>
+				          <i class="fa fa-database"></i>
+				        <%end%>
+				      </li>
+				      <li>
+				      	<%= link_to destroy_reviewer_session_path, :method => :delete do%>
+				      		<i class="fa fa-power-off"></i>
+				      	<%end%>
+				      </li>
+				      <li>
+				      	<a href="mailto:<%= current_reviewer.user.email%>"><%= current_reviewer.user.email%></a>
+				      </li>
+				      <li role="presentation">
+				      	<%= alert%>
+				      </li>				      
+			      </ul>
+			    </div><!-- /.navbar-collapse -->
+			  </div><!-- /.container-fluid -->
+			</nav>
 		<% end %>
 	</div>
 </div>

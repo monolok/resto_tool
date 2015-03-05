@@ -1,9 +1,11 @@
-<%if current_user.plan_id == nil%>
-  <%= link_to "#{notice}", new_basic_path, {style: "color: red;"} %>
-<%elsif current_user.plan_id == "basic"%>
-  <%= link_to "#{notice}", new_pro_path, {style: "color: red;"} %>
-<%else%>
-  <%= link_to "#{notice}", {style: "color: red;"} %>
+<%if user_signed_in?%>
+  <%if current_user.plan_id == nil%>
+    <%= link_to "#{notice}", new_basic_path, {style: "color: red;"} %>
+  <%elsif current_user.plan_id == "basic"%>
+    <%= link_to "#{notice}", new_pro_path, {style: "color: red;"} %>
+  <%else%>
+    <%= link_to "#{notice}", {style: "color: red;"} %>
+  <%end%>
 <%end%>
 
 <div class="container-fluid">
@@ -19,9 +21,13 @@
               <%end%>
           <%else%>
             <% if current_reviewer.vl == 0%>
-              <%= link_to Category.find(1).name, employees_path(pom: 1)%>
+              <%= link_to employees_path(pom: 1) do%>
+                1<i class="fa fa-star"></i>
+              <%end%>
             <%else%>
-              <p>no</p>
+              <%= link_to do%>
+                <i class="fa fa-ban"></i>
+              <%end%>
             <%end%>
           <%end%>
     </div>
@@ -32,9 +38,13 @@
               <%end%>
           <%else%>
             <% if current_reviewer.l == 0%>
-              <%= link_to Category.find(2).name, employees_path(pom: 2)%>
+              <%= link_to employees_path(pom: 2) do%>
+                2<i class="fa fa-star"></i>
+              <%end%>
             <%else%>
-              <p>no</p>
+              <%= link_to do%>
+                <i class="fa fa-ban"></i>
+              <%end%>
             <%end%>
           <%end%>
     </div>
@@ -45,39 +55,53 @@
               <%end%>            
           <%else%>
             <% if current_reviewer.m == 0%>
-              <%= link_to Category.find(3).name, employees_path(pom: 3)%>
+              <%= link_to employees_path(pom: 3) do%>
+                3<i class="fa fa-star"></i>             
+              <%end%>
             <%else%>
-              <p>no</p>
+              <%= link_to do%>
+                <i class="fa fa-ban"></i>
+              <%end%>
             <%end%>
           <%end%>
-  </div>
-  <div class="border-cat">
+    </div>
+    <div class="border-cat">
           <%if user_signed_in?%>
               <%= link_to employees_path(pom: 4) do%>
                 4<i class="fa fa-star"></i>
               <%end%>            
           <%else%>
             <% if current_reviewer.h == 0%>
-              <%= link_to Category.find(4).name, employees_path(pom: 4)%>
+              <%= link_to employees_path(pom: 4) do%>
+                4<i class="fa fa-star"></i>
+              <%end%>
             <%else%>
-              <p>no</p>
+              <%= link_to do%>
+                <i class="fa fa-ban"></i>
+              <%end%>
             <%end%>
           <%end%>
-  </div>
-  <div class="border-cat">
+    </div>
+    <div class="border-cat">
           <%if user_signed_in?%>
               <%= link_to employees_path(pom: 5) do%>
                 5<i class="fa fa-star"></i>
               <%end%>                          
           <%else%>
             <% if current_reviewer.vh == 0%>
-              <%= link_to Category.find(5).name, employees_path(pom: 5)%>
+              <%= link_to employees_path(pom: 5) do%>
+                5<i class="fa fa-star"></i>
+              <%end%> 
             <%else%>
-              <p>no</p>
+              <%= link_to do%>
+                <i class="fa fa-ban"></i>
+              <%end%>
             <%end%>
           <%end%>
-  </div>
     </div>
+  </div>
+
+<%if user_signed_in?%>
   <div class="row">
     <div class="col-xs-8">
       <div class="row pad">
@@ -137,13 +161,11 @@
             </div>
           <%end%>                   
           </div>
-
         <% end %>    
       </div>
     </div>
 
     <div class="col-xs-offset-1 col-xs-3">
-    <%if not reviewer_signed_in? %>
       <p><%= alert %></p>  
       </br>
       <div class="row pad">     
@@ -161,16 +183,86 @@
                 <li class="pad-bot">Last review:</li>
                 <li><%= link_to r.scores.last.employee.name, employee_path(r.scores.last.employee.id) %></li>
               <%end%>
-              <li>
+        
                 <%= link_to "reviewer_delete/#{r.id}", :method => :delete do%>
                   <i class="fa fa-trash fa-2x"></i>
                 <%end%>
-              </li>
+
+
+                <%= link_to edit_reviewer_registration_path do%>
+                  <i class="fa fa-pencil-square-o fa-2x"></i>
+                <%end%>
+
             <%end%>
           <%end%>
         </ul>
       </div>
     </div>
-  <%end%>
   </div>
+<%else%>
+  <div class="row">
+    <div class="col-xs-12">
+      <div class="row pad">
+        <% @employees.each do |employee| %>
+
+          <%@list_s = Array.new%>
+          <%if not employee.scores.blank?%>
+            <%employee.scores.each do |s|%>
+              <%@list_s.push(s.average)%>
+              <%@kf_sum = @list_s.inject(:+)%>
+              <%@kf = @kf_sum/employee.scores.count%>
+            <%end%>
+          <%else%>
+            <%@kf = 0%>
+          <%end%> 
+
+          <div class="col-sm-4 border-employee">
+            <div class="row pad-bot">
+              <strong><%= link_to employee.name, employee%></strong>
+            </div>
+            <div class="row">
+              <%if @kf > 2.5 %>
+                <p class="text-success">KEEP</p>
+              <%elsif @kf == 0 %>
+                <p>No review</p>
+              <%else%>
+                <p class="text-danger">FIRE</p>
+              <%end%>
+            </div>
+            <div class="row">
+              <%= employee.position%>
+            </div>
+
+            <div class="row pad-bot3">
+            <% if employee.scores.last.nil?%>
+            <%else%>
+            <%@last_time_reviewer_id = employee.scores.last.reviewer_id%>      
+            <%end%>
+
+              <% if @last_time_reviewer_id.nil?%>
+                <div>Last review by:</div>
+                <div><mark>ADMIN</mark></div>
+              <%else%>
+              <% @reviewer = Reviewer.find(@last_time_reviewer_id)%>
+                <div>Last review by:</div>
+                <div><%= @reviewer.name%></div>
+              <%end%>
+            </div> 
+          <% if user_signed_in?%>
+            <div class="row">
+              <%= link_to employee, method: :delete, data: { confirm: 'Are you sure?' } do %>
+                <i class="fa fa-trash fa-2x"></i>
+              <%end%>
+              <%= link_to employee_score_new_path(employee.id) do%>
+                <i class="fa fa-check-square-o fa-2x"></i>
+              <%end%>
+            </div>
+          <%end%>                   
+          </div>
+        <% end %>    
+      </div>
+    </div>
+  </div>
+<%end%>
+
 </div>

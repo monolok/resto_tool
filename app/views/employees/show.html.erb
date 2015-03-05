@@ -11,12 +11,15 @@
 			<%= link_to employee_score_new_path(@employee.id) do%>
 				<i class="fa fa-check-square-o fa-2x"></i>
 			<%end%>
-			<%= link_to @employee, method: :delete, data: { confirm: 'Are you sure?' } do %>
-	        	<i class="fa fa-trash fa-2x"></i>
+			<%if user_signed_in?%>
+				<%= link_to @employee, method: :delete, data: { confirm: 'Are you sure?' } do %>
+		        	<i class="fa fa-trash fa-2x"></i>
+		        <%end%>
+
+		        <%= link_to edit_employee_path(@employee) do%>
+		        	<i class="fa fa-pencil-square-o fa-2x"></i>
+		        <%end%>	
 	        <%end%>
-	        <%= link_to edit_employee_path(@employee) do%>
-	        	<i class="fa fa-pencil-square-o fa-2x"></i>
-	        <%end%>	
         </div>
         <div class="inherit">
 	        <%case @employee.pom%>
