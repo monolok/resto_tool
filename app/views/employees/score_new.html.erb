@@ -1,11 +1,14 @@
-<h1>This is Score_new</h1>
+<div class="row center pad-bot pad-top">
+  <h3 class="p-score"><%= Employee.find(params["employee_id"]).name%></h3>
+  <i class="fa fa-check-square-o fa-2x"></i>
+</div>
 
 <%= form_for @score, url: employee_score_new_path(@employee.id), html: { method: :post } do |f| %>
 
-<div class="row">
-  <div class="col-sm-4">
+<div class="row pad-bot">
+  <div class="col-xs-4 center">
     <div class="field">
-      <%= f.label :Predictable  %><br>
+      <%= f.label :Predictable, 'data-toggle' => 'tooltip', 'data-placement' => 'top', 'title' => 'Tooltip on top'%>
       <%= f.select(:qu1) do %>
         <% @mood.each do |c| %>
       <%= content_tag(:option, c.first, value: c.last) %>
@@ -14,7 +17,7 @@
     </div>
 
     <div class="field">
-      <%= f.label :Ponctuality %><br>
+      <%= f.label :Ponctuality, 'data-toggle' => 'tooltip', 'data-placement' => 'top', 'title' => 'Tooltip on top' %>
       <%= f.select(:qu2) do %>
         <% @mood.each do |c| %>
       <%= content_tag(:option, c.first, value: c.last) %>
@@ -23,7 +26,7 @@
     </div>
 
     <div class="field">
-      <%= f.label :Personal_life %><br>
+      <%= f.label :Personal, 'data-toggle' => 'tooltip', 'data-placement' => 'top', 'title' => 'Tooltip on top' %>
       <%= f.select(:qu3) do %>
         <% @mood.each do |c| %>
       <%= content_tag(:option, c.first, value: c.last) %>
@@ -32,7 +35,7 @@
     </div>
 
     <div class="field">
-      <%= f.label :Pay_check_in_avance %><br>
+      <%= f.label :Salary, 'data-toggle' => 'tooltip', 'data-placement' => 'top', 'title' => 'Pay check in avance' %>
       <%= f.select(:qu4) do %>
         <% @mood.each do |c| %>
       <%= content_tag(:option, c.first, value: c.last) %>
@@ -41,7 +44,7 @@
     </div>
 
     <div class="field">
-      <%= f.label :Respecting_rules %><br>
+      <%= f.label :Rules, 'data-toggle' => 'tooltip', 'data-placement' => 'top', 'title' => 'Respect rules' %>
       <%= f.select(:qu5) do %>
         <% @mood.each do |c| %>
       <%= content_tag(:option, c.first, value: c.last) %>
@@ -50,7 +53,7 @@
     </div>
 
     <div class="field">
-      <%= f.label :Get_the_work_done %><br>
+      <%= f.label :Perform, 'data-toggle' => 'tooltip', 'data-placement' => 'top', 'title' => 'Get the work done' %>
       <%= f.select(:qu6) do %>
         <% @mood.each do |c| %>
       <%= content_tag(:option, c.first, value: c.last) %>
@@ -59,7 +62,7 @@
     </div>
 
     <div class="field">
-      <%= f.label :Time_efficient %><br>
+      <%= f.label :Speed, 'data-toggle' => 'tooltip', 'data-placement' => 'top', 'title' => 'Time efficient' %>
       <%= f.select(:qu7) do %>
         <% @mood.each do |c| %>
       <%= content_tag(:option, c.first, value: c.last) %>
@@ -68,7 +71,7 @@
     </div>
 
     <div class="field">
-      <%= f.label :Do_the_police %><br>
+      <%= f.label :Supervision, 'data-toggle' => 'tooltip', 'data-placement' => 'top', 'title' => 'Do the police' %>
       <%= f.select(:qu8) do %>
         <% @mood.each do |c| %>
       <%= content_tag(:option, c.first, value: c.last) %>
@@ -77,7 +80,7 @@
     </div>
 
     <div class="field">
-      <%= f.label :Trustworthy %><br>
+      <%= f.label :Trustworthy, 'data-toggle' => 'tooltip', 'data-placement' => 'top', 'title' => 'Tooltip on top' %>
       <%= f.select(:qu9) do %>
         <% @mood.each do |c| %>
       <%= content_tag(:option, c.first, value: c.last) %>
@@ -86,7 +89,7 @@
     </div>
 
     <div class="field">
-      <%= f.label :room_for_improvment %><br>
+      <%= f.label :Improvement, 'data-toggle' => 'tooltip', 'data-placement' => 'top', 'title' => 'Reach its limit?' %>
       <%= f.select(:qu10) do %>
         <% @mood.each do |c| %>
       <%= content_tag(:option, c.first, value: c.last) %>
@@ -94,9 +97,9 @@
     <% end %>
     </div>    
   </div>
-  <div class="col-sm-4">
+  <div class="col-xs-4 center">
     <div class="field">
-      <%= f.label :Rush_hours %><br>
+      <%= f.label :Rush, 'data-toggle' => 'tooltip', 'data-placement' => 'top', 'title' => 'Rush hours' %>
       <%= f.select(:qu11) do %>
         <% @mood.each do |c| %>
       <%= content_tag(:option, c.first, value: c.last) %>
@@ -105,7 +108,7 @@
     </div>
 
     <div class="field">
-      <%= f.label :Focused %><br>
+      <%= f.label :Focused, 'data-toggle' => 'tooltip', 'data-placement' => 'top', 'title' => 'Tooltip on top' %>
       <%= f.select(:qu12) do %>
         <% @mood.each do |c| %>
       <%= content_tag(:option, c.first, value: c.last) %>
@@ -114,7 +117,7 @@
     </div>
 
     <div class="field">
-      <%= f.label :Consistency %><br>
+      <%= f.label :Consistency, 'data-toggle' => 'tooltip', 'data-placement' => 'top', 'title' => 'Tooltip on top' %>
       <%= f.select(:qu13) do %>
         <% @mood.each do |c| %>
       <%= content_tag(:option, c.first, value: c.last) %>
@@ -123,7 +126,7 @@
     </div>
 
     <div class="field">
-      <%= f.label :Relation_with_others %><br>
+      <%= f.label :Interpersonal, 'data-toggle' => 'tooltip', 'data-placement' => 'top', 'title' => 'Relation with others' %>
       <%= f.select(:qu14) do %>
         <% @mood.each do |c| %>
       <%= content_tag(:option, c.first, value: c.last) %>
@@ -132,7 +135,7 @@
     </div>
 
     <div class="field">
-      <%= f.label :Positive_attitude %><br>
+      <%= f.label :Positive, 'data-toggle' => 'tooltip', 'data-placement' => 'top', 'title' => 'Positive attitude' %>
       <%= f.select(:qu15) do %>
         <% @mood.each do |c| %>
       <%= content_tag(:option, c.first, value: c.last) %>
@@ -141,7 +144,7 @@
     </div>
 
     <div class="field">
-      <%= f.label :Open_to_critics %><br>
+      <%= f.label :Critics, 'data-toggle' => 'tooltip', 'data-placement' => 'top', 'title' => 'Open to critics' %>
       <%= f.select(:qu16) do %>
         <% @mood.each do |c| %>
       <%= content_tag(:option, c.first, value: c.last) %>
@@ -150,7 +153,7 @@
     </div>
 
     <div class="field">
-      <%= f.label :To_sure_of_him_self %><br>
+      <%= f.label :Confident, 'data-toggle' => 'tooltip', 'data-placement' => 'top', 'title' => 'To over confident' %>
       <%= f.select(:qu17) do %>
         <% @mood.each do |c| %>
       <%= content_tag(:option, c.first, value: c.last) %>
@@ -159,7 +162,7 @@
     </div>
 
     <div class="field">
-      <%= f.label :Extra_mile %><br>
+      <%= f.label :Plus, 'data-toggle' => 'tooltip', 'data-placement' => 'top', 'title' => 'Do the extra mile' %>
       <%= f.select(:qu18) do %>
         <% @mood.each do |c| %>
       <%= content_tag(:option, c.first, value: c.last) %>
@@ -168,7 +171,7 @@
     </div>
 
     <div class="field">
-      <%= f.label :Attitude_and_behaviour %><br>
+      <%= f.label :Attitude, 'data-toggle' => 'tooltip', 'data-placement' => 'top', 'title' => 'Attitude and behaviour' %>
       <%= f.select(:qu19) do %>
         <% @mood.each do |c| %>
       <%= content_tag(:option, c.first, value: c.last) %>
@@ -177,7 +180,7 @@
     </div>
 
     <div class="field">
-      <%= f.label :Team_work %><br>
+      <%= f.label :Team, 'data-toggle' => 'tooltip', 'data-placement' => 'top', 'title' => 'Team work' %>
       <%= f.select(:qu20) do %>
         <% @mood.each do |c| %>
       <%= content_tag(:option, c.first, value: c.last) %>
@@ -185,9 +188,9 @@
     <% end %>
     </div>
   </div>
-  <div class="col-sm-4">
+  <div class="col-xs-4 center">
     <div class="field">
-      <%= f.label :Blend_in %><br>
+      <%= f.label :Blend_in, 'data-toggle' => 'tooltip', 'data-placement' => 'top', 'title' => 'Tooltip on top' %>
       <%= f.select(:qu21) do %>
         <% @mood.each do |c| %>
       <%= content_tag(:option, c.first, value: c.last) %>
@@ -196,7 +199,7 @@
     </div>
 
     <div class="field">
-      <%= f.label :Counting_hours %><br>
+      <%= f.label :Hours, 'data-toggle' => 'tooltip', 'data-placement' => 'top', 'title' => 'Counting hours' %>
       <%= f.select(:qu22) do %>
         <% @mood.each do |c| %>
       <%= content_tag(:option, c.first, value: c.last) %>
@@ -205,7 +208,7 @@
     </div>
 
     <div class="field">
-      <%= f.label :Pressure_on_pay_check_or_schedule %><br>
+      <%= f.label :Pressure, 'data-toggle' => 'tooltip', 'data-placement' => 'top', 'title' => 'Pressure on pay check or schedule' %>
       <%= f.select(:qu23) do %>
         <% @mood.each do |c| %>
       <%= content_tag(:option, c.first, value: c.last) %>
@@ -214,7 +217,7 @@
     </div>
 
     <div class="field">
-      <%= f.label :Legal_pressure %><br>
+      <%= f.label :Legal, 'data-toggle' => 'tooltip', 'data-placement' => 'top', 'title' => 'Legal pressure' %>
       <%= f.select(:qu24) do %>
         <% @mood.each do |c| %>
       <%= content_tag(:option, c.first, value: c.last) %>
@@ -223,7 +226,7 @@
     </div>  
 
     <div class="field">
-      <%= f.label :Customer_drive %><br>
+      <%= f.label :Customer, 'data-toggle' => 'tooltip', 'data-placement' => 'top', 'title' => 'Customer drive' %>
       <%= f.select(:qu25) do %>
         <% @mood.each do |c| %>
       <%= content_tag(:option, c.first, value: c.last) %>
@@ -232,7 +235,7 @@
     </div>
 
     <div class="field">
-      <%= f.label :Operational_changes %><br>
+      <%= f.label :Changes, 'data-toggle' => 'tooltip', 'data-placement' => 'top', 'title' => 'React toward Operational changes' %>
       <%= f.select(:qu26) do %>
         <% @mood.each do |c| %>
       <%= content_tag(:option, c.first, value: c.last) %>
@@ -241,7 +244,7 @@
     </div>
 
     <div class="field">
-      <%= f.label :Unpredictable_situations %><br>
+      <%= f.label :Situations, 'data-toggle' => 'tooltip', 'data-placement' => 'top', 'title' => 'Unpredictable situations' %>
       <%= f.select(:qu27) do %>
         <% @mood.each do |c| %>
       <%= content_tag(:option, c.first, value: c.last) %>
@@ -250,7 +253,7 @@
     </div>
 
     <div class="field">
-      <%= f.label :Flexibility %><br>
+      <%= f.label :Flexibility, 'data-toggle' => 'tooltip', 'data-placement' => 'top', 'title' => 'Tooltip on top' %>
       <%= f.select(:qu28) do %>
         <% @mood.each do |c| %>
       <%= content_tag(:option, c.first, value: c.last) %>
@@ -259,7 +262,7 @@
     </div>   
 
     <div class="field">
-      <%= f.label :Good_to_work_with %><br>
+      <%= f.label :Company, 'data-toggle' => 'tooltip', 'data-placement' => 'top', 'title' => 'Good_to_work_with' %>
       <%= f.select(:qu29) do %>
         <% @mood.each do |c| %>
       <%= content_tag(:option, c.first, value: c.last) %>
@@ -269,9 +272,9 @@
   </div>
 </div>
 
-<div class="row center">
+<div class="row center pad-bot">
   <div class="actions">
-    <%= f.submit class: "btn btn-primary" %>
+    <%= f.submit class: "btn btn-default" %>
   </div>
 </div>
 
