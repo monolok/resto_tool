@@ -20,9 +20,11 @@ class EmployeesController < ApplicationController
       end
     end
 
-    if not current_user.reviewers.empty?
-      current_user.reviewers.each do |r|
-        sign_in(:reviewer, r)
+    if user_signed_in?
+      if not current_user.reviewers.empty?
+        current_user.reviewers.each do |r|
+          sign_in(:reviewer, r)
+        end
       end
     end
     #respond_with(@employees)

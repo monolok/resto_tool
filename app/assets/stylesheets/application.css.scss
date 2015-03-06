@@ -288,6 +288,12 @@ a:hover {
 #pad-li-connected{
 	padding-right: 62px;
 }
+
+input[type="checkbox"] {
+    margin: 18px 0px 0px;
+    line-height: normal;
+}
+
 /*RESPONSIVE*/
 
 @media (max-width: 435px) {

@@ -1,46 +1,55 @@
-<h2>Add reviewer</h2>
+<h2 class="center pad">Add a reviewer</h2>
 
-<%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+<%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: {class: "form-horizontal"}) do |f| %>
   <%= devise_error_messages! %>
-
-  <div>
-    <%= f.label :name%>
-    <%= f.text_field :name%>
+  <div class="form-group">
+    <%= f.label :name, class: "col-sm-2 col-xs-offset-1 col-xs-3 control-label" %>
+    <div class="col-xs-6 col-sm-6">
+      <div class="input-group">
+        <span class="input-group-addon" id="basic-addon1"></span>
+        <%= f.text_field :name, class: "form-control", :placeholder => "Antoine" %>
+      </div> 
+    </div>
+  </div>   
+  <div class="form-group">
+    <%= f.label :email, class: "col-sm-2 col-xs-offset-1 col-xs-3 control-label" %>
+    <div class="col-xs-6 col-sm-6">
+      <div class="input-group">
+        <span class="input-group-addon" id="basic-addon1">@</span>
+        <%= f.email_field :email, autofocus: true, class: "form-control", :placeholder => "user@exemple.com" %>
+      </div> 
+    </div>
+  </div> 
+  <div class="form-group">
+    <%= f.label :category_not_permited, class: "col-sm-2 col-xs-offset-1 col-xs-3 control-label" %>
+    <div class="col-xs-6 col-sm-6">
+        <div class="col-xs-2">V.L<%= f.check_box :vl%></div>
+        <div class="col-xs-2">L<%= f.check_box :l%></div>
+        <div class="col-xs-2">M<%= f.check_box :m%></div>
+        <div class="col-xs-2">H<%= f.check_box :h%></div>
+        <div class="col-xs-2">V.H<%= f.check_box :vh%></div>
+    </div>
+  </div>   
+  <div class="form-group">
+    <%= f.label :password, class: "col-sm-2 col-xs-offset-1 col-xs-3 control-label" %>
+    <div class="col-xs-6 col-sm-6">
+      <% if @validatable %>
+      <em>(<%= @minimum_password_length %> characters minimum)</em>
+      <% end %><br />
+      <%= f.password_field :password, autocomplete: "off", class: "form-control" %>
+    </div>
   </div>
-<!--      @permit = [['Very low', 1], ['Low', 2], ['Medium', 3], ['High', 4], ['Very high', 5]]
- -->
-  <div>
-    <%= f.label :category_not_permited%>
-     <ul>
-      <li>Very Low <%= f.check_box :vl%></li>
-      <li>Low <%= f.check_box :l%></li>
-      <li>Medium <%= f.check_box :m%></li>
-      <li>High <%= f.check_box :h%></li>
-      <li>Very High <%= f.check_box :vh%></li>
-    </ul>
+  <div class="form-group">
+    <%= f.label :password_confirmation, class: "col-sm-2 col-xs-offset-1 col-xs-3 control-label" %>
+    <div class="col-xs-6 col-sm-6">
+      <%= f.password_field :password_confirmation, autocomplete: "off", class: "form-control" %>
+    </div>
   </div>
-
-  <div class="field">
-    <%= f.label :email %><br />
-    <%= f.email_field :email, autofocus: true %>
-  </div>
-
-  <div class="field">
-    <%= f.label :password %>
-    <% if @validatable %>
-    <em>(<%= @minimum_password_length %> characters minimum)</em>
-    <% end %><br />
-    <%= f.password_field :password, autocomplete: "off" %>
-  </div>
-
-  <div class="field">
-    <%= f.label :password_confirmation %><br />
-    <%= f.password_field :password_confirmation, autocomplete: "off" %>
-  </div>
-
-  <div class="actions">
-    <%= f.submit "Sign up" %>
+  <div class="form-group">
+    <div class="center">
+      <%= f.submit "Add reviewer number #{current_user.reviewers.count+1}", class: "btn btn-default" %>
+      <%= render "devise/shared/links" %>
+      <%= link_to "back", root_path%>
+    </div>
   </div>
 <% end %>
-
-<%= render "reviewers/shared/links" %>
