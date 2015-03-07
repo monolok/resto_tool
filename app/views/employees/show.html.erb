@@ -51,7 +51,7 @@
 		</div>
 	</div>
 	<% if @last_qu_hash.nil?%>
-	<div class="row center pad-top">
+	<div class="row center pad-top pad-show">
 		<mark>NO REVIEWS</mark>		
 		<%= link_to "Review #{@employee.name} now", employee_score_new_path(@employee.id), class: "inherit"%>
 	</div>
