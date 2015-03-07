@@ -6,7 +6,7 @@
 		<%if @uu > @ii %>
 			<p class="click" data-toggle="modal" data-target=".1">Predicable <strong style="color: green;">+<%=((1-(@uu.to_f/@ii.to_f))*100).round(0)*-1%>%</strong><i class="fa fa-arrow-up green"></i></p>
 		<%elsif @uu == @ii%>
-			<p class="click" data-toggle="modal" data-target=".1">Predictable <strong style="color: brown;"> 0% </strong></p>			
+			<p class="click" data-toggle="modal" data-target=".1">Predictable <strong style="color: brown;"> ━ </strong></p>			
 		<%else%>
 			<p class="click" data-toggle="modal" data-target=".1">Predictable <strong style="color: red;">-<%=((1-(@uu.to_f/@ii.to_f))*100).round(0)%>%</strong><i class="fa fa-arrow-down red"></i></p>
 		<%end%>					
@@ -16,7 +16,7 @@
 		<%if @uu > @ii %>
 			<p class="click" data-toggle="modal" data-target=".2">Ponctuality <strong style="color: green;">+<%=((1-(@uu.to_f/@ii.to_f))*100).round(0)*-1%>%</strong><i class="fa fa-arrow-up green"></i></p>
 		<%elsif @uu == @ii%>
-			<p class="click" data-toggle="modal" data-target=".2">Ponctuality <strong style="color: brown;"> 0% </strong></p>			
+			<p class="click" data-toggle="modal" data-target=".2">Ponctuality <strong style="color: brown;"> ━ </strong></p>			
 		<%else%>
 			<p class="click" data-toggle="modal" data-target=".2">Ponctuality <strong style="color: red;">-<%=((1-(@uu.to_f/@ii.to_f))*100).round(0)%>%</strong><i class="fa fa-arrow-down red"></i></p>
 		<%end%>	
@@ -26,7 +26,7 @@
 		<%if @uu > @ii %>
 			<p class="click" data-toggle="modal" data-target=".3">Personal life <strong style="color: green;">+<%=((1-(@uu.to_f/@ii.to_f))*100).round(0)*-1%>%</strong><i class="fa fa-arrow-up green"></i></p>
 		<%elsif @uu == @ii%>
-			<p class="click" data-toggle="modal" data-target=".3">Personal life <strong style="color: brown;"> 0% </strong></p>			
+			<p class="click" data-toggle="modal" data-target=".3">Personal life <strong style="color: brown;"> ━ </strong></p>			
 		<%else%>
 			<p class="click" data-toggle="modal" data-target=".3">Personal life <strong style="color: red;">-<%=((1-(@uu.to_f/@ii.to_f))*100).round(0)%>%</strong><i class="fa fa-arrow-down red"></i></p>
 		<%end%>	
@@ -36,7 +36,7 @@
 		<%if @uu > @ii %>
 			<p class="click" data-toggle="modal" data-target=".4">Pay check in advance <strong style="color: green;">+<%=((1-(@uu.to_f/@ii.to_f))*100).round(0)*-1%>%</strong><i class="fa fa-arrow-up green"></i></p>
 		<%elsif @uu == @ii%>
-			<p class="click" data-toggle="modal" data-target=".4">Pay check <strong style="color: brown;"> 0% </strong></p>			
+			<p class="click" data-toggle="modal" data-target=".4">Pay check <strong style="color: brown;"> ━ </strong></p>			
 		<%else%>
 			<p class="click" data-toggle="modal" data-target=".4">Pay check in advance <strong style="color: red;">-<%=((1-(@uu.to_f/@ii.to_f))*100).round(0)%>%</strong><i class="fa fa-arrow-down red"></i></p>
 		<%end%>
@@ -46,7 +46,7 @@
 		<%if @uu > @ii %>
 			<p class="click" data-toggle="modal" data-target=".5">Respecting rules <strong style="color: green;">+<%=((1-(@uu.to_f/@ii.to_f))*100).round(0)*-1%>%</strong><i class="fa fa-arrow-up green"></i></p>
 		<%elsif @uu == @ii%>
-			<p class="click" data-toggle="modal" data-target=".5">Respecting rules <strong style="color: brown;"> 0% </strong></p>			
+			<p class="click" data-toggle="modal" data-target=".5">Respecting rules <strong style="color: brown;"> ━ </strong></p>			
 		<%else%>
 			<p class="click" data-toggle="modal" data-target=".5">Respecting rules <strong style="color: red;">-<%=((1-(@uu.to_f/@ii.to_f))*100).round(0)%>%</strong><i class="fa fa-arrow-down red"></i></p>
 		<%end%>
@@ -56,7 +56,7 @@
 		<%if @uu > @ii %>
 			<p class="click" data-toggle="modal" data-target=".6">Get the work done <strong style="color: green;">+<%=((1-(@uu.to_f/@ii.to_f))*100).round(0)*-1%>%</strong><i class="fa fa-arrow-up green"></i></p>
 		<%elsif @uu == @ii%>
-			<p class="click" data-toggle="modal" data-target=".6">Get the work done <strong style="color: brown;"> 0% </strong></p>			
+			<p class="click" data-toggle="modal" data-target=".6">Get the work done <strong style="color: brown;"> ━ </strong></p>			
 		<%else%>
 			<p class="click" data-toggle="modal" data-target=".6">Get the work done <strong style="color: red;">-<%=((1-(@uu.to_f/@ii.to_f))*100).round(0)%>%</strong><i class="fa fa-arrow-down red"></i></p>
 		<%end%>
@@ -66,7 +66,7 @@
 		<%if @uu > @ii %>
 			<p class="click" data-toggle="modal" data-target=".7">Time efficient <strong style="color: green;">+<%=((1-(@uu.to_f/@ii.to_f))*100).round(0)*-1%>%</strong><i class="fa fa-arrow-up green"></i></p>
 		<%elsif @uu == @ii%>
-			<p class="click" data-toggle="modal" data-target=".7">Time efficient <strong style="color: brown;"> 0% </strong></p>			
+			<p class="click" data-toggle="modal" data-target=".7">Time efficient <strong style="color: brown;"> ━ </strong></p>			
 		<%else%>
 			<p class="click" data-toggle="modal" data-target=".7">Time efficient <strong style="color: red;">-<%=((1-(@uu.to_f/@ii.to_f))*100).round(0)%>%</strong><i class="fa fa-arrow-down red"></i></p>
 		<%end%>
@@ -76,7 +76,7 @@
 		<%if @uu > @ii %>
 			<p class="click" data-toggle="modal" data-target=".8">Do the police <strong style="color: green;">+<%=((1-(@uu.to_f/@ii.to_f))*100).round(0)*-1%>%</strong><i class="fa fa-arrow-up green"></i></p>
 		<%elsif @uu == @ii%>
-			<p class="click" data-toggle="modal" data-target=".8">Police<strong style="color: brown;"> 0% </strong></p>			
+			<p class="click" data-toggle="modal" data-target=".8">Police<strong style="color: brown;"> ━ </strong></p>			
 		<%else%>
 			<p class="click" data-toggle="modal" data-target=".8">Do the police <strong style="color: red;">-<%=((1-(@uu.to_f/@ii.to_f))*100).round(0)%>%</strong><i class="fa fa-arrow-down red"></i></p>
 		<%end%>
@@ -86,7 +86,7 @@
 		<%if @uu > @ii %>
 			<p class="click" data-toggle="modal" data-target=".9">Trustworthy <strong style="color: green;">+<%=((1-(@uu.to_f/@ii.to_f))*100).round(0)*-1%>%</strong><i class="fa fa-arrow-up green"></i></p>
 		<%elsif @uu == @ii%>
-			<p class="click" data-toggle="modal" data-target=".9">Trustworthy <strong style="color: brown;"> 0% </strong></p>			
+			<p class="click" data-toggle="modal" data-target=".9">Trustworthy <strong style="color: brown;"> ━ </strong></p>			
 		<%else%>
 			<p class="click" data-toggle="modal" data-target=".9">Trustworthy <strong style="color: red;">-<%=((1-(@uu.to_f/@ii.to_f))*100).round(0)%>%</strong><i class="fa fa-arrow-down red"></i></p>
 		<%end%>
@@ -96,7 +96,7 @@
 		<%if @uu > @ii %>
 			<p class="click" data-toggle="modal" data-target=".10">Room for improvment <strong style="color: green;">+<%=((1-(@uu.to_f/@ii.to_f))*100).round(0)*-1%>%</strong><i class="fa fa-arrow-up green"></i></p>
 		<%elsif @uu == @ii%>
-			<p class="click" data-toggle="modal" data-target=".10">Room for improvment <strong style="color: brown;"> 0% </strong></p>			
+			<p class="click" data-toggle="modal" data-target=".10">Room for improvment <strong style="color: brown;"> ━ </strong></p>			
 		<%else%>
 			<p class="click" data-toggle="modal" data-target=".10">Room for improvment <strong style="color: red;">-<%=((1-(@uu.to_f/@ii.to_f))*100).round(0)%>%</strong><i class="fa fa-arrow-down red"></i></p>
 		<%end%>
@@ -106,7 +106,7 @@
 		<%if @uu > @ii %>
 			<p class="click" data-toggle="modal" data-target=".11">Rush hours <strong style="color: green;">+<%=((1-(@uu.to_f/@ii.to_f))*100).round(0)*-1%>%</strong><i class="fa fa-arrow-up green"></i></p>
 		<%elsif @uu == @ii%>
-			<p class="click" data-toggle="modal" data-target=".11">Rush hours<strong style="color: brown;"> 0% </strong></p>			
+			<p class="click" data-toggle="modal" data-target=".11">Rush hours<strong style="color: brown;"> ━ </strong></p>			
 		<%else%>
 			<p class="click" data-toggle="modal" data-target=".11">Rush hours <strong style="color: red;">-<%=((1-(@uu.to_f/@ii.to_f))*100).round(0)%>%</strong><i class="fa fa-arrow-down red"></i></p>
 		<%end%>
@@ -116,7 +116,7 @@
 		<%if @uu > @ii %>
 			<p class="click" data-toggle="modal" data-target=".12">Focused <strong style="color: green;">+<%=((1-(@uu.to_f/@ii.to_f))*100).round(0)*-1%>%</strong><i class="fa fa-arrow-up green"></i></p>
 		<%elsif @uu == @ii%>
-			<p class="click" data-toggle="modal" data-target=".12">Focused <strong style="color: brown;"> 0% </strong></p>			
+			<p class="click" data-toggle="modal" data-target=".12">Focused <strong style="color: brown;"> ━ </strong></p>			
 		<%else%>
 			<p class="click" data-toggle="modal" data-target=".12">Focused <strong style="color: red;">-<%=((1-(@uu.to_f/@ii.to_f))*100).round(0)%>%</strong><i class="fa fa-arrow-down red"></i></p>
 		<%end%>
@@ -126,7 +126,7 @@
 		<%if @uu > @ii %>
 			<p class="click" data-toggle="modal" data-target=".13">Consistency <strong style="color: green;">+<%=((1-(@uu.to_f/@ii.to_f))*100).round(0)*-1%>%</strong><i class="fa fa-arrow-up green"></i></p>
 		<%elsif @uu == @ii%>
-			<p class="click" data-toggle="modal" data-target=".13">Consistency <strong style="color: brown;"> 0% </strong></p>			
+			<p class="click" data-toggle="modal" data-target=".13">Consistency <strong style="color: brown;"> ━ </strong></p>			
 		<%else%>
 			<p class="click" data-toggle="modal" data-target=".13">Consistency <strong style="color: red;">-<%=((1-(@uu.to_f/@ii.to_f))*100).round(0)%>%</strong><i class="fa fa-arrow-down red"></i></p>
 		<%end%>
@@ -136,7 +136,7 @@
 		<%if @uu > @ii %>
 			<p class="click" data-toggle="modal" data-target=".14">Relation with others <strong style="color: green;">+<%=((1-(@uu.to_f/@ii.to_f))*100).round(0)*-1%>%</strong><i class="fa fa-arrow-up green"></i></p>
 		<%elsif @uu == @ii%>
-			<p class="click" data-toggle="modal" data-target=".14">Relation with others <strong style="color: brown;"> 0% </strong></p>			
+			<p class="click" data-toggle="modal" data-target=".14">Relation with others <strong style="color: brown;"> ━ </strong></p>			
 		<%else%>
 			<p class="click" data-toggle="modal" data-target=".14">Relation with others <strong style="color: red;">-<%=((1-(@uu.to_f/@ii.to_f))*100).round(0)%>%</strong><i class="fa fa-arrow-down red"></i></p>
 		<%end%>
@@ -146,7 +146,7 @@
 		<%if @uu > @ii %>
 			<p class="click" data-toggle="modal" data-target=".15">Positive attitude <strong style="color: green;">+<%=((1-(@uu.to_f/@ii.to_f))*100).round(0)*-1%>%</strong><i class="fa fa-arrow-up green"></i></p>
 		<%elsif @uu == @ii%>
-			<p class="click" data-toggle="modal" data-target=".15">Positive <strong style="color: brown;"> 0% </strong></p>			
+			<p class="click" data-toggle="modal" data-target=".15">Positive <strong style="color: brown;"> ━ </strong></p>			
 		<%else%>
 			<p class="click" data-toggle="modal" data-target=".15">Positive attitude <strong style="color: red;">-<%=((1-(@uu.to_f/@ii.to_f))*100).round(0)%>%</strong><i class="fa fa-arrow-down red"></i></p>
 		<%end%>
@@ -156,7 +156,7 @@
 		<%if @uu > @ii %>
 			<p class="click" data-toggle="modal" data-target=".16">Open to critics <strong style="color: green;">+<%=((1-(@uu.to_f/@ii.to_f))*100).round(0)*-1%>%</strong><i class="fa fa-arrow-up green"></i></p>
 		<%elsif @uu == @ii%>
-			<p class="click" data-toggle="modal" data-target=".16">Critics<strong style="color: brown;"> 0% </strong></p>			
+			<p class="click" data-toggle="modal" data-target=".16">Critics<strong style="color: brown;"> ━ </strong></p>			
 		<%else%>
 			<p class="click" data-toggle="modal" data-target=".16">Open to critics <strong style="color: red;">-<%=((1-(@uu.to_f/@ii.to_f))*100).round(0)%>%</strong><i class="fa fa-arrow-down red"></i></p>
 		<%end%>
@@ -166,7 +166,7 @@
 		<%if @uu > @ii %>
 			<p class="click" data-toggle="modal" data-target=".17">To sure of him self <strong style="color: green;">+<%=((1-(@uu.to_f/@ii.to_f))*100).round(0)*-1%>%</strong><i class="fa fa-arrow-up green"></i></p>
 		<%elsif @uu == @ii%>
-			<p class="click" data-toggle="modal" data-target=".17">Too sure <strong style="color: brown;"> 0% </strong></p>			
+			<p class="click" data-toggle="modal" data-target=".17">Too sure <strong style="color: brown;"> ━ </strong></p>			
 		<%else%>
 			<p class="click" data-toggle="modal" data-target=".17">To sure of him self <strong style="color: red;">-<%=((1-(@uu.to_f/@ii.to_f))*100).round(0)%>%</strong><i class="fa fa-arrow-down red"></i></p>
 		<%end%>
@@ -176,7 +176,7 @@
 		<%if @uu > @ii %>
 			<p class="click" data-toggle="modal" data-target=".18">Extra mile <strong style="color: green;">+<%=((1-(@uu.to_f/@ii.to_f))*100).round(0)*-1%>%</strong><i class="fa fa-arrow-up green"></i></p>
 		<%elsif @uu == @ii%>
-			<p class="click" data-toggle="modal" data-target=".18">Extra mile <strong style="color: brown;"> 0% </strong></p>			
+			<p class="click" data-toggle="modal" data-target=".18">Extra mile <strong style="color: brown;"> ━ </strong></p>			
 		<%else%>
 			<p class="click" data-toggle="modal" data-target=".18">Extra mile <strong style="color: red;">-<%=((1-(@uu.to_f/@ii.to_f))*100).round(0)%>%</strong><i class="fa fa-arrow-down red"></i></p>
 		<%end%>
@@ -186,7 +186,7 @@
 		<%if @uu > @ii %>
 			<p class="click" data-toggle="modal" data-target=".19">Attitude and behaviour <strong style="color: green;">+<%=((1-(@uu.to_f/@ii.to_f))*100).round(0)*-1%>%</strong><i class="fa fa-arrow-up green"></i></p>
 		<%elsif @uu == @ii%>
-			<p class="click" data-toggle="modal" data-target=".19">Attitude <strong style="color: brown;"> 0% </strong></p>			
+			<p class="click" data-toggle="modal" data-target=".19">Attitude <strong style="color: brown;"> ━ </strong></p>			
 		<%else%>
 			<p class="click" data-toggle="modal" data-target=".19">Attitude and behaviour <strong style="color: red;">-<%=((1-(@uu.to_f/@ii.to_f))*100).round(0)%>%</strong><i class="fa fa-arrow-down red"></i></p>
 		<%end%>
@@ -196,7 +196,7 @@
 		<%if @uu > @ii %>
 			<p class="click" data-toggle="modal" data-target=".20">Team work <strong style="color: green;">+<%=((1-(@uu.to_f/@ii.to_f))*100).round(0)*-1%>%</strong><i class="fa fa-arrow-up green"></i></p>
 		<%elsif @uu == @ii%>
-			<p class="click" data-toggle="modal" data-target=".20">Team work <strong style="color: brown;"> 0% </strong></p>			
+			<p class="click" data-toggle="modal" data-target=".20">Team work <strong style="color: brown;"> ━ </strong></p>			
 		<%else%>
 			<p class="click" data-toggle="modal" data-target=".20">Team work <strong style="color: red;">-<%=((1-(@uu.to_f/@ii.to_f))*100).round(0)%>%</strong><i class="fa fa-arrow-down red"></i></p>
 		<%end%>
@@ -206,7 +206,7 @@
 		<%if @uu > @ii %>
 			<p class="click" data-toggle="modal" data-target=".21">Blend in <strong style="color: green;">+<%=((1-(@uu.to_f/@ii.to_f))*100).round(0)*-1%>%</strong><i class="fa fa-arrow-up green"></i></p>
 		<%elsif @uu == @ii%>
-			<p class="click" data-toggle="modal" data-target=".21">Blend in <strong style="color: brown;"> 0% </strong></p>			
+			<p class="click" data-toggle="modal" data-target=".21">Blend in <strong style="color: brown;"> ━ </strong></p>			
 		<%else%>
 			<p class="click" data-toggle="modal" data-target=".21">Blend in <strong style="color: red;">-<%=((1-(@uu.to_f/@ii.to_f))*100).round(0)%>%</strong><i class="fa fa-arrow-down red"></i></p>
 		<%end%>
@@ -216,7 +216,7 @@
 		<%if @uu > @ii %>
 			<p class="click" data-toggle="modal" data-target=".22">Counting hours <strong style="color: green;">+<%=((1-(@uu.to_f/@ii.to_f))*100).round(0)*-1%>%</strong><i class="fa fa-arrow-up green"></i></p>
 		<%elsif @uu == @ii%>
-			<p class="click" data-toggle="modal" data-target=".22">Counting hours <strong style="color: brown;"> 0% </strong></p>			
+			<p class="click" data-toggle="modal" data-target=".22">Counting hours <strong style="color: brown;"> ━ </strong></p>			
 		<%else%>
 			<p class="click" data-toggle="modal" data-target=".22">Counting hours <strong style="color: red;">-<%=((1-(@uu.to_f/@ii.to_f))*100).round(0)%>%</strong><i class="fa fa-arrow-down red"></i></p>
 		<%end%>
@@ -226,7 +226,7 @@
 		<%if @uu > @ii %>
 			<p class="click" data-toggle="modal" data-target=".23">Pressure on pay check or schedule <strong style="color: green;">+<%=((1-(@uu.to_f/@ii.to_f))*100).round(0)*-1%>%</strong><i class="fa fa-arrow-up green"></i></p>
 		<%elsif @uu == @ii%>
-			<p class="click" data-toggle="modal" data-target=".23">Pressure on pay check or schedule <strong style="color: brown;"> 0% </strong></p>			
+			<p class="click" data-toggle="modal" data-target=".23">Pressure on pay check or schedule <strong style="color: brown;"> ━ </strong></p>			
 		<%else%>
 			<p class="click" data-toggle="modal" data-target=".23">Pressure on pay check or schedule <strong style="color: red;">-<%=((1-(@uu.to_f/@ii.to_f))*100).round(0)%>%</strong><i class="fa fa-arrow-down red"></i></p>
 		<%end%>
@@ -236,7 +236,7 @@
 		<%if @uu > @ii %>
 			<p class="click" data-toggle="modal" data-target=".24">Legal pressure <strong style="color: green;">+<%=((1-(@uu.to_f/@ii.to_f))*100).round(0)*-1%>%</strong><i class="fa fa-arrow-up green"></i></p>
 		<%elsif @uu == @ii%>
-			<p class="click" data-toggle="modal" data-target=".24">Legal pressure <strong style="color: brown;"> 0% </strong></p>			
+			<p class="click" data-toggle="modal" data-target=".24">Legal pressure <strong style="color: brown;"> ━ </strong></p>			
 		<%else%>
 			<p class="click" data-toggle="modal" data-target=".24">Legal pressure <strong style="color: red;">-<%=((1-(@uu.to_f/@ii.to_f))*100).round(0)%>%</strong><i class="fa fa-arrow-down red"></i></p>
 		<%end%>
@@ -246,7 +246,7 @@
 		<%if @uu > @ii %>
 			<p class="click" data-toggle="modal" data-target=".25">Customer Drive <strong style="color: green;">+<%=((1-(@uu.to_f/@ii.to_f))*100).round(0)*-1%>%</strong><i class="fa fa-arrow-up green"></i></p>
 		<%elsif @uu == @ii%>
-			<p class="click" data-toggle="modal" data-target=".25">Customer Drive <strong style="color: brown;"> 0% </strong></p>			
+			<p class="click" data-toggle="modal" data-target=".25">Customer Drive <strong style="color: brown;"> ━ </strong></p>			
 		<%else%>
 			<p class="click" data-toggle="modal" data-target=".25">Customer Drive <strong style="color: red;">-<%=((1-(@uu.to_f/@ii.to_f))*100).round(0)%>%</strong><i class="fa fa-arrow-down red"></i></p>
 		<%end%>
@@ -256,7 +256,7 @@
 		<%if @uu > @ii %>
 			<p class="click" data-toggle="modal" data-target=".26">Operational change <strong style="color: green;">+<%=((1-(@uu.to_f/@ii.to_f))*100).round(0)*-1%>%</strong><i class="fa fa-arrow-up green"></i></p>
 		<%elsif @uu == @ii%>
-			<p class="click" data-toggle="modal" data-target=".26">Operational change <strong style="color: brown;"> 0% </strong></p>			
+			<p class="click" data-toggle="modal" data-target=".26">Operational change <strong style="color: brown;"> ━ </strong></p>			
 		<%else%>
 			<p class="click" data-toggle="modal" data-target=".26">Operational change <strong style="color: red;">-<%=((1-(@uu.to_f/@ii.to_f))*100).round(0)%>%</strong><i class="fa fa-arrow-down red"></i></p>
 		<%end%>
@@ -266,7 +266,7 @@
 		<%if @uu > @ii %>
 			<p class="click" data-toggle="modal" data-target=".27">Unpredictable situation <strong style="color: green;">+<%=((1-(@uu.to_f/@ii.to_f))*100).round(0)*-1%>%</strong><i class="fa fa-arrow-up green"></i></p>
 		<%elsif @uu == @ii%>
-			<p class="click" data-toggle="modal" data-target=".27">Unpredicable situation <strong style="color: brown;"> 0% </strong></p>			
+			<p class="click" data-toggle="modal" data-target=".27">Unpredicable situation <strong style="color: brown;"> ━ </strong></p>			
 		<%else%>
 			<p class="click" data-toggle="modal" data-target=".27">Unpredictable situation <strong style="color: red;">-<%=((1-(@uu.to_f/@ii.to_f))*100).round(0)%>%</strong><i class="fa fa-arrow-down red"></i></p>
 		<%end%>
@@ -276,7 +276,7 @@
 		<%if @uu > @ii %>
 			<p class="click" data-toggle="modal" data-target=".28">Flexibility <strong style="color: green;">+<%=((1-(@uu.to_f/@ii.to_f))*100).round(0)*-1%>%</strong><i class="fa fa-arrow-up green"></i></p>
 		<%elsif @uu == @ii%>
-			<p class="click" data-toggle="modal" data-target=".28">Flexibility<strong style="color: brown;"> 0% </strong></p>			
+			<p class="click" data-toggle="modal" data-target=".28">Flexibility<strong style="color: brown;"> ━ </strong></p>			
 		<%else%>
 			<p class="click" data-toggle="modal" data-target=".28">Flexibility <strong style="color: red;">-<%=((1-(@uu.to_f/@ii.to_f))*100).round(0)%>%</strong><i class="fa fa-arrow-down red"></i></p>
 		<%end%>
@@ -286,7 +286,7 @@
 		<%if @uu > @ii %>
 			<p class="click" data-toggle="modal" data-target=".29">Good to work with <strong style="color: green;">+<%=((1-(@uu.to_f/@ii.to_f))*100).round(0)*-1%>%</strong><i class="fa fa-arrow-up green"></i></p>
 		<%elsif @uu == @ii%>
-			<p class="click" data-toggle="modal" data-target=".29">Good to work with<strong style="color: brown;"> 0% </strong></p>			
+			<p class="click" data-toggle="modal" data-target=".29">Good to work with<strong style="color: brown;"> ━ </strong></p>			
 		<%else%>
 			<p class="click" data-toggle="modal" data-target=".29">Good to work with <strong style="color: red;">-<%=((1-(@uu.to_f/@ii.to_f))*100).round(0)%>%</strong><i class="fa fa-arrow-down red"></i></p>
 		<%end%>
