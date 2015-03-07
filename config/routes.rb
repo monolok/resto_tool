@@ -4,6 +4,7 @@ Rails.application.routes.draw do
     get "score_new"
     post "score_new", to: "employees#score_create" 
   end
+  delete "employees/score_destroy/:id", to: "employees#score_destroy"
 
   devise_for :users, controllers: { registrations: "users/registrations"}
   devise_scope :user do

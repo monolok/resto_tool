@@ -55,9 +55,9 @@
 	<%else%>
 		<div class="row">
 			<div class="col-sm-4 col-xs-4">
-				<h5 class="text-info">Latest scores:</h5>
-				<% @employee.scores.each do |r|%>
-				<div class="pad-bot2 click">
+				<h5 class="text-info">Latest 5 scores:</h5>
+				<% @employee.scores.order("created_at DESC").limit(5).each do |r|%>
+				<div class="pad-bot2">
 					<div class="border-score">
 						<div class="row center">
 							<%= r.created_at.strftime("%A %B %d")%>	
@@ -87,6 +87,15 @@
 									<p>Reviewed by: <%= Reviewer.find(r.reviewer_id).name%></p>
 								</div>
 							</div>						
+						<%end%>
+						<%if user_signed_in?%>
+							<div class="row">
+								<div class="col-xs-12 center">
+									<%= link_to "score_destroy/#{r.id}", method: :delete do%>
+										<i class="fa fa-trash fa-2x"></i>
+									<%end%>
+								</div>
+							</div>
 						<%end%>
 					</div>
 				</div>

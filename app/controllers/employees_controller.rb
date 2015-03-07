@@ -36,7 +36,7 @@ class EmployeesController < ApplicationController
     @list_pb = Hash.new
     while @n != 0
       @qu = Score.where(employee_id: @employee.id).average("qu#{@n}").to_f.round(2)
-      if @qu > 2.5
+      if @qu > 2.8
       @list_qa[@n] = @qu
       else
       @list_pb[@n] = @qu
@@ -115,6 +115,13 @@ class EmployeesController < ApplicationController
     else
       flash[:notice] = "Not saved"
     end    
+  end
+
+  def score_destroy
+    @score = Score.find(params[:id])
+    @show = @score.employee.id
+    @score.destroy
+    redirect_to employee_path(@show)
   end
 
 

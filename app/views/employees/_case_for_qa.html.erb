@@ -1,236 +1,294 @@
 <% @list_qa.each do |k, v|%>
 	<%case k%>
 	<%when 1%>
-		<% @i = @list_qa[k].to_i%>
+		<% @i = @list_qa[k].to_f%>
 		<% @u = @last_qu_hash[k].to_i%>
 		<%if @u > @i %>
-			<p class="click" data-toggle="modal" data-target=".1">Predicable <i class="fa fa-arrow-up green"></i></p>
+			<p class="click" data-toggle="modal" data-target=".1">Predicable <strong style="color: green;">+<%=((1-(@u.to_f/@i.to_f))*100).round(0)*-1%>%</strong><i class="fa fa-arrow-up green"></i></p>
+		<%elsif @u == @i%>
+			<p class="click" data-toggle="modal" data-target=".14">Predictable <strong style="color: brown;">0%</strong></p>			
 		<%else%>
-			<p class="click" data-toggle="modal" data-target=".1">Predictable <i class="fa fa-arrow-down red"></i></p>
+			<p class="click" data-toggle="modal" data-target=".1">Predictable <strong style="color: red;">-<%=((1-(@u.to_f/@i.to_f))*100).round(0)%>%</strong><i class="fa fa-arrow-down red"></i></p>
 		<%end%>					
 	<%when 2%>
-		<% @i = @list_qa[k].to_i%>
+		<% @i = @list_qa[k].to_f%>
 		<% @u = @last_qu_hash[k].to_i%>
 		<%if @u > @i %>
-			<p class="click" data-toggle="modal" data-target=".2">Ponctuality <i class="fa fa-arrow-up green"></i></p>
+			<p class="click" data-toggle="modal" data-target=".2">Ponctuality <strong style="color: green;">+<%=((1-(@u.to_f/@i.to_f))*100).round(0)*-1%>%</strong><i class="fa fa-arrow-up green"></i></p>
+		<%elsif @u == @i%>
+			<p class="click" data-toggle="modal" data-target=".14">Ponctuality <strong style="color: brown;">0%</strong></p>			
 		<%else%>
-			<p class="click" data-toggle="modal" data-target=".2">Ponctuality <i class="fa fa-arrow-down red"></i></p>
+			<p class="click" data-toggle="modal" data-target=".2">Ponctuality <strong style="color: red;">-<%=((1-(@u.to_f/@i.to_f))*100).round(0)%>%</strong><i class="fa fa-arrow-down red"></i></p>
 		<%end%>	
 	<%when 3%>
-		<% @i = @list_qa[k].to_i%>
+		<% @i = @list_qa[k].to_f%>
 		<% @u = @last_qu_hash[k].to_i%>
 		<%if @u > @i %>
-			<p class="click" data-toggle="modal" data-target=".3">Personal life <i class="fa fa-arrow-up green"></i></p>
+			<p class="click" data-toggle="modal" data-target=".3">Personal life <strong style="color: green;">+<%=((1-(@u.to_f/@i.to_f))*100).round(0)*-1%>%</strong><i class="fa fa-arrow-up green"></i></p>
+		<%elsif @u == @i%>
+			<p class="click" data-toggle="modal" data-target=".14">Personal life <strong style="color: brown;">0%</strong></p>			
 		<%else%>
-			<p class="click" data-toggle="modal" data-target=".3">Personal life <i class="fa fa-arrow-down red"></i></p>
+			<p class="click" data-toggle="modal" data-target=".3">Personal life <strong style="color: red;">-<%=((1-(@u.to_f/@i.to_f))*100).round(0)%>%</strong><i class="fa fa-arrow-down red"></i></p>
 		<%end%>	
 	<%when 4%>
-		<% @i = @list_qa[k].to_i%>
+		<% @i = @list_qa[k].to_f%>
 		<% @u = @last_qu_hash[k].to_i%>
 		<%if @u > @i %>
-			<p class="click" data-toggle="modal" data-target=".4">Pay check in advance <i class="fa fa-arrow-up green"></i></p>
+			<p class="click" data-toggle="modal" data-target=".4">Pay check in advance <strong style="color: green;">+<%=((1-(@u.to_f/@i.to_f))*100).round(0)*-1%>%</strong><i class="fa fa-arrow-up green"></i></p>
+		<%elsif @u == @i%>
+			<p class="click" data-toggle="modal" data-target=".14">Pay check <strong style="color: brown;">0%</strong></p>			
 		<%else%>
-			<p class="click" data-toggle="modal" data-target=".4">Pay check in advance <i class="fa fa-arrow-down red"></i></p>
+			<p class="click" data-toggle="modal" data-target=".4">Pay check in advance <strong style="color: red;">-<%=((1-(@u.to_f/@i.to_f))*100).round(0)%>%</strong><i class="fa fa-arrow-down red"></i></p>
 		<%end%>
 	<%when 5%>
-		<% @i = @list_qa[k].to_i%>
+		<% @i = @list_qa[k].to_f%>
 		<% @u = @last_qu_hash[k].to_i%>
 		<%if @u > @i %>
-			<p class="click" data-toggle="modal" data-target=".5">Respecting rules <i class="fa fa-arrow-up green"></i></p>
+			<p class="click" data-toggle="modal" data-target=".5">Respecting rules <strong style="color: green;">+<%=((1-(@u.to_f/@i.to_f))*100).round(0)*-1%>%</strong><i class="fa fa-arrow-up green"></i></p>
+		<%elsif @u == @i%>
+			<p class="click" data-toggle="modal" data-target=".14">Respecting rules <strong style="color: brown;">0%</strong></p>			
 		<%else%>
-			<p class="click" data-toggle="modal" data-target=".5">Respecting rules <i class="fa fa-arrow-down red"></i></p>
+			<p class="click" data-toggle="modal" data-target=".5">Respecting rules <strong style="color: red;">-<%=((1-(@u.to_f/@i.to_f))*100).round(0)%>%</strong><i class="fa fa-arrow-down red"></i></p>
 		<%end%>
 	<%when 6%>
-		<% @i = @list_qa[k].to_i%>
+		<% @i = @list_qa[k].to_f%>
 		<% @u = @last_qu_hash[k].to_i%>
 		<%if @u > @i %>
-			<p class="click" data-toggle="modal" data-target=".6">Get the work done <i class="fa fa-arrow-up green"></i></p>
+			<p class="click" data-toggle="modal" data-target=".6">Get the work done <strong style="color: green;">+<%=((1-(@u.to_f/@i.to_f))*100).round(0)*-1%>%</strong><i class="fa fa-arrow-up green"></i></p>
+		<%elsif @u == @i%>
+			<p class="click" data-toggle="modal" data-target=".14">Get the work done <strong style="color: brown;">0%</strong></p>			
 		<%else%>
-			<p class="click" data-toggle="modal" data-target=".6">Get the work done <i class="fa fa-arrow-down red"></i></p>
+			<p class="click" data-toggle="modal" data-target=".6">Get the work done <strong style="color: red;">-<%=((1-(@u.to_f/@i.to_f))*100).round(0)%>%</strong><i class="fa fa-arrow-down red"></i></p>
 		<%end%>
 	<%when 7%>
-		<% @i = @list_qa[k].to_i%>
+		<% @i = @list_qa[k].to_f%>
 		<% @u = @last_qu_hash[k].to_i%>
 		<%if @u > @i %>
-			<p class="click" data-toggle="modal" data-target=".7">Time efficient <i class="fa fa-arrow-up green"></i></p>
+			<p class="click" data-toggle="modal" data-target=".7">Time efficient <strong style="color: green;">+<%=((1-(@u.to_f/@i.to_f))*100).round(0)*-1%>%</strong><i class="fa fa-arrow-up green"></i></p>
+		<%elsif @u == @i%>
+			<p class="click" data-toggle="modal" data-target=".14">Time efficient <strong style="color: brown;">0%</strong></p>			
 		<%else%>
-			<p class="click" data-toggle="modal" data-target=".7">Time efficient <i class="fa fa-arrow-down red"></i></p>
+			<p class="click" data-toggle="modal" data-target=".7">Time efficient <strong style="color: red;">-<%=((1-(@u.to_f/@i.to_f))*100).round(0)%>%</strong><i class="fa fa-arrow-down red"></i></p>
 		<%end%>
 	<%when 8%>
-		<% @i = @list_qa[k].to_i%>
+		<% @i = @list_qa[k].to_f%>
 		<% @u = @last_qu_hash[k].to_i%>
 		<%if @u > @i %>
-			<p class="click" data-toggle="modal" data-target=".8">Do the police <i class="fa fa-arrow-up green"></i></p>
+			<p class="click" data-toggle="modal" data-target=".8">Do the police <strong style="color: green;">+<%=((1-(@u.to_f/@i.to_f))*100).round(0)*-1%>%</strong><i class="fa fa-arrow-up green"></i></p>
+		<%elsif @u == @i%>
+			<p class="click" data-toggle="modal" data-target=".14">Police<strong style="color: brown;">0%</strong></p>			
 		<%else%>
-			<p class="click" data-toggle="modal" data-target=".8">Do the police <i class="fa fa-arrow-down red"></i></p>
+			<p class="click" data-toggle="modal" data-target=".8">Do the police <strong style="color: red;">-<%=((1-(@u.to_f/@i.to_f))*100).round(0)%>%</strong><i class="fa fa-arrow-down red"></i></p>
 		<%end%>
 	<%when 9%>
-		<% @i = @list_qa[k].to_i%>
+		<% @i = @list_qa[k].to_f%>
 		<% @u = @last_qu_hash[k].to_i%>
 		<%if @u > @i %>
-			<p class="click" data-toggle="modal" data-target=".9">Trustworthy <i class="fa fa-arrow-up green"></i></p>
+			<p class="click" data-toggle="modal" data-target=".9">Trustworthy <strong style="color: green;">+<%=((1-(@u.to_f/@i.to_f))*100).round(0)*-1%>%</strong><i class="fa fa-arrow-up green"></i></p>
+		<%elsif @u == @i%>
+			<p class="click" data-toggle="modal" data-target=".14">Trustworthy <strong style="color: brown;">0%</strong></p>			
 		<%else%>
-			<p class="click" data-toggle="modal" data-target=".9">Trustworthy <i class="fa fa-arrow-down red"></i></p>
+			<p class="click" data-toggle="modal" data-target=".9">Trustworthy <strong style="color: red;">-<%=((1-(@u.to_f/@i.to_f))*100).round(0)%>%</strong><i class="fa fa-arrow-down red"></i></p>
 		<%end%>
 	<%when 10%>
-		<% @i = @list_qa[k].to_i%>
+		<% @i = @list_qa[k].to_f%>
 		<% @u = @last_qu_hash[k].to_i%>
 		<%if @u > @i %>
-			<p class="click" data-toggle="modal" data-target=".10">Room for improvment <i class="fa fa-arrow-up green"></i></p>
+			<p class="click" data-toggle="modal" data-target=".10">Room for improvment <strong style="color: green;">+<%=((1-(@u.to_f/@i.to_f))*100).round(0)*-1%>%</strong><i class="fa fa-arrow-up green"></i></p>
+		<%elsif @u == @i%>
+			<p class="click" data-toggle="modal" data-target=".14">Room for improvment <strong style="color: brown;">0%</strong></p>			
 		<%else%>
-			<p class="click" data-toggle="modal" data-target=".10">Room for improvment <i class="fa fa-arrow-down red"></i></p>
+			<p class="click" data-toggle="modal" data-target=".10">Room for improvment <strong style="color: red;">-<%=((1-(@u.to_f/@i.to_f))*100).round(0)%>%</strong><i class="fa fa-arrow-down red"></i></p>
 		<%end%>
 	<%when 11%>
-		<% @i = @list_qa[k].to_i%>
+		<% @i = @list_qa[k].to_f%>
 		<% @u = @last_qu_hash[k].to_i%>
 		<%if @u > @i %>
-			<p class="click" data-toggle="modal" data-target=".11">Rush hours <i class="fa fa-arrow-up green"></i></p>
+			<p class="click" data-toggle="modal" data-target=".11">Rush hours <strong style="color: green;">+<%=((1-(@u.to_f/@i.to_f))*100).round(0)*-1%>%</strong><i class="fa fa-arrow-up green"></i></p>
+		<%elsif @u == @i%>
+			<p class="click" data-toggle="modal" data-target=".14">Rush hours<strong style="color: brown;">0%</strong></p>			
 		<%else%>
-			<p class="click" data-toggle="modal" data-target=".11">Rush hours <i class="fa fa-arrow-down red"></i></p>
+			<p class="click" data-toggle="modal" data-target=".11">Rush hours <strong style="color: red;">-<%=((1-(@u.to_f/@i.to_f))*100).round(0)%>%</strong><i class="fa fa-arrow-down red"></i></p>
 		<%end%>
 	<%when 12%>
-		<% @i = @list_qa[k].to_i%>
+		<% @i = @list_qa[k].to_f%>
 		<% @u = @last_qu_hash[k].to_i%>
 		<%if @u > @i %>
-			<p class="click" data-toggle="modal" data-target=".12">Focused <i class="fa fa-arrow-up green"></i></p>
+			<p class="click" data-toggle="modal" data-target=".12">Focused <strong style="color: green;">+<%=((1-(@u.to_f/@i.to_f))*100).round(0)*-1%>%</strong><i class="fa fa-arrow-up green"></i></p>
+		<%elsif @u == @i%>
+			<p class="click" data-toggle="modal" data-target=".14">Focused <strong style="color: brown;">0%</strong></p>			
 		<%else%>
-			<p class="click" data-toggle="modal" data-target=".12">Focused <i class="fa fa-arrow-down red"></i></p>
+			<p class="click" data-toggle="modal" data-target=".12">Focused <strong style="color: red;">-<%=((1-(@u.to_f/@i.to_f))*100).round(0)%>%</strong><i class="fa fa-arrow-down red"></i></p>
 		<%end%>
 	<%when 13%>
-		<% @i = @list_qa[k].to_i%>
+		<% @i = @list_qa[k].to_f%>
 		<% @u = @last_qu_hash[k].to_i%>
 		<%if @u > @i %>
-			<p class="click" data-toggle="modal" data-target=".13">Consistency <i class="fa fa-arrow-up green"></i></p>
+			<p class="click" data-toggle="modal" data-target=".13">Consistency <strong style="color: green;">+<%=((1-(@u.to_f/@i.to_f))*100).round(0)*-1%>%</strong><i class="fa fa-arrow-up green"></i></p>
+		<%elsif @u == @i%>
+			<p class="click" data-toggle="modal" data-target=".14">Consistency <strong style="color: brown;">0%</strong></p>			
 		<%else%>
-			<p class="click" data-toggle="modal" data-target=".13">Consistency <i class="fa fa-arrow-down red"></i></p>
+			<p class="click" data-toggle="modal" data-target=".13">Consistency <strong style="color: red;">-<%=((1-(@u.to_f/@i.to_f))*100).round(0)%>%</strong><i class="fa fa-arrow-down red"></i></p>
 		<%end%>
 	<%when 14%>
-		<% @i = @list_qa[k].to_i%>
+		<% @i = @list_qa[k].to_f%>
 		<% @u = @last_qu_hash[k].to_i%>
 		<%if @u > @i %>
-			<p class="click" data-toggle="modal" data-target=".14">Relation with others <i class="fa fa-arrow-up green"></i></p>
+			<p class="click" data-toggle="modal" data-target=".14">Relation with others <strong style="color: green;">+<%=((1-(@u.to_f/@i.to_f))*100).round(0)*-1%>%</strong><i class="fa fa-arrow-up green"></i></p>
+		<%elsif @u == @i%>
+			<p class="click" data-toggle="modal" data-target=".14">Relation with others <strong style="color: brown;">0%</strong></p>			
 		<%else%>
-			<p class="click" data-toggle="modal" data-target=".14">Relation with others <i class="fa fa-arrow-down red"></i></p>
+			<p class="click" data-toggle="modal" data-target=".14">Relation with others <strong style="color: red;">-<%=((1-(@u.to_f/@i.to_f))*100).round(0)%>%</strong><i class="fa fa-arrow-down red"></i></p>
 		<%end%>
 	<%when 15%>
-		<% @i = @list_qa[k].to_i%>
+		<% @i = @list_qa[k].to_f%>
 		<% @u = @last_qu_hash[k].to_i%>
 		<%if @u > @i %>
-			<p class="click" data-toggle="modal" data-target=".15">Positive attitude <i class="fa fa-arrow-up green"></i></p>
+			<p class="click" data-toggle="modal" data-target=".15">Positive attitude <strong style="color: green;">+<%=((1-(@u.to_f/@i.to_f))*100).round(0)*-1%>%</strong><i class="fa fa-arrow-up green"></i></p>
+		<%elsif @u == @i%>
+			<p class="click" data-toggle="modal" data-target=".14">Positive <strong style="color: brown;">0%</strong></p>			
 		<%else%>
-			<p class="click" data-toggle="modal" data-target=".15">Positive attitude <i class="fa fa-arrow-down red"></i></p>
+			<p class="click" data-toggle="modal" data-target=".15">Positive attitude <strong style="color: red;">-<%=((1-(@u.to_f/@i.to_f))*100).round(0)%>%</strong><i class="fa fa-arrow-down red"></i></p>
 		<%end%>
 	<%when 16%>
-		<% @i = @list_qa[k].to_i%>
+		<% @i = @list_qa[k].to_f%>
 		<% @u = @last_qu_hash[k].to_i%>
 		<%if @u > @i %>
-			<p class="click" data-toggle="modal" data-target=".16">Open to critics <i class="fa fa-arrow-up green"></i></p>
+			<p class="click" data-toggle="modal" data-target=".16">Open to critics <strong style="color: green;">+<%=((1-(@u.to_f/@i.to_f))*100).round(0)*-1%>%</strong><i class="fa fa-arrow-up green"></i></p>
+		<%elsif @u == @i%>
+			<p class="click" data-toggle="modal" data-target=".14">Critics<strong style="color: brown;">0%</strong></p>			
 		<%else%>
-			<p class="click" data-toggle="modal" data-target=".16">Open to critics <i class="fa fa-arrow-down red"></i></p>
+			<p class="click" data-toggle="modal" data-target=".16">Open to critics <strong style="color: red;">-<%=((1-(@u.to_f/@i.to_f))*100).round(0)%>%</strong><i class="fa fa-arrow-down red"></i></p>
 		<%end%>
 	<%when 17%>
-		<% @i = @list_qa[k].to_i%>
+		<% @i = @list_qa[k].to_f%>
 		<% @u = @last_qu_hash[k].to_i%>
 		<%if @u > @i %>
-			<p class="click" data-toggle="modal" data-target=".17">To sure of him self <i class="fa fa-arrow-up green"></i></p>
+			<p class="click" data-toggle="modal" data-target=".17">To sure of him self <strong style="color: green;">+<%=((1-(@u.to_f/@i.to_f))*100).round(0)*-1%>%</strong><i class="fa fa-arrow-up green"></i></p>
+		<%elsif @u == @i%>
+			<p class="click" data-toggle="modal" data-target=".14">Too sure <strong style="color: brown;">0%</strong></p>			
 		<%else%>
-			<p class="click" data-toggle="modal" data-target=".17">To sure of him self <i class="fa fa-arrow-down red"></i></p>
+			<p class="click" data-toggle="modal" data-target=".17">To sure of him self <strong style="color: red;">-<%=((1-(@u.to_f/@i.to_f))*100).round(0)%>%</strong><i class="fa fa-arrow-down red"></i></p>
 		<%end%>
 	<%when 18%>
-		<% @i = @list_qa[k].to_i%>
+		<% @i = @list_qa[k].to_f%>
 		<% @u = @last_qu_hash[k].to_i%>
 		<%if @u > @i %>
-			<p class="click" data-toggle="modal" data-target=".18">Extra mile <i class="fa fa-arrow-up green"></i></p>
+			<p class="click" data-toggle="modal" data-target=".18">Extra mile <strong style="color: green;">+<%=((1-(@u.to_f/@i.to_f))*100).round(0)*-1%>%</strong><i class="fa fa-arrow-up green"></i></p>
+		<%elsif @u == @i%>
+			<p class="click" data-toggle="modal" data-target=".14">Extra mile <strong style="color: brown;">0%</strong></p>			
 		<%else%>
-			<p class="click" data-toggle="modal" data-target=".18">Extra mile <i class="fa fa-arrow-down red"></i></p>
+			<p class="click" data-toggle="modal" data-target=".18">Extra mile <strong style="color: red;">-<%=((1-(@u.to_f/@i.to_f))*100).round(0)%>%</strong><i class="fa fa-arrow-down red"></i></p>
 		<%end%>
 	<%when 19%>
-		<% @i = @list_qa[k].to_i%>
+		<% @i = @list_qa[k].to_f%>
 		<% @u = @last_qu_hash[k].to_i%>
 		<%if @u > @i %>
-			<p class="click" data-toggle="modal" data-target=".19">Attitude and behaviour <i class="fa fa-arrow-up green"></i></p>
+			<p class="click" data-toggle="modal" data-target=".19">Attitude and behaviour <strong style="color: green;">+<%=((1-(@u.to_f/@i.to_f))*100).round(0)*-1%>%</strong><i class="fa fa-arrow-up green"></i></p>
+		<%elsif @u == @i%>
+			<p class="click" data-toggle="modal" data-target=".14">Attitude <strong style="color: brown;">0%</strong></p>			
 		<%else%>
-			<p class="click" data-toggle="modal" data-target=".19">Attitude and behaviour <i class="fa fa-arrow-down red"></i></p>
+			<p class="click" data-toggle="modal" data-target=".19">Attitude and behaviour <strong style="color: red;">-<%=((1-(@u.to_f/@i.to_f))*100).round(0)%>%</strong><i class="fa fa-arrow-down red"></i></p>
 		<%end%>
 	<%when 20%>
-		<% @i = @list_qa[k].to_i%>
+		<% @i = @list_qa[k].to_f%>
 		<% @u = @last_qu_hash[k].to_i%>
 		<%if @u > @i %>
-			<p class="click" data-toggle="modal" data-target=".20">Team work <i class="fa fa-arrow-up green"></i></p>
+			<p class="click" data-toggle="modal" data-target=".20">Team work <strong style="color: green;">+<%=((1-(@u.to_f/@i.to_f))*100).round(0)*-1%>%</strong><i class="fa fa-arrow-up green"></i></p>
+		<%elsif @u == @i%>
+			<p class="click" data-toggle="modal" data-target=".14">Team work <strong style="color: brown;">0%</strong></p>			
 		<%else%>
-			<p class="click" data-toggle="modal" data-target=".20">Team work <i class="fa fa-arrow-down red"></i></p>
+			<p class="click" data-toggle="modal" data-target=".20">Team work <strong style="color: red;">-<%=((1-(@u.to_f/@i.to_f))*100).round(0)%>%</strong><i class="fa fa-arrow-down red"></i></p>
 		<%end%>
 	<%when 21%>
-		<% @i = @list_qa[k].to_i%>
+		<% @i = @list_qa[k].to_f%>
 		<% @u = @last_qu_hash[k].to_i%>
 		<%if @u > @i %>
-			<p class="click" data-toggle="modal" data-target=".21">Blend in <i class="fa fa-arrow-up green"></i></p>
+			<p class="click" data-toggle="modal" data-target=".21">Blend in <strong style="color: green;">+<%=((1-(@u.to_f/@i.to_f))*100).round(0)*-1%>%</strong><i class="fa fa-arrow-up green"></i></p>
+		<%elsif @u == @i%>
+			<p class="click" data-toggle="modal" data-target=".14">Blend in <strong style="color: brown;">0%</strong></p>			
 		<%else%>
-			<p class="click" data-toggle="modal" data-target=".21">Blend in <i class="fa fa-arrow-down red"></i></p>
+			<p class="click" data-toggle="modal" data-target=".21">Blend in <strong style="color: red;">-<%=((1-(@u.to_f/@i.to_f))*100).round(0)%>%</strong><i class="fa fa-arrow-down red"></i></p>
 		<%end%>
 	<%when 22%>
-		<% @i = @list_qa[k].to_i%>
+		<% @i = @list_qa[k].to_f%>
 		<% @u = @last_qu_hash[k].to_i%>
 		<%if @u > @i %>
-			<p class="click" data-toggle="modal" data-target=".22">Counting hours <i class="fa fa-arrow-up green"></i></p>
+			<p class="click" data-toggle="modal" data-target=".22">Counting hours <strong style="color: green;">+<%=((1-(@u.to_f/@i.to_f))*100).round(0)*-1%>%</strong><i class="fa fa-arrow-up green"></i></p>
+		<%elsif @u == @i%>
+			<p class="click" data-toggle="modal" data-target=".14">Counting hours <strong style="color: brown;">0%</strong></p>			
 		<%else%>
-			<p class="click" data-toggle="modal" data-target=".22">Counting hours <i class="fa fa-arrow-down red"></i></p>
+			<p class="click" data-toggle="modal" data-target=".22">Counting hours <strong style="color: red;">-<%=((1-(@u.to_f/@i.to_f))*100).round(0)%>%</strong><i class="fa fa-arrow-down red"></i></p>
 		<%end%>
 	<%when 23%>
-		<% @i = @list_qa[k].to_i%>
+		<% @i = @list_qa[k].to_f%>
 		<% @u = @last_qu_hash[k].to_i%>
 		<%if @u > @i %>
-			<p class="click" data-toggle="modal" data-target=".23">Pressure on pay check or schedule <i class="fa fa-arrow-up green"></i></p>
+			<p class="click" data-toggle="modal" data-target=".23">Pressure on pay check or schedule <strong style="color: green;">+<%=((1-(@u.to_f/@i.to_f))*100).round(0)*-1%>%</strong><i class="fa fa-arrow-up green"></i></p>
+		<%elsif @u == @i%>
+			<p class="click" data-toggle="modal" data-target=".14">Pressure on pay check or schedule <strong style="color: brown;">0%</strong></p>			
 		<%else%>
-			<p class="click" data-toggle="modal" data-target=".23">Pressure on pay check or schedule <i class="fa fa-arrow-down red"></i></p>
+			<p class="click" data-toggle="modal" data-target=".23">Pressure on pay check or schedule <strong style="color: red;">-<%=((1-(@u.to_f/@i.to_f))*100).round(0)%>%</strong><i class="fa fa-arrow-down red"></i></p>
 		<%end%>
 	<%when 24%>
-		<% @i = @list_qa[k].to_i%>
+		<% @i = @list_qa[k].to_f%>
 		<% @u = @last_qu_hash[k].to_i%>
 		<%if @u > @i %>
-			<p class="click" data-toggle="modal" data-target=".24">Legal pressure <i class="fa fa-arrow-up green"></i></p>
+			<p class="click" data-toggle="modal" data-target=".24">Legal pressure <strong style="color: green;">+<%=((1-(@u.to_f/@i.to_f))*100).round(0)*-1%>%</strong><i class="fa fa-arrow-up green"></i></p>
+		<%elsif @u == @i%>
+			<p class="click" data-toggle="modal" data-target=".14">Legal pressure <strong style="color: brown;">0%</strong></p>			
 		<%else%>
-			<p class="click" data-toggle="modal" data-target=".24">Legal pressure <i class="fa fa-arrow-down red"></i></p>
+			<p class="click" data-toggle="modal" data-target=".24">Legal pressure <strong style="color: red;">-<%=((1-(@u.to_f/@i.to_f))*100).round(0)%>%</strong><i class="fa fa-arrow-down red"></i></p>
 		<%end%>
 	<%when 25%>
-		<% @i = @list_qa[k].to_i%>
+		<% @i = @list_qa[k].to_f%>
 		<% @u = @last_qu_hash[k].to_i%>
 		<%if @u > @i %>
-			<p class="click" data-toggle="modal" data-target=".25">Customer Drive <i class="fa fa-arrow-up green"></i></p>
+			<p class="click" data-toggle="modal" data-target=".25">Customer Drive <strong style="color: green;">+<%=((1-(@u.to_f/@i.to_f))*100).round(0)*-1%>%</strong><i class="fa fa-arrow-up green"></i></p>
+		<%elsif @u == @i%>
+			<p class="click" data-toggle="modal" data-target=".14">Customer Drive <strong style="color: brown;">0%</strong></p>			
 		<%else%>
-			<p class="click" data-toggle="modal" data-target=".25">Customer Drive <i class="fa fa-arrow-down red"></i></p>
+			<p class="click" data-toggle="modal" data-target=".25">Customer Drive <strong style="color: red;">-<%=((1-(@u.to_f/@i.to_f))*100).round(0)%>%</strong><i class="fa fa-arrow-down red"></i></p>
 		<%end%>
 	<%when 26%>
-		<% @i = @list_qa[k].to_i%>
+		<% @i = @list_qa[k].to_f%>
 		<% @u = @last_qu_hash[k].to_i%>
 		<%if @u > @i %>
-			<p class="click" data-toggle="modal" data-target=".26">Operational change <i class="fa fa-arrow-up green"></i></p>
+			<p class="click" data-toggle="modal" data-target=".26">Operational change <strong style="color: green;">+<%=((1-(@u.to_f/@i.to_f))*100).round(0)*-1%>%</strong><i class="fa fa-arrow-up green"></i></p>
+		<%elsif @u == @i%>
+			<p class="click" data-toggle="modal" data-target=".14">Operational change <strong style="color: brown;">0%</strong></p>			
 		<%else%>
-			<p class="click" data-toggle="modal" data-target=".26">Operational change <i class="fa fa-arrow-down red"></i></p>
+			<p class="click" data-toggle="modal" data-target=".26">Operational change <strong style="color: red;">-<%=((1-(@u.to_f/@i.to_f))*100).round(0)%>%</strong><i class="fa fa-arrow-down red"></i></p>
 		<%end%>
 	<%when 27%>
-		<% @i = @list_qa[k].to_i%>
+		<% @i = @list_qa[k].to_f%>
 		<% @u = @last_qu_hash[k].to_i%>
 		<%if @u > @i %>
-			<p class="click" data-toggle="modal" data-target=".27">Unpredictable situation <i class="fa fa-arrow-up green"></i></p>
+			<p class="click" data-toggle="modal" data-target=".27">Unpredictable situation <strong style="color: green;">+<%=((1-(@u.to_f/@i.to_f))*100).round(0)*-1%>%</strong><i class="fa fa-arrow-up green"></i></p>
+		<%elsif @u == @i%>
+			<p class="click" data-toggle="modal" data-target=".14">Unpredicable situation <strong style="color: brown;">0%</strong></p>			
 		<%else%>
-			<p class="click" data-toggle="modal" data-target=".27">Unpredictable situation <i class="fa fa-arrow-down red"></i></p>
+			<p class="click" data-toggle="modal" data-target=".27">Unpredictable situation <strong style="color: red;">-<%=((1-(@u.to_f/@i.to_f))*100).round(0)%>%</strong><i class="fa fa-arrow-down red"></i></p>
 		<%end%>
 	<%when 28%>
-		<% @i = @list_qa[k].to_i%>
+		<% @i = @list_qa[k].to_f%>
 		<% @u = @last_qu_hash[k].to_i%>
 		<%if @u > @i %>
-			<p class="click" data-toggle="modal" data-target=".28">Flexibility <i class="fa fa-arrow-up green"></i></p>
+			<p class="click" data-toggle="modal" data-target=".28">Flexibility <strong style="color: green;">+<%=((1-(@u.to_f/@i.to_f))*100).round(0)*-1%>%</strong><i class="fa fa-arrow-up green"></i></p>
+		<%elsif @u == @i%>
+			<p class="click" data-toggle="modal" data-target=".14">Flexibility<strong style="color: brown;">0%</strong></p>			
 		<%else%>
-			<p class="click" data-toggle="modal" data-target=".28">Flexibility <i class="fa fa-arrow-down red"></i></p>
+			<p class="click" data-toggle="modal" data-target=".28">Flexibility <strong style="color: red;">-<%=((1-(@u.to_f/@i.to_f))*100).round(0)%>%</strong><i class="fa fa-arrow-down red"></i></p>
 		<%end%>
 	<%when 29%>
-		<% @i = @list_qa[k].to_i%>
+		<% @i = @list_qa[k].to_f%>
 		<% @u = @last_qu_hash[k].to_i%>
 		<%if @u > @i %>
-			<p class="click" data-toggle="modal" data-target=".29">Good to work with <i class="fa fa-arrow-up green"></i></p>
+			<p class="click" data-toggle="modal" data-target=".29">Good to work with <strong style="color: green;">+<%=((1-(@u.to_f/@i.to_f))*100).round(0)*-1%>%</strong><i class="fa fa-arrow-up green"></i></p>
+		<%elsif @u == @i%>
+			<p class="click" data-toggle="modal" data-target=".14">Good to work with<strong style="color: brown;">0%</strong></p>			
 		<%else%>
-			<p class="click" data-toggle="modal" data-target=".29">Good to work with <i class="fa fa-arrow-down red"></i></p>
+			<p class="click" data-toggle="modal" data-target=".29">Good to work with <strong style="color: red;">-<%=((1-(@u.to_f/@i.to_f))*100).round(0)%>%</strong><i class="fa fa-arrow-down red"></i></p>
 		<%end%>
 	<%else%>
 		<p>Error</p>

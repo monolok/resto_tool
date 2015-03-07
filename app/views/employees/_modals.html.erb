@@ -1,7 +1,7 @@
 <div class="modal fade 1" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
   <div class="modal-dialog modal-lg">
     <div class="modal-content">
-	    <%= line_chart Score.where(employee_id: @employee.id).group(:created_at).sum(:qu1), :library => {hAxis: {title: "Months", discrete: true, format: "MM"}, vAxis: {title: "Score", discrete: true}, title: "History of score Predictable"}, max: 5.5, min: 0%>
+	    <%= line_chart Score.where(employee_id: @employee.id).limit(10).group(:created_at).sum(:qu1), :library => {hAxis: {title: "Months", discrete: true, format: "MM"}, vAxis: {title: "Score", discrete: true}, title: "History of score Predictable"}, max: 5.5, min: 0%>
     </div>
   </div>
 </div>
@@ -9,7 +9,7 @@
 <div class="modal fade 2" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
   <div class="modal-dialog modal-lg">
     <div class="modal-content">
-	    <%= line_chart Score.where(employee_id: @employee.id).group(:created_at).sum(:qu2), :library => {hAxis: {title: "Months", discrete: true, format: "MM"}, vAxis: {title: "Score", discrete: true}, title: "History of score Ponctuality"}, max: 5.5, min: 0%>
+	    <%= line_chart Score.where(employee_id: @employee.id).limit(10).group(:created_at).sum(:qu2), :library => {hAxis: {title: "Months", discrete: true, format: "MM"}, vAxis: {title: "Score", discrete: true}, title: "History of score Ponctuality"}, max: 5.5, min: 0%>
     </div>
   </div>
 </div>
@@ -17,7 +17,7 @@
 <div class="modal fade 3" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
   <div class="modal-dialog modal-lg">
     <div class="modal-content">
-	    <%= line_chart Score.where(employee_id: @employee.id).group(:created_at).sum(:qu3), :library => {hAxis: {title: "Months", discrete: true, format: "MM"}, vAxis: {title: "Score", discrete: true}, title: "History of score Personal life"}, max: 5.5, min: 0%>
+	    <%= line_chart Score.where(employee_id: @employee.id).limit(10).group(:created_at).sum(:qu3), :library => {hAxis: {title: "Months", discrete: true, format: "MM"}, vAxis: {title: "Score", discrete: true}, title: "History of score Personal life"}, max: 5.5, min: 0%>
     </div>
   </div>
 </div>
@@ -25,7 +25,7 @@
 <div class="modal fade 4" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
   <div class="modal-dialog modal-lg">
     <div class="modal-content">
-	    <%= line_chart Score.where(employee_id: @employee.id).group(:created_at).sum(:qu4), :library => {hAxis: {title: "Months", discrete: true, format: "MM"}, vAxis: {title: "Score", discrete: true}, title: "History of score Pay check in advance"}, max: 5.5, min: 0%>
+	    <%= line_chart Score.where(employee_id: @employee.id).limit(10).group(:created_at).sum(:qu4), :library => {hAxis: {title: "Months", discrete: true, format: "MM"}, vAxis: {title: "Score", discrete: true}, title: "History of score Pay check in advance"}, max: 5.5, min: 0%>
     </div>
   </div>
 </div>
@@ -33,7 +33,7 @@
 <div class="modal fade 5" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
   <div class="modal-dialog modal-lg">
     <div class="modal-content">
-	    <%= line_chart Score.where(employee_id: @employee.id).group(:created_at).sum(:qu5), :library => {hAxis: {title: "Months", discrete: true, format: "MM"}, vAxis: {title: "Score", discrete: true}, title: "History of score Respecting Rules"}, max: 5.5, min: 0%>
+	    <%= line_chart Score.where(employee_id: @employee.id).limit(10).group(:created_at).sum(:qu5), :library => {hAxis: {title: "Months", discrete: true, format: "MM"}, vAxis: {title: "Score", discrete: true}, title: "History of score Respecting Rules"}, max: 5.5, min: 0%>
     </div>
   </div>
 </div>
@@ -41,7 +41,7 @@
 <div class="modal fade 6" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
   <div class="modal-dialog modal-lg">
     <div class="modal-content">
-	    <%= line_chart Score.where(employee_id: @employee.id).group(:created_at).sum(:qu6), :library => {hAxis: {title: "Months", discrete: true, format: "MM"}, vAxis: {title: "Score", discrete: true}, title: "History of score Get the work done"}, max: 5.5, min: 0%>
+	    <%= line_chart Score.where(employee_id: @employee.id).limit(10).group(:created_at).sum(:qu6), :library => {hAxis: {title: "Months", discrete: true, format: "MM"}, vAxis: {title: "Score", discrete: true}, title: "History of score Get the work done"}, max: 5.5, min: 0%>
     </div>
   </div>
 </div>
@@ -49,7 +49,7 @@
 <div class="modal fade 7" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
   <div class="modal-dialog modal-lg">
     <div class="modal-content">
-	    <%= line_chart Score.where(employee_id: @employee.id).group(:created_at).sum(:qu7), :library => {hAxis: {title: "Months", discrete: true, format: "MM"}, vAxis: {title: "Score", discrete: true}, title: "History of score Time efficient"}, max: 5.5, min: 0%>
+	    <%= line_chart Score.where(employee_id: @employee.id).limit(10).group(:created_at).sum(:qu7), :library => {hAxis: {title: "Months", discrete: true, format: "MM"}, vAxis: {title: "Score", discrete: true}, title: "History of score Time efficient"}, max: 5.5, min: 0%>
     </div>
   </div>
 </div>
@@ -57,7 +57,7 @@
 <div class="modal fade 8" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
   <div class="modal-dialog modal-lg">
     <div class="modal-content">
-	    <%= line_chart Score.where(employee_id: @employee.id).group(:created_at).sum(:qu8), :library => {hAxis: {title: "Months", discrete: true, format: "MM"}, vAxis: {title: "Score", discrete: true}, title: "History of score Do the police"}, max: 5.5, min: 0%>
+	    <%= line_chart Score.where(employee_id: @employee.id).limit(10).group(:created_at).sum(:qu8), :library => {hAxis: {title: "Months", discrete: true, format: "MM"}, vAxis: {title: "Score", discrete: true}, title: "History of score Do the police"}, max: 5.5, min: 0%>
     </div>
   </div>
 </div>
@@ -65,7 +65,7 @@
 <div class="modal fade 9" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
   <div class="modal-dialog modal-lg">
     <div class="modal-content">
-	    <%= line_chart Score.where(employee_id: @employee.id).group(:created_at).sum(:qu9), :library => {hAxis: {title: "Months", discrete: true, format: "MM"}, vAxis: {title: "Score", discrete: true}, title: "History of score Trustworthy"}, max: 5.5, min: 0%>
+	    <%= line_chart Score.where(employee_id: @employee.id).limit(10).group(:created_at).sum(:qu9), :library => {hAxis: {title: "Months", discrete: true, format: "MM"}, vAxis: {title: "Score", discrete: true}, title: "History of score Trustworthy"}, max: 5.5, min: 0%>
     </div>
   </div>
 </div>
@@ -73,7 +73,7 @@
 <div class="modal fade 10" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
   <div class="modal-dialog modal-lg">
     <div class="modal-content">
-	    <%= line_chart Score.where(employee_id: @employee.id).group(:created_at).sum(:qu10), :library => {hAxis: {title: "Months", discrete: true, format: "MM"}, vAxis: {title: "Score", discrete: true}, title: "History of score Room for improvment"}, max: 5.5, min: 0%>
+	    <%= line_chart Score.where(employee_id: @employee.id).limit(10).group(:created_at).sum(:qu10), :library => {hAxis: {title: "Months", discrete: true, format: "MM"}, vAxis: {title: "Score", discrete: true}, title: "History of score Room for improvment"}, max: 5.5, min: 0%>
     </div>
   </div>
 </div>
@@ -81,7 +81,7 @@
 <div class="modal fade 11" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
   <div class="modal-dialog modal-lg">
     <div class="modal-content">
-	    <%= line_chart Score.where(employee_id: @employee.id).group(:created_at).sum(:qu11), :library => {hAxis: {title: "Months", discrete: true, format: "MM"}, vAxis: {title: "Score", discrete: true}, title: "History of score Rush hours"}, max: 5.5, min: 0%>
+	    <%= line_chart Score.where(employee_id: @employee.id).limit(10).group(:created_at).sum(:qu11), :library => {hAxis: {title: "Months", discrete: true, format: "MM"}, vAxis: {title: "Score", discrete: true}, title: "History of score Rush hours"}, max: 5.5, min: 0%>
     </div>
   </div>
 </div>
@@ -89,7 +89,7 @@
 <div class="modal fade 12" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
   <div class="modal-dialog modal-lg">
     <div class="modal-content">
-	    <%= line_chart Score.where(employee_id: @employee.id).group(:created_at).sum(:qu12), :library => {hAxis: {title: "Months", discrete: true, format: "MM"}, vAxis: {title: "Score", discrete: true}, title: "History of score Focused"}, max: 5.5, min: 0%>
+	    <%= line_chart Score.where(employee_id: @employee.id).limit(10).group(:created_at).sum(:qu12), :library => {hAxis: {title: "Months", discrete: true, format: "MM"}, vAxis: {title: "Score", discrete: true}, title: "History of score Focused"}, max: 5.5, min: 0%>
     </div>
   </div>
 </div>
@@ -97,7 +97,7 @@
 <div class="modal fade 13" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
   <div class="modal-dialog modal-lg">
     <div class="modal-content">
-	    <%= line_chart Score.where(employee_id: @employee.id).group(:created_at).sum(:qu13), :library => {hAxis: {title: "Months", discrete: true, format: "MM"}, vAxis: {title: "Score", discrete: true}, title: "History of score Consistency"}, max: 5.5, min: 0%>
+	    <%= line_chart Score.where(employee_id: @employee.id).limit(10).group(:created_at).sum(:qu13), :library => {hAxis: {title: "Months", discrete: true, format: "MM"}, vAxis: {title: "Score", discrete: true}, title: "History of score Consistency"}, max: 5.5, min: 0%>
     </div>
   </div>
 </div>
@@ -105,7 +105,7 @@
 <div class="modal fade 14" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
   <div class="modal-dialog modal-lg">
     <div class="modal-content">
-	    <%= line_chart Score.where(employee_id: @employee.id).group(:created_at).sum(:qu14), :library => {hAxis: {title: "Months", discrete: true, format: "MM"}, vAxis: {title: "Score", discrete: true}, title: "History of score Relation with others"}, max: 5.5, min: 0%>
+	    <%= line_chart Score.where(employee_id: @employee.id).limit(10).group(:created_at).sum(:qu14), :library => {hAxis: {title: "Months", discrete: true, format: "MM"}, vAxis: {title: "Score", discrete: true}, title: "History of score Relation with others"}, max: 5.5, min: 0%>
     </div>
   </div>
 </div>
@@ -113,7 +113,7 @@
 <div class="modal fade 15" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
   <div class="modal-dialog modal-lg">
     <div class="modal-content">
-	    <%= line_chart Score.where(employee_id: @employee.id).group(:created_at).sum(:qu15), :library => {hAxis: {title: "Months", discrete: true, format: "MM"}, vAxis: {title: "Score", discrete: true}, title: "History of score Positive attitude"}, max: 5.5, min: 0%>
+	    <%= line_chart Score.where(employee_id: @employee.id).limit(10).group(:created_at).sum(:qu15), :library => {hAxis: {title: "Months", discrete: true, format: "MM"}, vAxis: {title: "Score", discrete: true}, title: "History of score Positive attitude"}, max: 5.5, min: 0%>
     </div>
   </div>
 </div>
@@ -121,7 +121,7 @@
 <div class="modal fade 16" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
   <div class="modal-dialog modal-lg">
     <div class="modal-content">
-	    <%= line_chart Score.where(employee_id: @employee.id).group(:created_at).sum(:qu16), :library => {hAxis: {title: "Months", discrete: true, format: "MM"}, vAxis: {title: "Score", discrete: true}, title: "History of score Open to critics"}, max: 5.5, min: 0%>
+	    <%= line_chart Score.where(employee_id: @employee.id).limit(10).group(:created_at).sum(:qu16), :library => {hAxis: {title: "Months", discrete: true, format: "MM"}, vAxis: {title: "Score", discrete: true}, title: "History of score Open to critics"}, max: 5.5, min: 0%>
     </div>
   </div>
 </div>
@@ -129,7 +129,7 @@
 <div class="modal fade 17" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
   <div class="modal-dialog modal-lg">
     <div class="modal-content">
-	    <%= line_chart Score.where(employee_id: @employee.id).group(:created_at).sum(:qu17), :library => {hAxis: {title: "Months", discrete: true, format: "MM"}, vAxis: {title: "Score", discrete: true}, title: "History of score Too sure of him-self"}, max: 5.5, min: 0%>
+	    <%= line_chart Score.where(employee_id: @employee.id).limit(10).group(:created_at).sum(:qu17), :library => {hAxis: {title: "Months", discrete: true, format: "MM"}, vAxis: {title: "Score", discrete: true}, title: "History of score Too sure of him-self"}, max: 5.5, min: 0%>
     </div>
   </div>
 </div>
@@ -137,7 +137,7 @@
 <div class="modal fade 18" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
   <div class="modal-dialog modal-lg">
     <div class="modal-content">
-	    <%= line_chart Score.where(employee_id: @employee.id).group(:created_at).sum(:qu18), :library => {hAxis: {title: "Months", discrete: true, format: "MM"}, vAxis: {title: "Score", discrete: true}, title: "History of score Extra mile"}, max: 5.5, min: 0%>
+	    <%= line_chart Score.where(employee_id: @employee.id).limit(10).group(:created_at).sum(:qu18), :library => {hAxis: {title: "Months", discrete: true, format: "MM"}, vAxis: {title: "Score", discrete: true}, title: "History of score Extra mile"}, max: 5.5, min: 0%>
     </div>
   </div>
 </div>
@@ -145,7 +145,7 @@
 <div class="modal fade 19" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
   <div class="modal-dialog modal-lg">
     <div class="modal-content">
-	    <%= line_chart Score.where(employee_id: @employee.id).group(:created_at).sum(:qu19), :library => {hAxis: {title: "Months", discrete: true, format: "MM"}, vAxis: {title: "Score", discrete: true}, title: "History of score Attitude and behaviour"}, max: 5.5, min: 0%>
+	    <%= line_chart Score.where(employee_id: @employee.id).limit(10).group(:created_at).sum(:qu19), :library => {hAxis: {title: "Months", discrete: true, format: "MM"}, vAxis: {title: "Score", discrete: true}, title: "History of score Attitude and behaviour"}, max: 5.5, min: 0%>
     </div>
   </div>
 </div>
@@ -153,7 +153,7 @@
 <div class="modal fade 20" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
   <div class="modal-dialog modal-lg">
     <div class="modal-content">
-	    <%= line_chart Score.where(employee_id: @employee.id).group(:created_at).sum(:qu20), :library => {hAxis: {title: "Months", discrete: true, format: "MM"}, vAxis: {title: "Score", discrete: true}, title: "History of score Team work"}, max: 5.5, min: 0%>
+	    <%= line_chart Score.where(employee_id: @employee.id).limit(10).group(:created_at).sum(:qu20), :library => {hAxis: {title: "Months", discrete: true, format: "MM"}, vAxis: {title: "Score", discrete: true}, title: "History of score Team work"}, max: 5.5, min: 0%>
     </div>
   </div>
 </div>
@@ -161,7 +161,7 @@
 <div class="modal fade 21" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
   <div class="modal-dialog modal-lg">
     <div class="modal-content">
-	    <%= line_chart Score.where(employee_id: @employee.id).group(:created_at).sum(:qu21), :library => {hAxis: {title: "Months", discrete: true, format: "MM"}, vAxis: {title: "Score", discrete: true}, title: "History of score Blend in"}, max: 5.5, min: 0%>
+	    <%= line_chart Score.where(employee_id: @employee.id).limit(10).group(:created_at).sum(:qu21), :library => {hAxis: {title: "Months", discrete: true, format: "MM"}, vAxis: {title: "Score", discrete: true}, title: "History of score Blend in"}, max: 5.5, min: 0%>
     </div>
   </div>
 </div>
@@ -169,7 +169,7 @@
 <div class="modal fade 22" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
   <div class="modal-dialog modal-lg">
     <div class="modal-content">
-	    <%= line_chart Score.where(employee_id: @employee.id).group(:created_at).sum(:qu22), :library => {hAxis: {title: "Months", discrete: true, format: "MM"}, vAxis: {title: "Score", discrete: true}, title: "History of score Counting hours"}, max: 5.5, min: 0%>
+	    <%= line_chart Score.where(employee_id: @employee.id).limit(10).group(:created_at).sum(:qu22), :library => {hAxis: {title: "Months", discrete: true, format: "MM"}, vAxis: {title: "Score", discrete: true}, title: "History of score Counting hours"}, max: 5.5, min: 0%>
     </div>
   </div>
 </div>
@@ -177,7 +177,7 @@
 <div class="modal fade 23" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
   <div class="modal-dialog modal-lg">
     <div class="modal-content">
-	    <%= line_chart Score.where(employee_id: @employee.id).group(:created_at).sum(:qu23), :library => {hAxis: {title: "Months", discrete: true, format: "MM"}, vAxis: {title: "Score", discrete: true}, title: "History of score Pressure on paycheck or schedule"}, max: 5.5, min: 0%>
+	    <%= line_chart Score.where(employee_id: @employee.id).limit(10).group(:created_at).sum(:qu23), :library => {hAxis: {title: "Months", discrete: true, format: "MM"}, vAxis: {title: "Score", discrete: true}, title: "History of score Pressure on paycheck or schedule"}, max: 5.5, min: 0%>
     </div>
   </div>
 </div>
@@ -185,7 +185,7 @@
 <div class="modal fade 24" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
   <div class="modal-dialog modal-lg">
     <div class="modal-content">
-	    <%= line_chart Score.where(employee_id: @employee.id).group(:created_at).sum(:qu24), :library => {hAxis: {title: "Months", discrete: true, format: "MM"}, vAxis: {title: "Score", discrete: true}, title: "History of score Legal pressure"}, max: 5.5, min: 0%>
+	    <%= line_chart Score.where(employee_id: @employee.id).limit(10).group(:created_at).sum(:qu24), :library => {hAxis: {title: "Months", discrete: true, format: "MM"}, vAxis: {title: "Score", discrete: true}, title: "History of score Legal pressure"}, max: 5.5, min: 0%>
     </div>
   </div>
 </div>
@@ -193,7 +193,7 @@
 <div class="modal fade 25" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
   <div class="modal-dialog modal-lg">
     <div class="modal-content">
-	    <%= line_chart Score.where(employee_id: @employee.id).group(:created_at).sum(:qu25), :library => {hAxis: {title: "Months", discrete: true, format: "MM"}, vAxis: {title: "Score", discrete: true}, title: "History of score Customer Drive"}, max: 5.5, min: 0%>
+	    <%= line_chart Score.where(employee_id: @employee.id).limit(10).group(:created_at).sum(:qu25), :library => {hAxis: {title: "Months", discrete: true, format: "MM"}, vAxis: {title: "Score", discrete: true}, title: "History of score Customer Drive"}, max: 5.5, min: 0%>
     </div>
   </div>
 </div>
@@ -201,7 +201,7 @@
 <div class="modal fade 26" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
   <div class="modal-dialog modal-lg">
     <div class="modal-content">
-	    <%= line_chart Score.where(employee_id: @employee.id).group(:created_at).sum(:qu26), :library => {hAxis: {title: "Months", discrete: true, format: "MM"}, vAxis: {title: "Score", discrete: true}, title: "History of score Operational changes"}, max: 5.5, min: 0%>
+	    <%= line_chart Score.where(employee_id: @employee.id).limit(10).group(:created_at).sum(:qu26), :library => {hAxis: {title: "Months", discrete: true, format: "MM"}, vAxis: {title: "Score", discrete: true}, title: "History of score Operational changes"}, max: 5.5, min: 0%>
     </div>
   </div>
 </div>
@@ -209,7 +209,7 @@
 <div class="modal fade 27" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
   <div class="modal-dialog modal-lg">
     <div class="modal-content">
-	    <%= line_chart Score.where(employee_id: @employee.id).group(:created_at).sum(:qu27), :library => {hAxis: {title: "Months", discrete: true, format: "MM"}, vAxis: {title: "Score", discrete: true}, title: "History of score Unpredictable situation"}, max: 5.5, min: 0%>
+	    <%= line_chart Score.where(employee_id: @employee.id).limit(10).group(:created_at).sum(:qu27), :library => {hAxis: {title: "Months", discrete: true, format: "MM"}, vAxis: {title: "Score", discrete: true}, title: "History of score Unpredictable situation"}, max: 5.5, min: 0%>
     </div>
   </div>
 </div>
@@ -217,7 +217,7 @@
 <div class="modal fade 28" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
   <div class="modal-dialog modal-lg">
     <div class="modal-content">
-	    <%= line_chart Score.where(employee_id: @employee.id).group(:created_at).sum(:qu28), :library => {hAxis: {title: "Months", discrete: true, format: "MM"}, vAxis: {title: "Score", discrete: true}, title: "History of score Flexibility"}, max: 5.5, min: 0%>
+	    <%= line_chart Score.where(employee_id: @employee.id).limit(10).group(:created_at).sum(:qu28), :library => {hAxis: {title: "Months", discrete: true, format: "MM"}, vAxis: {title: "Score", discrete: true}, title: "History of score Flexibility"}, max: 5.5, min: 0%>
     </div>
   </div>
 </div>
@@ -225,7 +225,7 @@
 <div class="modal fade 29" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
   <div class="modal-dialog modal-lg">
     <div class="modal-content">
-	    <%= line_chart Score.where(employee_id: @employee.id).group(:created_at).sum(:qu29), :library => {hAxis: {title: "Months", discrete: true, format: "MM"}, vAxis: {title: "Score", discrete: true}, title: "History of score Good to work with"}, max: 5.5, min: 0%>
+	    <%= line_chart Score.where(employee_id: @employee.id).limit(10).group(:created_at).sum(:qu29), :library => {hAxis: {title: "Months", discrete: true, format: "MM"}, vAxis: {title: "Score", discrete: true}, title: "History of score Good to work with"}, max: 5.5, min: 0%>
     </div>
   </div>
 </div>
