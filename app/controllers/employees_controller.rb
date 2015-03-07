@@ -31,28 +31,28 @@ class EmployeesController < ApplicationController
   end
 
   def show
-    @n = 29
+    @n = 1
     @list_qa = Hash.new
     @list_pb = Hash.new
-    while @n != 0
+    while @n != 29
       @qu = Score.where(employee_id: @employee.id).average("qu#{@n}").to_f.round(2)
       if @qu > 2.8
       @list_qa[@n] = @qu
       else
       @list_pb[@n] = @qu
       end
-      @n = @n - 1
+      @n = @n + 1
     end
 
     if Score.where(employee_id: @employee.id).last.nil?
       
     else
-      @l = 29
+      @l = 1
       @last_qu = Score.where(employee_id: @employee.id).last
       @last_qu_hash = Hash.new
-      while @l != 0
+      while @l != 29
         @last_qu_hash[@l] = @last_qu.attribute_for_inspect("qu#{@l}")
-        @l = @l -1
+        @l = @l + 1
       end
     end
   end
