@@ -11,6 +11,9 @@
 			<%= link_to employee_score_new_path(@employee.id) do%>
 				<i class="fa fa-check-square-o fa-2x"></i>
 			<%end%>
+			<%= link_to '', :onclick => 'window.print();return false;' do%>
+				<i class="fa fa-print fa-2x"></i>
+			<%end%>
 			<%if user_signed_in?%>
 				<%= link_to @employee, method: :delete, data: { confirm: 'Are you sure?' } do %>
 		        	<i class="fa fa-trash fa-2x"></i>
@@ -21,7 +24,7 @@
 		        <%end%>	
 	        <%end%>
         </div>
-        <div class="inherit">
+        <div class="inherit" id="pad-bot-print">
 	        <%case @employee.pom%>
 	          <%when 1%>
 	          	<i class="fa fa-star"></i>
@@ -54,7 +57,7 @@
 	</div>
 	<%else%>
 		<div class="row">
-			<div class="col-sm-4 col-xs-4">
+			<div class="col-sm-4 col-xs-4" id="print-score">
 				<h5 class="text-info">Latest 5 scores:</h5>
 				<% @employee.scores.order("created_at DESC").limit(5).each do |r|%>
 				<div class="pad-bot2">
@@ -101,12 +104,12 @@
 				</div>
 				<%end%>
 			</div>
-			<div class="col-sm-offset-1 col-sm-3 col-xs-4 responsive-text">
-				<h5 class="text-success">Strengths:</h5>
+			<div class="col-sm-offset-1 col-sm-3 col-xs-4 responsive-text" id="print-margin1">
+				<h5 class="text-success" id="fontsize-print1">Strengths:</h5>
 				<%= render "case_for_qa"%>
 			</div>
-			<div class="col-sm-4 col-xs-4 responsive-text">
-				<h5 class="text-danger">Weaknesses:</h5>
+			<div class="col-sm-4 col-xs-4 responsive-text" id="print-margin2">
+				<h5 class="text-danger" id="fontsize-print2">Weaknesses:</h5>
 				<%= render "case_for_pb"%>
 			</div>
 		</div>

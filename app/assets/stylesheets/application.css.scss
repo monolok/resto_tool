@@ -428,3 +428,46 @@ input[type="checkbox"] {
 	}	
 
 }
+@media print{
+	.letter-spacing {
+		display: none;
+	}
+	#print-score {
+		display: none;
+	}
+	#print-margin1 {
+		width: 50%;
+	}
+	#print-margin2 {
+		width: 40%;
+	}
+	#pad-bot-print{
+		padding-bottom: 4%;
+	}
+	#pad-bot-print-mini{
+		padding-bottom: 6%;
+	}
+	#fontsize-print1{
+		font-size: 30px;
+		padding-bottom: 3%;
+	}
+	#fontsize-print2{
+		font-size: 30px;
+		padding-bottom: 3%;
+	}
+	.border-cat{
+		display: none;
+	}	
+	#people-print {
+		width: 100%;
+	}
+	#margin-bot-print{
+		margin-bottom: 5%;
+	}
+	.border-employee {
+		padding: none;
+	}
+	a[href]:after {
+    	content: none !important;
+  	}
+}

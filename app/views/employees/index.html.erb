@@ -1,5 +1,5 @@
 <div class="container-fluid">
-  <div class="row center pad-bot">
+  <div class="row center pad-bot" id="pad-bot-print-mini">
     <h3 class="center pad-bot2 click" data-toggle="modal" data-target=".bs-example-modal-sm">Your people</h3>
     <div class="border-cat">
       <%= link_to "All", employees_path%>     
@@ -89,11 +89,14 @@
             <%end%>
           <%end%>
     </div>
+    <div class="border-cat click">
+        <i class="fa fa-print fa-2x", onclick="window.print();return false;"></i>
+    </div>
   </div>
 
 <%if user_signed_in?%>
   <div class="row">
-    <div class="col-xs-8">
+    <div class="col-xs-8" id="people-print">
       <div class="row pad">
         <% @employees.each do |employee| %>
 
@@ -108,7 +111,7 @@
             <%@kf = 0%>
           <%end%> 
 
-          <div class="col-sm-4 border-employee">
+          <div class="col-sm-4 border-employee" id="margin-bot-print">
             <div class="row pad-bot">
               <strong><%= link_to employee.name, employee%></strong>
             </div>
@@ -125,7 +128,7 @@
               <%= employee.position%>
             </div>
 
-            <div class="row pad-bot3">
+            <div class="row pad-bot3" id="print-score">
             <% if employee.scores.last.nil?%>
             <%else%>
             <%@last_time_reviewer_id = employee.scores.last.reviewer_id%>      
@@ -141,7 +144,7 @@
               <%end%>
             </div> 
           <% if user_signed_in?%>
-            <div class="row">
+            <div class="row" id="print-score">
               <%= link_to employee, method: :delete, data: { confirm: 'Are you sure?' } do %>
                 <i class="fa fa-trash fa-2x"></i>
               <%end%>
@@ -155,9 +158,9 @@
       </div>
     </div>
 
-    <div class="col-xs-offset-1 col-xs-3">
+    <div class="col-xs-offset-1 col-xs-3" id="print-score">
       </br>
-      </br>
+      <strong>Your reviewers:</strong>
       <div class="row pad">     
         <ul class="col-xs-12 ul_style border-reviewer">
           <%if current_user.reviewers.blank? %>
@@ -165,7 +168,7 @@
           <%else%>
             <% current_user.reviewers.each do |r| %>
               <li class="text-capitalize pad-bot"><strong><%= r.name%></strong></li>
-              <li id="pad-li-connected">Connected:</li>
+              <li id="pad-li-connected">Last connection:</li>
               <li class="pad-bot"><em><%= r.updated_at.strftime("%A %B %d")%></em></li>
               <%if r.scores.empty?%>
                 <li class="pad-bot"><mark>No reviews done yet</mark></li>
