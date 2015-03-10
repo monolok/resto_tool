@@ -1,22 +1,24 @@
-<h2>Sign up Basic account: <%= @user.email%></h2>
+<h2 class="center pad">Sign Up for a Basic plan with <%= @user.email%></h2>
 
 <%= form_tag new_basic_path do %>
-  <article>
+  <article class="center">
     <label class="amount">
-      <span>Amount: $20.00</span>
+      <h3>Amount: $29.00</h3>
     </label>
   </article>
-<script 
+  <div class="center pad-bot3">
+    <script 
 
-  src="https://checkout.stripe.com/checkout.js" class="stripe-button"
-  data-key="<%= Rails.configuration.stripe[:publishable_key] %>"
-  data-description="A month's subscription"
-  data-amount="2000" 
-  data-email="<%= @user.email%>" 
-  data-allow-remember-me="false"
+      src="https://checkout.stripe.com/checkout.js" class="stripe-button"
+      data-key="<%= Rails.configuration.stripe[:publishable_key] %>"
+      data-description="Basic plan"
+      data-amount="2900" 
+      data-email="<%= @user.email%>" 
+      data-allow-remember-me="false"
 
 
-  >
-</script>
+      >
+    </script>
+  </div>
 <% end %>
 <!-- :url => {:action => "create_new_basic"} -->
