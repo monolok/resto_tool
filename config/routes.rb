@@ -12,6 +12,8 @@ Rails.application.routes.draw do
     post 'new_basic', to: "users/registrations#create_new_basic"
     get 'new_pro', to: "users/registrations#new_pro"
     post 'new_pro', to: "users/registrations#create_new_pro"
+    post 'downgrade', to: "users/registrations#downgrade"
+    post 'upgrade', to: "users/registrations#upgrade"
   end
   devise_for :reviewers, controllers: { registrations: "reviewers/registrations", sessions: "reviewers/sessions"}
 

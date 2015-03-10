@@ -4,6 +4,11 @@
     <%= link_to employees_path do%>
       <i class="fa fa-arrow-circle-o-left fa-2x"></i>
     <%end%> 
+    <%if current_user.plan_id == nil%>
+      <p>Your plan is: free</p>
+    <%else%>
+      <p>Your plan is: <%= current_user.plan_id%></p>
+    <%end%>
   </div>  
 </div>
 
@@ -40,6 +45,18 @@
     <div class="center">
       <%= f.submit "Update", class: "btn btn-default" %>
       <%= link_to "Cancel my account", registration_path(resource_name), data: { confirm: "Are you sure?" }, method: :delete, class: "btn btn-danger" %>
+
+      <%if current_user.plan_id == nil%>
+        <%= link_to "Upgrade to basic", new_basic_path, class: "btn btn-info"%>
+      <%elsif current_user.plan_id == "basic"%>
+        <%= link_to "Upgrade to pro", upgrade_path, method: :post, data: { confirm: "You will be charged for the pro plan" }, class: "btn btn-info"%>
+        <%= link_to "Downgrade", downgrade_path, method: :post, data: { confirm: "Extra employees and reviewers created will be deleted" }, class: "btn btn-info" %>        
+      <%elsif current_user.plan_id == "pro"%>
+        <%= link_to "Downgrade", downgrade_path, method: :post, data: { confirm: "Extra employees and reviewers created will be deleted" }, class: "btn btn-info" %>
+      <%else%>
+        <%= link_to "Downgrade", downgrade_path, method: :post, data: { confirm: "Extra employees and reviewers created will be deleted" }, class: "btn btn-info" %>
+      <%end%>
+      
     </div>
   </div>
  <% end %>

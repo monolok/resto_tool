@@ -77,6 +77,72 @@ class Users::RegistrationsController < Devise::RegistrationsController
   #   super
   # end
 
+  def downgrade
+    if current_user.plan_id == "basic"
+      customer = Stripe::Customer.retrieve("#{current_user.stripe_id}")
+      customer.subscriptions.retrieve("#{customer.subscriptions.data[0].id}").delete
+      customer.delete
+      current_user.update(plan_id: nil)
+      if current_user.employees.count > 5
+        employees_to_delete = current_user.employees.count - 5
+        current_user.employees.last(employees_to_delete).each do |e|
+          e.delete
+        end
+      end
+      if current_user.reviewers.count > 1
+        reviewers_to_delete = current_user.employees.count - 1
+        current_user.employees.last(reviewers_to_delete).each do |r|
+          r.delete
+        end
+      end      
+      redirect_to employees_path
+    elsif current_user.plan_id == "pro"
+      customer = Stripe::Customer.retrieve("#{current_user.stripe_id}")
+      subscription = customer.subscriptions.retrieve("#{customer.subscriptions.data[0].id}")
+      subscription.plan = "basic"
+      subscription.save
+      current_user.update(plan_id: "basic")
+      if current_user.employees.count > 25
+        employees_to_delete = current_user.employees.count - 25
+        current_user.employees.last(employees_to_delete).each do |e|
+          e.delete
+        end
+      end
+      if current_user.reviewers.count > 5
+        reviewers_to_delete = current_user.employees.count - 5
+        current_user.employees.last(reviewers_to_delete).each do |r|
+          r.delete
+        end
+      end
+      redirect_to employees_path
+    else
+      flash[:notice] = "To downgrade contact your commercial"
+      # customer = Stripe::Customer.retrieve("#{current_user.stripe_id}")
+      # subscription = customer.subscriptions.retrieve("#{customer.subscriptions.data[0].id}")
+      # subscription.plan = "pro"
+      # subscription.save
+      # current_user.update(plan_id: "pro")
+      # if current_user.employees.count > 50
+      #   employees_to_delete = current_user.employees.count - 50
+      #   current_user.employees.last(employees_to_delete).destroy_all
+      # end
+      # if current_user.reviewers.count > 10
+      #   reviewers_to_delete = current_user.employees.count - 10
+      #   current_user.employees.last(reviewers_to_delete).destroy_all
+      # end      
+      redirect_to employees_path 
+    end
+  end
+
+  def upgrade
+    customer = Stripe::Customer.retrieve("#{current_user.stripe_id}")
+    subscription = customer.subscriptions.retrieve("#{customer.subscriptions.data[0].id}")
+    subscription.plan = "pro"
+    subscription.save
+    current_user.update(plan_id: "pro")
+    redirect_to employees_path
+  end
+
   # DELETE /resource
   def destroy
     current_user.employees.destroy_all
