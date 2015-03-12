@@ -129,20 +129,19 @@
             </div>
 
             <div class="row pad-bot3" id="print-score">
-            <% if employee.scores.last.nil?%>
-            <%else%>
-            <%@last_time_reviewer_id = employee.scores.last.reviewer_id%>      
-            <%end%>
-
-              <% if @last_time_reviewer_id.nil?%>
+              <% if employee.scores.last.nil?%>
+                <div><mark>No reviews yet</mark></div>
+              <%elsif employee.scores.last.reviewer_id.nil?%>
                 <div>Last review by:</div>
                 <div><mark>ADMIN</mark></div>
               <%else%>
-              <% @reviewer = Reviewer.find(@last_time_reviewer_id)%>
+                <%@last_time_reviewer_id = employee.scores.last.reviewer_id%>
+                <% @reviewer = Reviewer.find(@last_time_reviewer_id)%>
                 <div>Last review by:</div>
                 <div><%= @reviewer.name%></div>
               <%end%>
             </div> 
+
           <% if user_signed_in?%>
             <div class="row" id="print-score">
               <%= link_to employee, method: :delete, data: { confirm: 'Are you sure?' } do %>
@@ -226,21 +225,20 @@
               <%= employee.position%>
             </div>
 
-            <div class="row pad-bot3">
-            <% if employee.scores.last.nil?%>
-            <%else%>
-            <%@last_time_reviewer_id = employee.scores.last.reviewer_id%>      
-            <%end%>
-
-              <% if @last_time_reviewer_id.nil?%>
+            <div class="row pad-bot3" id="print-score">
+              <% if employee.scores.last.nil?%>
+                <div><mark>No reviews yet</mark></div>
+              <%elsif employee.scores.last.reviewer_id.nil?%>
                 <div>Last review by:</div>
                 <div><mark>ADMIN</mark></div>
               <%else%>
-              <% @reviewer = Reviewer.find(@last_time_reviewer_id)%>
+                <%@last_time_reviewer_id = employee.scores.last.reviewer_id%>
+                <% @reviewer = Reviewer.find(@last_time_reviewer_id)%>
                 <div>Last review by:</div>
                 <div><%= @reviewer.name%></div>
               <%end%>
             </div> 
+
           <% if user_signed_in?%>
             <div class="row">
               <%= link_to employee, method: :delete, data: { confirm: 'Are you sure?' } do %>
