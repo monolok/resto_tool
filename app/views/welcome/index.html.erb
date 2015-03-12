@@ -18,10 +18,10 @@
 	</div>
 <%if user_signed_in? or reviewer_signed_in?%>
 	<div class="row pad-top">
-		<p class="text-home">Review your people, get them the feedback they need to make them better or to realize that they do not fit to your working environment. A sustainable activity can only be with sustainable people.</p>
+		<p class="text-home">Before reviewing your people, make sure you at least comply with our four general <strong class="click" data-toggle="modal" data-target=".6" style="color: red;">Guidelines</strong> so that your reviews are legitimate. Get your people the feedback they need to make your work environment better. A sustainable activity can only be done with sustainable people.</p>
 	</div>	
 	<div class="row center pad">
-		<%= link_to "Dashboard", employees_path, class: "btn btn-primary btn-lg"%>
+		<%= link_to "Get cracking !", employees_path, class: "btn btn-primary btn-lg"%>
 	</div>
 <%else%>
 	<div class="row pad-top">
@@ -100,7 +100,10 @@
 
 <div class="container-fluid" id="pricing">
 	<% if user_signed_in? and current_user.plan_id == nil%>
-		<h3 class="center">Upgrade</h3>
+		<div class="center title_sub">
+			<h3>Upgrade</h3>
+			<small>(Monthly subscription)</small>
+		</div>
 		<div class="row">
 			<div class="col-xs-6">
 				<div class="border-price-nil">
@@ -145,7 +148,10 @@
 			</div>
 		</div>
 	<%elsif user_signed_in? and current_user.plan_id == "basic"%>
-		<h3 class="center">Upgrade to pro plan</h3>
+		<div class="center title_sub">
+			<h3>Upgrade to pro plan</h3>
+			<small>(Monthly subscription)</small>
+		</div>
 		<div class="row">
 			<div class="col-xs-12">
 				<div class="border-price-basic">
@@ -171,9 +177,35 @@
 	<%elsif user_signed_in? and current_user.plan_id == "pro"%>
 	Upgrade more than a pro plan
 	<%elsif reviewer_signed_in?%>
-		<p>Wecome reviewer</p>
+		<div class="row blue title_up" id="concept">
+			<h3 class="center title_sub">Why are you a reviewer ?</h3>
+			<div class="row center pad">
+				<div class="col-xs-6">
+					<i class="fa fa-check-square-o fa-5x"></i>
+					<p>You are trusted</p>
+				</div>
+				<div class="col-xs-6">
+					<i class="fa fa-area-chart fa-5x"></i>
+					<p>You have good records</p>
+				</div>
+			</div>
+			<div class="row center pad">
+				<div class="col-xs-6">
+					<i class="fa fa-flag fa-5x"></i>		
+					<p>You are aware</p>
+				</div>
+				<div class="col-xs-6">
+					<i class="fa fa-comments fa-5x"></i>
+					<p>You communicate well</p>		
+				</div>					
+			</div>
+		</div>
+
 	<%else%>
-		<h3 class="center title_sub">Pricing</h3>
+		<div class="center title_sub">
+			<h3>Pricing</h3>
+			<small>(Monthly subscription)</small>
+		</div>
 		<div class="row">
 			<div class="col-xs-4">
 				<div class="border-price-plan">
