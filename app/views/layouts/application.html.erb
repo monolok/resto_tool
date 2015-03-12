@@ -108,8 +108,11 @@
 				      	<a href="mailto:<%= current_reviewer.user.email%>"><%= current_reviewer.user.email%></a>
 				      </li>
 				      <li role="presentation">
-				      	<%= alert%>
-				      	<%= notice %>
+				      	<%if notice.present?%>
+				      		<%= link_to "#{notice}"%>
+				      	<%elsif alert.present?%>
+				      		<%= link_to "#{alert}"%>
+				  		<%end%>    	
 				      </li>				      
 			      </ul>
 			    </div><!-- /.navbar-collapse -->

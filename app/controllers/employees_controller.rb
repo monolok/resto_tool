@@ -63,7 +63,7 @@ class EmployeesController < ApplicationController
     @list_pb = Hash.new
     while @n != 29
       @qu = Score.where(employee_id: @employee.id).average("qu#{@n}").to_f.round(2)
-      if @qu > 2.8
+      if @qu > 3
       @list_qa[@n] = @qu
       else
       @list_pb[@n] = @qu
