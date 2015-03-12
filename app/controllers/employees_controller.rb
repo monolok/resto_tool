@@ -5,12 +5,39 @@ class EmployeesController < ApplicationController
   respond_to :html
 
   def index
+    if reviewer_signed_in?
+      @pom = Array.new
+      @pom1 = current_reviewer.vl
+      if @pom1 == 1
+        @pom.push(1)
+      end
+      @pom2 = current_reviewer.l
+      if @pom2 == 1
+        @pom.push(2)  
+      end
+      @pom3 = current_reviewer.m
+      if @pom3 == 1
+        @pom.push(3)        
+      end
+      @pom4 = current_reviewer.h
+      if @pom4 == 1
+        @pom.push(4)       
+      end
+      @pom5 = current_reviewer.vh
+      if @pom5 == 1
+        @pom.push(5)
+      end
+    end
 
     if params[:pom].blank?
       if user_signed_in?
         @employees = current_user.employees
       else
-        @employees = current_reviewer.user.employees
+        if @pom.empty?
+          @employees = current_reviewer.user.employees
+        else
+          @employees = current_reviewer.user.employees.where.not(pom: @pom)
+        end
       end
     else
       if user_signed_in?
