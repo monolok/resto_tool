@@ -130,6 +130,7 @@
 
             <div class="row pad-bot3" id="print-score">
               <% if employee.scores.last.nil?%>
+                <div>Last review by:</div>
                 <div><mark>No reviews yet</mark></div>
               <%elsif employee.scores.last.reviewer_id.nil?%>
                 <div>Last review by:</div>
@@ -227,6 +228,7 @@
 
             <div class="row pad-bot3" id="print-score">
               <% if employee.scores.last.nil?%>
+                <div>Last review by:</div>
                 <div><mark>No reviews yet</mark></div>
               <%elsif employee.scores.last.reviewer_id.nil?%>
                 <div>Last review by:</div>
