@@ -17,36 +17,32 @@
 //= require_tree .
 
 
-$(document).ready(function() {
-
-$('#concept_start').click(function (event) {
-	$('html, body').animate({
-		scrollTop: $('#concept').offset().top
-		}, 1500);
-event.preventDefault();
-});
-
-$('#functioning_start').click(function (event) {
-	$('html, body').animate({
-		scrollTop: $('#functioning').offset().top
-		}, 1500);
-event.preventDefault();
-});
-
-$('#pricing_start').click(function (event) {
-	$('html, body').animate({
-		scrollTop: $('#pricing').offset().top
-		}, 1500);
-event.preventDefault();
-});
-
 // $('.modal').click(function () {
 
 // })
 $(function () {
-  $('[data-toggle="tooltip"]').tooltip()
-})
+  	$('[data-toggle="tooltip"]').tooltip()
+	
+	$('#concept_start').click(function (event) {
+		$('html, body').animate({
+			scrollTop: $('#concept').offset().top
+			}, 1500);
+	event.preventDefault();
+	});
 
+	$('#functioning_start').click(function (event) {
+		$('html, body').animate({
+			scrollTop: $('#functioning').offset().top
+			}, 1500);
+	event.preventDefault();
+	});
+
+	$('#pricing_start').click(function (event) {
+		$('html, body').animate({
+			scrollTop: $('#pricing').offset().top
+			}, 1500);
+	event.preventDefault();
+	});
 })
 
 function myFace() {
