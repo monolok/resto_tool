@@ -86,12 +86,12 @@ class EmployeesController < ApplicationController
 
   def new
     @employee = current_user.employees.build
-    @pom_mood = [['Very low', 1], ['Low', 2], ['Medium', 3], ['High', 4], ['Very high', 5]]
+    @pom_mood = [["1", 1], ['2', 2], ['3', 3], ['4', 4], ['5', 5]]
     respond_with(@employee)
   end
 
   def edit
-    @pom_mood = [['Very low', 1], ['Low', 2], ['Medium', 3], ['High', 4], ['Very high', 5]]
+    @pom_mood = [['1', 1], ['2', 2], ['3', 3], ['4', 4], ['5', 5]]
   end
 
   def create
