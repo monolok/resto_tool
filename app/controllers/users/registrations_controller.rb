@@ -157,7 +157,7 @@ class Users::RegistrationsController < Devise::RegistrationsController
 
   #update average_boder
   def update_average_border
-    avrg = params[:average_border].first
+    avrg = params[:average_border]
 
     current_user.update(average_border: avrg)
 

@@ -1,7 +1,18 @@
+<!-- Modals data -->
+
+
+<!-- 29 Modals for 29 questions-->
 <div class="modal fade 1" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
   <div class="modal-dialog modal-lg">
-    <div class="modal-content">
-	    <%= line_chart Score.where(employee_id: @employee.id).limit(10).group(:created_at).sum(:qu1), :library => {hAxis: {title: "Months", discrete: true, format: "MM"}, vAxis: {title: "Score", discrete: true}, title: "History of score Predictable"}, max: 5.5, min: 0%>
+    <div class="modal-content row">
+      <div class="col-xs-8">
+        <%= line_chart Score.where(employee_id: @employee.id).limit(10).group(:created_at).sum(:qu1), :library => {hAxis: {title: "Months", discrete: true, format: "MM"}, vAxis: {title: "Score", discrete: true}, title: "History of score Predictable"}, max: 5.5, min: 0%>
+      </div>    
+      <div class="col-xs-4">
+        <ul>
+          <li>good job </li>
+        </ul>
+      </div>
     </div>
   </div>
 </div>

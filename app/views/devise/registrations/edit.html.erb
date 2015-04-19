@@ -11,8 +11,9 @@
     <%end%>
 
 <%= form_tag(avrg_path, method: "post") do %>
-  You have set up the bar to: 
-  <%= number_field :average_border, nil, min: 1, max: 4, :step => 'any', class: "" %>
+  You have set up the bar to:
+  <%= number_field_tag :average_border, current_user.average_border, min: 1, max: 4, :step => 'any', class: "" %> 
+  <%# number_field :average_border, nil, min: 1, max: 4, :step => 'any', class: "" %>
   <%= submit_tag("ok") %>
 <% end %>
 
