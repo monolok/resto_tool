@@ -116,7 +116,7 @@
               <strong><%= link_to employee.name, employee%></strong>
             </div>
             <div class="row">
-              <%if @kf > 2.5 %>
+              <%if @kf > employee.user.average_border.to_f %>
                 <p class="text-success">KEEP</p>
               <%elsif @kf == 0 %>
                 <p>No review</p>

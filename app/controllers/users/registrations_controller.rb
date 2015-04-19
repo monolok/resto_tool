@@ -68,14 +68,14 @@ class Users::RegistrationsController < Devise::RegistrationsController
     redirect_to new_basic_path  
   end
   # GET /resource/edit
-  # def edit
-  #   super
-  # end
+  def edit
+    super
+  end
 
   # PUT /resource
-  # def update
-  #   super
-  # end
+  def update
+    super
+  end
 
   def downgrade
     if current_user.plan_id == "basic"
@@ -153,6 +153,15 @@ class Users::RegistrationsController < Devise::RegistrationsController
       customer.delete
     end
     super
+  end
+
+  #update average_boder
+  def update_average_border
+    avrg = params[:average_border].first
+
+    current_user.update(average_border: avrg)
+
+    redirect_to edit_user_registration_path
   end
 
   # GET /resource/cancel

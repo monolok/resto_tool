@@ -14,6 +14,7 @@ Rails.application.routes.draw do
     post 'new_pro', to: "users/registrations#create_new_pro"
     post 'downgrade', to: "users/registrations#downgrade"
     post 'upgrade', to: "users/registrations#upgrade"
+    post 'avrg', to: "users/registrations#update_average_border"
   end
   devise_for :reviewers, controllers: { registrations: "reviewers/registrations", sessions: "reviewers/sessions"}
 
