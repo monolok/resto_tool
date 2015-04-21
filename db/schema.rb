@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150419094221) do
+ActiveRecord::Schema.define(version: 20150421145840) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -21,6 +21,17 @@ ActiveRecord::Schema.define(version: 20150419094221) do
     t.integer  "pom"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+  end
+
+  create_table "comments", force: true do |t|
+    t.text     "comment"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
+    t.integer  "user_id"
+    t.integer  "reviewer_id"
+    t.integer  "employee_id"
+    t.integer  "score_id"
+    t.integer  "qu_id"
   end
 
   create_table "employees", force: true do |t|
@@ -92,6 +103,35 @@ ActiveRecord::Schema.define(version: 20150419094221) do
     t.integer  "employee_id"
     t.decimal  "average",     precision: 16, scale: 2
     t.integer  "reviewer_id"
+    t.integer  "com1"
+    t.integer  "com2"
+    t.integer  "com3"
+    t.integer  "com4"
+    t.integer  "com5"
+    t.integer  "com6"
+    t.integer  "com7"
+    t.integer  "com8"
+    t.integer  "com9"
+    t.integer  "com10"
+    t.integer  "com11"
+    t.integer  "com12"
+    t.integer  "com13"
+    t.integer  "com14"
+    t.integer  "com15"
+    t.integer  "com16"
+    t.integer  "com17"
+    t.integer  "com18"
+    t.integer  "com19"
+    t.integer  "com20"
+    t.integer  "com21"
+    t.integer  "com22"
+    t.integer  "com23"
+    t.integer  "com24"
+    t.integer  "com25"
+    t.integer  "com26"
+    t.integer  "com27"
+    t.integer  "com28"
+    t.integer  "com29"
   end
 
   create_table "users", force: true do |t|
