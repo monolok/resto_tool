@@ -58,11 +58,13 @@ class EmployeesController < ApplicationController
   end
 
   def show
+  @scores = Score.where(employee_id: @employee.id)
+    
     @n = 1
     @list_qa = Hash.new
     @list_pb = Hash.new
     while @n != 29
-      @qu = Score.where(employee_id: @employee.id).average("qu#{@n}").to_f.round(2)
+      @qu = @scores.average("qu#{@n}").to_f.round(2)
       if @qu > 3
       @list_qa[@n] = @qu
       else
@@ -71,11 +73,11 @@ class EmployeesController < ApplicationController
       @n = @n + 1
     end
 
-    if Score.where(employee_id: @employee.id).last.nil?
+    if @scores.last.nil?
       
     else
       @l = 1
-      @last_qu = Score.where(employee_id: @employee.id).last
+      @last_qu = @scores.last
       @last_qu_hash = Hash.new
       while @l != 29
         @last_qu_hash[@l] = @last_qu.attribute_for_inspect("qu#{@l}")
@@ -163,6 +165,6 @@ class EmployeesController < ApplicationController
     end
 
     def score_params
-      params.require(:score).permit(:qu1, :qu2, :qu3, :qu4, :qu5, :qu6, :qu7, :qu8, :qu9, :qu10, :qu11, :qu12, :qu13, :qu14, :qu15, :qu16, :qu17, :qu18, :qu19, :qu20, :qu21, :qu22, :qu23, :qu24, :qu25, :qu26,:qu27, :qu28, :qu29, :reviewer_id)
+      params.require(:score).permit(:qu1, :qu2, :qu3, :qu4, :qu5, :qu6, :qu7, :qu8, :qu9, :qu10, :qu11, :qu12, :qu13, :qu14, :qu15, :qu16, :qu17, :qu18, :qu19, :qu20, :qu21, :qu22, :qu23, :qu24, :qu25, :qu26,:qu27, :qu28, :qu29, :reviewer_id, :com1, :com2, :com3, :com4, :com5, :com6, :com7, :com8, :com9, :com10, :com11, :com12, :com13, :com14, :com15, :com16, :com17, :com18, :com19, :com20, :com21, :com22, :com23, :com24, :com25, :com26,:com27, :com28, :com29)
     end
 end
