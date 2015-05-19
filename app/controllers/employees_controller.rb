@@ -7,6 +7,7 @@ class EmployeesController < ApplicationController
   def index
     if reviewer_signed_in?
       @pom = Array.new
+      
       @pom1 = current_reviewer.vl
       if @pom1 == 1
         @pom.push(1)
