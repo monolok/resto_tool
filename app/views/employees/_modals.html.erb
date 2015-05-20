@@ -21,9 +21,13 @@
             max: 5.5, min: 0, discrete: true%>
         </div>    
         <div class="col-xs-4">
-          <% @scores.limit(5).each do |score|%>
+          <% @scores.limit(5).order(created_at: :asc).each do |score|%>
             <ul>
-              <li><strong><%=score.created_at.strftime("%A %B %d")%>: </strong><%= score.attribute_for_inspect("com#{c}")%></li>
+              <%if not score.attribute_for_inspect("com#{c}") == "\"\""%>
+                <li><strong><%=score.created_at.strftime("%A %B %d")%>: </strong>
+                  <%= score.attribute_for_inspect("com#{c}")%>
+                </li>
+              <%end%>
             </ul>
           <%end%>
         </div>
