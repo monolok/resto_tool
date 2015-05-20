@@ -50,7 +50,16 @@
 			<%end%>
 		</div>
 		<div>
-			<%= line_chart Score.where(employee_id: params[:id]).limit(10).group(:created_at).sum(:average), :library => {hAxis: {lineColor: 'transparent'}, vAxis: {lineColor: 'transparent'}, title: "#{@employee.name} latest results"}, max: 5.5, min: 0%>
+			<%= line_chart Score.where(employee_id: params[:id]).limit(10).group(:created_at).sum(:average), discrete: true, library: {
+					vAxis: {
+						gridlines: {color: "transparent"}, 
+						textPosition: 'none'
+					}, 
+					hAxis: {
+						textPosition: 'none'
+					}
+				}
+			%>
 		</div>
 	</div>
 	<% if @last_qu_hash.nil?%>

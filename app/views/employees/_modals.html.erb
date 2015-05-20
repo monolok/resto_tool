@@ -7,7 +7,18 @@
     <div class="modal-dialog modal-lg">
       <div class="modal-content row">
         <div class="col-xs-8">
-          <%= line_chart Score.where(employee_id: @employee.id).limit(10).group(:created_at).sum("qu#{c}".to_sym), :library => {hAxis: {title: "Months", discrete: true, format: "MM"}, vAxis: {title: "Score", discrete: true}, title: "History of score Predictable"}, max: 5.5, min: 0%>
+          <%= line_chart Score.where(employee_id: @employee.id).limit(10).group(:created_at).sum("qu#{c}".to_sym), :library => {
+              hAxis: {
+                title: "Latest 10", 
+                format: "MM",
+                textPosition: "none"
+                }, 
+              vAxis: {
+                gridlines: {color: "transparent"}
+                },
+              title: "Historical data of #{Score.get_name(c)}"
+            }, 
+            max: 5.5, min: 0, discrete: true%>
         </div>    
         <div class="col-xs-4">
           <% @scores.limit(5).each do |score|%>
