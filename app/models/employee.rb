@@ -16,4 +16,19 @@ class Employee < ActiveRecord::Base
 	 	else
 		end
 	end
-end
+
+	scope :get_average, ->(employee_id){
+		avrg_arr = Array.new
+		target_employee = Employee.find(employee_id)
+		target_employee.scores.each do |score|
+			avrg_arr.push(score.average)
+		end
+		if target_employee.scores.empty?
+			return 0
+		else
+			big_avrg = (avrg_arr.inject(:+))/(target_employee.scores.count)
+			return big_avrg
+		end
+
+	}
+end 

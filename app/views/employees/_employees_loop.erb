@@ -1,0 +1,37 @@
+<% @employees.each do |employee| %>
+  <div class="col-sm-4 border-employee" id="margin-bot-print">
+
+    <div class="row pad-bot">
+      <strong><%= link_to employee.name, employee%></strong>
+    </div>
+
+    <div class="row">
+      <%if Employee.get_average(employee.id) > employee.user.average_border.to_f %>
+        <p class="text-success">KEEP</p>
+      <%elsif employee.scores.empty? %>
+        <p>No review</p>
+      <%else%>
+        <p class="text-danger">FIRE</p>
+      <%end%>
+    </div>
+
+    <div class="row">
+      <%= employee.position%>
+    </div>
+
+    <div class="row pad-bot3" id="print-score">
+      <div>Last review by:</div>
+      <div><mark><%= Score.last_review_by(employee.id)%></mark></div>
+    </div>
+
+    <div class="row" id="print-score">
+      <%= link_to employee, method: :delete, data: { confirm: 'Are you sure?' } do %>
+        <i class="fa fa-trash fa-2x"></i>
+      <%end%>
+      <%= link_to employee_score_new_path(employee.id) do%>
+        <i class="fa fa-check-square-o fa-2x"></i>
+      <%end%>
+    </div>
+
+  </div>
+<% end %> 

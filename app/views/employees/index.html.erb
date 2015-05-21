@@ -1,94 +1,33 @@
 <div class="container-fluid pad-index">
   <div class="row center pad-bot" id="pad-bot-print-mini">
     <h3 class="center pad-bot2 click" data-toggle="modal" data-target=".bs-example-modal-sm">Your people</h3>
+
     <div class="border-cat">
       <%= link_to "All", employees_path%>     
     </div>
-    <div class="border-cat">
-          <%if user_signed_in?%>
-              <%= link_to employees_path(pom: 1) do%>
-                1<i class="fa fa-star"></i>
-              <%end%>
-          <%else%>
-            <% if current_reviewer.vl == 0%>
-              <%= link_to employees_path(pom: 1) do%>
-                1<i class="fa fa-star"></i>
-              <%end%>
+
+    <%c = 1%>
+    <%while c != 6 %>
+      <div class="border-cat">
+            <%if user_signed_in?%>
+                <%= link_to employees_path(pom: "#{c}") do%>
+                  <%= c%><i class="fa fa-star"></i>
+                <%end%>
             <%else%>
-              <%= link_to do%>
-                <i class="fa fa-ban"></i>
+              <% if current_reviewer.vl == 0%>
+                <%= link_to employees_path(pom: "#{c}") do%>
+                  <%= c%><i class="fa fa-star"></i>
+                <%end%>
+              <%else%>
+                <%= link_to do%>
+                  <i class="fa fa-ban"></i>
+                <%end%>
               <%end%>
             <%end%>
-          <%end%>
-    </div>
-    <div class="border-cat">
-          <%if user_signed_in?%>
-              <%= link_to employees_path(pom: 2) do%>
-                2<i class="fa fa-star"></i>
-              <%end%>
-          <%else%>
-            <% if current_reviewer.l == 0%>
-              <%= link_to employees_path(pom: 2) do%>
-                2<i class="fa fa-star"></i>
-              <%end%>
-            <%else%>
-              <%= link_to do%>
-                <i class="fa fa-ban"></i>
-              <%end%>
-            <%end%>
-          <%end%>
-    </div>
-    <div class="border-cat">
-          <%if user_signed_in?%>
-              <%= link_to employees_path(pom: 3) do%>
-                3<i class="fa fa-star"></i>             
-              <%end%>            
-          <%else%>
-            <% if current_reviewer.m == 0%>
-              <%= link_to employees_path(pom: 3) do%>
-                3<i class="fa fa-star"></i>             
-              <%end%>
-            <%else%>
-              <%= link_to do%>
-                <i class="fa fa-ban"></i>
-              <%end%>
-            <%end%>
-          <%end%>
-    </div>
-    <div class="border-cat">
-          <%if user_signed_in?%>
-              <%= link_to employees_path(pom: 4) do%>
-                4<i class="fa fa-star"></i>
-              <%end%>            
-          <%else%>
-            <% if current_reviewer.h == 0%>
-              <%= link_to employees_path(pom: 4) do%>
-                4<i class="fa fa-star"></i>
-              <%end%>
-            <%else%>
-              <%= link_to do%>
-                <i class="fa fa-ban"></i>
-              <%end%>
-            <%end%>
-          <%end%>
-    </div>
-    <div class="border-cat">
-          <%if user_signed_in?%>
-              <%= link_to employees_path(pom: 5) do%>
-                5<i class="fa fa-star"></i>
-              <%end%>                          
-          <%else%>
-            <% if current_reviewer.vh == 0%>
-              <%= link_to employees_path(pom: 5) do%>
-                5<i class="fa fa-star"></i>
-              <%end%> 
-            <%else%>
-              <%= link_to do%>
-                <i class="fa fa-ban"></i>
-              <%end%>
-            <%end%>
-          <%end%>
-    </div>
+      </div>
+    <%c = c+1%>
+    <%end%>
+
     <div class="border-cat click">
         <i class="fa fa-print fa-2x", onclick="window.print();return false;"></i>
     </div>
@@ -98,97 +37,43 @@
   <div class="row">
     <div class="col-xs-8" id="people-print">
       <div class="row pad">
-        <% @employees.each do |employee| %>
-
-          <%@list_s = Array.new%>
-          <%if not employee.scores.blank?%>
-            <%employee.scores.each do |s|%>
-              <%@list_s.push(s.average)%>
-              <%@kf_sum = @list_s.inject(:+)%>
-              <%@kf = @kf_sum/employee.scores.count%>
-            <%end%>
-          <%else%>
-            <%@kf = 0%>
-          <%end%> 
-
-          <div class="col-sm-4 border-employee" id="margin-bot-print">
-            <div class="row pad-bot">
-              <strong><%= link_to employee.name, employee%></strong>
-            </div>
-            <div class="row">
-              <%if @kf > employee.user.average_border.to_f %>
-                <p class="text-success">KEEP</p>
-              <%elsif @kf == 0 %>
-                <p>No review</p>
-              <%else%>
-                <p class="text-danger">FIRE</p>
-              <%end%>
-            </div>
-            <div class="row">
-              <%= employee.position%>
-            </div>
-
-            <div class="row pad-bot3" id="print-score">
-              <% if employee.scores.last.nil?%>
-                <div>Last review by:</div>
-                <div><mark>No reviews yet</mark></div>
-              <%elsif employee.scores.last.reviewer_id.nil?%>
-                <div>Last review by:</div>
-                <div><mark>ADMIN</mark></div>
-              <%else%>
-                <%@last_time_reviewer_id = employee.scores.last.reviewer_id%>
-                <% @reviewer = Reviewer.find(@last_time_reviewer_id)%>
-                <div>Last review by:</div>
-                <div><%= @reviewer.name%></div>
-              <%end%>
-            </div> 
-
-          <% if user_signed_in?%>
-            <div class="row" id="print-score">
-              <%= link_to employee, method: :delete, data: { confirm: 'Are you sure?' } do %>
-                <i class="fa fa-trash fa-2x"></i>
-              <%end%>
-              <%= link_to employee_score_new_path(employee.id) do%>
-                <i class="fa fa-check-square-o fa-2x"></i>
-              <%end%>
-            </div>
-          <%end%>                   
-          </div>
-        <% end %>    
+        <%= render "employees_loop"%>   
       </div>
     </div>
 
     <div class="col-xs-offset-1 col-xs-3" id="print-score">
       </br>
       <strong>Your reviewers:</strong>
-      <div class="row pad">     
-        <ul class="col-xs-12 ul_style border-reviewer">
+      <div class="row pad">   
+
+        <ul class="col-xs-12">
           <%if current_user.reviewers.blank? %>
             <li>No reviewers ! <%= link_to "Add one", new_reviewer_registration_path %></li>
           <%else%>
             <% current_user.reviewers.each do |r| %>
-              <li class="text-capitalize pad-bot"><strong><%= r.name%></strong></li>
-              <li id="pad-li-connected">Last connection:</li>
-              <li class="pad-bot"><em><%= r.updated_at.strftime("%A %B %d")%></em></li>
-              <%if r.scores.empty?%>
+              <div class="ul_style border-reviewer">
+                <li class="text-capitalize pad-bot"><strong><%= r.name%></strong></li>
+                <li id="pad-li-connected">Last connection:</li>
+                <li class="pad-bot"><em><%= r.updated_at.strftime("%A %B %d")%></em></li>
+                <%if r.scores.empty?%>
                 <li class="pad-bot"><mark>No reviews done yet</mark></li>
-              <%else%>
+                <%else%>
                 <li class="pad-bot">Last review:</li>
                 <li><%= link_to r.scores.last.employee.name, employee_path(r.scores.last.employee.id) %></li>
-              <%end%>
-        
-                <%= link_to "reviewer_delete/#{r.id}", :method => :delete do%>
-                  <i class="fa fa-trash fa-2x"></i>
                 <%end%>
 
+                <%= link_to "reviewer_delete/#{r.id}", :method => :delete do%>
+                <i class="fa fa-trash fa-2x"></i>
+                <%end%>
 
                 <%= link_to edit_reviewer_registration_path do%>
-                  <i class="fa fa-pencil-square-o fa-2x"></i>
+                <i class="fa fa-pencil-square-o fa-2x"></i>
                 <%end%>
-
+              </div>
             <%end%>
           <%end%>
         </ul>
+
       </div>
     </div>
   </div>
@@ -196,63 +81,7 @@
   <div class="row">
     <div class="col-xs-12">
       <div class="row pad">
-        <% @employees.each do |employee| %>
-
-          <%@list_s = Array.new%>
-          <%if not employee.scores.blank?%>
-            <%employee.scores.each do |s|%>
-              <%@list_s.push(s.average)%>
-              <%@kf_sum = @list_s.inject(:+)%>
-              <%@kf = @kf_sum/employee.scores.count%>
-            <%end%>
-          <%else%>
-            <%@kf = 0%>
-          <%end%> 
-
-          <div class="col-sm-4 border-employee">
-            <div class="row pad-bot">
-              <strong><%= link_to employee.name, employee%></strong>
-            </div>
-            <div class="row">
-              <%if @kf > 2.5 %>
-                <p class="text-success">KEEP</p>
-              <%elsif @kf == 0 %>
-                <p>No review</p>
-              <%else%>
-                <p class="text-danger">FIRE</p>
-              <%end%>
-            </div>
-            <div class="row">
-              <%= employee.position%>
-            </div>
-
-            <div class="row pad-bot3" id="print-score">
-              <% if employee.scores.last.nil?%>
-                <div>Last review by:</div>
-                <div><mark>No reviews yet</mark></div>
-              <%elsif employee.scores.last.reviewer_id.nil?%>
-                <div>Last review by:</div>
-                <div><mark>ADMIN</mark></div>
-              <%else%>
-                <%@last_time_reviewer_id = employee.scores.last.reviewer_id%>
-                <% @reviewer = Reviewer.find(@last_time_reviewer_id)%>
-                <div>Last review by:</div>
-                <div><%= @reviewer.name%></div>
-              <%end%>
-            </div> 
-
-          <% if user_signed_in?%>
-            <div class="row">
-              <%= link_to employee, method: :delete, data: { confirm: 'Are you sure?' } do %>
-                <i class="fa fa-trash fa-2x"></i>
-              <%end%>
-              <%= link_to employee_score_new_path(employee.id) do%>
-                <i class="fa fa-check-square-o fa-2x"></i>
-              <%end%>
-            </div>
-          <%end%>                   
-          </div>
-        <% end %>    
+        <%= render "employees_loop"%>   
       </div>
     </div>
   </div>

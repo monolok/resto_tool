@@ -67,4 +67,16 @@ class Score < ActiveRecord::Base
 		end
 	}
 
+	scope :last_review_by, ->(employee_id){
+		last_score = Employee.find(employee_id).scores.last
+		if last_score == nil
+			return "No reviews yet"
+		elsif last_score.reviewer_id.nil?
+			return "ADMIN"
+		else
+			reviewer = Reviewer.find(last_score.reviewer_id)
+			return reviewer.name
+		end
+	}
+
 end
