@@ -2,9 +2,13 @@ class Users::SessionsController < Devise::SessionsController
 # before_filter :configure_sign_in_params, only: [:create]
 
   # GET /resource/sign_in
-  # def new
-  #   super
-  # end
+  def new
+    if params[:confirmation_token].exist?
+      flash[:notice] = "Your email has been confirmed !"
+    end
+
+    super
+  end
 
   # POST /resource/sign_in
   # def create
