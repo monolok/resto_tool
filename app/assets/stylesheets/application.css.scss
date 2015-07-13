@@ -257,14 +257,18 @@ a:hover {
 	border: medium solid black;
 }
 
-.btn-primary {
-	background-color: whitesmoke;
+.btn-main {
+	color: black;
+	font-weight: bold;
 	opacity: 0.8;
 	border-color: black;
+	border-width: 5px;
+	background-color: white;
 }
 
-.btn-primary:hover {
-	background-color: white;
+.btn-main:hover {
+	background-color: grey;
+	color: white;
 }
 
 .btn-success {
@@ -277,15 +281,15 @@ a:hover {
 	opacity: 0.8;
 }
 
-.btn-lg {
+/*.btn-lg {
 	font-size: 40px;
 	color: black;
-}
+}*/
 
-.btn-lg:hover {
+/*.btn-lg:hover {
 	font-size: 40px;
 	color: black;
-}
+}*/
 
 .absolute {
 	position: absolute;
