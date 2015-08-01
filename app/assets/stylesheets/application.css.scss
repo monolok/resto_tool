@@ -69,7 +69,7 @@ select {
 	background-image: url("home.png");
 	background-size: 100%;
 	background-repeat: no-repeat;
-} 
+}
 
 .navbar {
 	margin-bottom: 1px;
@@ -339,6 +339,10 @@ input[type="checkbox"] {
 }
 .pad-show {
 	padding-bottom: 150px;
+}
+
+.dotted-line {
+	border-bottom: dotted;
 }
 /*NAV BOTTOM*/
 footer {

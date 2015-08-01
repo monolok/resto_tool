@@ -7,44 +7,43 @@ class EmployeesController < ApplicationController
   def index
     if reviewer_signed_in?
       @pom = Array.new
-      
-      @pom1 = current_reviewer.vl
-      if @pom1 == 1
+      if current_reviewer.vl == 1
         @pom.push(1)
       end
-      @pom2 = current_reviewer.l
-      if @pom2 == 1
-        @pom.push(2)  
+      if current_reviewer.l == 1
+        @pom.push(2)
+      end 
+      if current_reviewer.m == 1 
+        @pom.push(3)
       end
-      @pom3 = current_reviewer.m
-      if @pom3 == 1
-        @pom.push(3)        
+      if current_reviewer.h == 1
+        @pom.push(4)
       end
-      @pom4 = current_reviewer.h
-      if @pom4 == 1
-        @pom.push(4)       
-      end
-      @pom5 = current_reviewer.vh
-      if @pom5 == 1
+      if current_reviewer.vh == 1
         @pom.push(5)
       end
     end
 
-    if params[:pom].blank?
-      if user_signed_in?
-        @employees = current_user.employees
+    if user_signed_in?
+      if params[:pom].blank?
+        @employees = current_user.employees        
+      else
+        @employees = current_user.employees.where(pom: params[:pom])
+      end
+
+    elsif reviewer_signed_in?
+      if params[:pom].present?
+        if @pom.present?
+          @employees = current_reviewer.user.employees.where(pom: params[:pom]).where.not(pom: @pom)
+        else
+          @employees = current_reviewer.user.employees.where(pom: params[:pom])          
+        end
       else
         if @pom.empty?
           @employees = current_reviewer.user.employees
         else
           @employees = current_reviewer.user.employees.where.not(pom: @pom)
         end
-      end
-    else
-      if user_signed_in?
-        @employees = current_user.employees.where(pom: params[:pom])
-      else 
-        @employees = current_reviewer.user.employees.where(pom: params[:pom])         
       end
     end
 

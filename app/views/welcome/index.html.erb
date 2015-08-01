@@ -1,5 +1,5 @@
-<div class="container-fluid bg">
-	<% if not user_signed_in? and not reviewer_signed_in? %>
+<% if not user_signed_in? and not reviewer_signed_in? %>
+	<div class="container-fluid bg">
 		<div class="row">
 			<div class="col-xs-4 red">
 				<p><%= notice %></p>
@@ -9,276 +9,287 @@
 				<%= link_to 'Reviewer', new_reviewer_session_path, class: "btn btn-default" %>
 			</div>
 		</div>
-	<%end%>
-	<div class="row center text-main">
-		<h1>Restool App</h1>
-	</div>
-	<div class="row center">
-		<h4>Keep valuable people and fire dead-weight.</h4>
-	</div>
-<%if user_signed_in? or reviewer_signed_in?%>
-	<div class="row pad-top">
-		<p class="text-home">Before reviewing your people, make sure you at least comply with our four general <strong class="click" data-toggle="modal" data-target=".6" style="color: red;">Guidelines</strong> so that your reviews are legitimate. Get your people the feedback they need to make your work environment better. A sustainable activity can only be done with sustainable people.</p>
-	</div>	
-	<div class="row center pad">
-		<%= link_to "Get cracking !", employees_path, class: "btn btn-main"%>
-	</div>
-<%else%>
-<!-- 	<div class="row pad-top">
-		<p class="text-home">Sign up by becoming a manager and start reviewing your people and create reviewers to empower the good ones. Restool is a simple tool to improve your working environment, spirit and efficiency.</p>
-	</div>	 -->
-	<div class="row">
-		<div class="video_box">
-		    <div class="embed-responsive embed-responsive-16by9">
-		      <iframe src="//www.youtube.com/embed/zpOULjyy-n8?rel=0" allowfullscreen="">
-		      </iframe>
-		    </div>
-		</div>			
-	</div>	
-	<div class="row center pad-button">
-		<%= link_to 'Become a Manager', new_user_registration_path, class: "btn btn-main" %>
-	</div>
 
-	<div class="row">
-		<%= render "navbar"%>
-	</div>
-<div class="row blue" id="concept">
-	<h3 class="center title_sub">Concept</h3>
-	<div class="row center pad">
-		<div class="col-xs-4">
-			<i class="fa fa-check-square-o fa-5x click" data-toggle="modal" data-target=".bs-example-modal-lg"></i>
-			<p>Review</p>
-		</div>
-		<div class="col-xs-4">
-			<i class="fa fa-area-chart fa-5x click" data-toggle="modal" data-target=".1"></i>
-			<p>Keep track</p>
-		</div>
-		<div class="col-xs-4">
-			<i class="fa fa-filter fa-5x click" data-toggle="modal" data-target=".2"></i>
-			<p>Filter</p>	
-		</div>
-	</div>
-	<div class="row center pad">
-		<div class="col-xs-4">
-			<i class="fa fa-flag fa-5x click" data-toggle="modal" data-target=".3"></i>		
-			<p>Notice</p>
-		</div>
-		<div class="col-xs-4">
-			<i class="fa fa-comments fa-5x click" data-toggle="modal" data-target=".4"></i>
-			<p>Feedback</p>		
-		</div>
-		<div class="col-xs-4">
-			<i class="fa fa-users fa-5x click" data-toggle="modal" data-target=".5"></i>	
-			<p>Delegate</p>		
-		</div>					
-	</div>
-</div>
-
-<div class="row redi" id="functioning">
-	<h3 class="center title_sub">Get started !</h3>
-	<div class="col-xs-offset-2 col-xs-8 col-xs-offset-2 pad-bot2">
-		<i class="fa fa-arrow-circle-right fa-3x pad-right"></i> 
-		<p class="p-work"><%= link_to "Sign up for a free account", new_user_registration_path, class: "text-deco-none"%></p>
-	</div>
-	<div class="col-xs-offset-2 col-xs-8 col-xs-offset-2 pad-bot2">
-		<i class="fa fa-arrow-circle-right fa-3x pad-right"></i> 
-		<p class="p-work">Add employees</p>		
-	</div>
-	<div class="col-xs-offset-2 col-xs-8 col-xs-offset-2 pad-bot2">
-		<i class="fa fa-arrow-circle-right fa-3x pad-right"></i> 
-		<p class="p-work">Add reviewers with or with no restrictions</p>
-	</div>
-	<div class="col-xs-offset-2 col-xs-8 col-xs-offset-2 pad-bot2">
-		<i class="fa fa-arrow-circle-right fa-3x pad-right"></i> 
-		<p class="p-work">Start reviewing and analize results over time</p>		
-	</div>
-	<div class="col-xs-offset-2 col-xs-8 col-xs-offset-2 pad-bot2">
-		<i class="fa fa-arrow-circle-right fa-3x pad-right"></i> 
-		<p class="p-work">Keep valuable people</p>
-	</div>	
-	<div class="col-xs-offset-2 col-xs-8 col-xs-offset-2 pad-bot2">
-		<i class="fa fa-arrow-circle-right fa-3x pad-right"></i> 
-		<p class="p-work">Empower your reviewers</p>
-	</div>						
-</div>
-<%end%>
-</div>
-
-
-<div class="container-fluid" id="pricing">
-	<% if user_signed_in? and current_user.plan_id == nil%>
-		<div class="center title_sub">
-			<h3>Upgrade</h3>
-			<small>(Monthly subscription)</small>
-		</div>
 		<div class="row">
-			<div class="col-xs-6">
-				<div class="border-price-nil">
-					<section>
-						<div class="container-img pad-bot">
-							<i class="fa fa-user fa-5x black"></i>
-							<i class="fa fa-user fa-5x black"></i>
-						</div>
-					</section>
-					<section class="pad-bot">
-						<%= link_to "Basic", new_basic_path, class: "btn btn-success"%>
-					</section>
-					<section>
-						<ul class="plan-features">
-							<li class="price">29 Euro</li>
-							<li>5 Reviewers</li>
-							<li>25 employees</li>
-							<li>Support</li>
-						</ul>
-					</section>
-				</div>
-			</div>
-			<div class="col-xs-6">
-				<div class="border-price-nil">
-					<section>
-						<div class="container-img pad-bot">
-							<i class="fa fa-users fa-5x black"></i>
-						</div>
-					</section>
-					<section class="pad-bot">
-						<%= link_to "Pro", new_pro_path, class: "btn btn-success"%>
-					</section>
-					<section>
-						<ul class="plan-features">
-							<li class="price">49 Euro</li>
-							<li>10 Reviewers</li>
-							<li>50 employees</li>
-							<li>Support</li>
-						</ul>
-					</section>
-				</div>
-			</div>
-		</div>
-	<%elsif user_signed_in? and current_user.plan_id == "basic"%>
-		<div class="center title_sub">
-			<h3>Upgrade to pro plan</h3>
-			<small>(Monthly subscription)</small>
-		</div>
-		<div class="row">
-			<div class="col-xs-12">
-				<div class="border-price-basic">
-					<section>
-						<div class="container-img pad-bot">
-							<i class="fa fa-users fa-5x black"></i>
-						</div>
-					</section>
-					<section class="pad-bot">
-						<%= link_to "Pro", new_pro_path, class: "btn btn-success"%>
-					</section>
-					<section>
-						<ul class="plan-features">
-							<li class="price">49 Euro</li>
-							<li>10 Reviewers</li>
-							<li>50 employees</li>
-							<li>Support</li>
-						</ul>
-					</section>
-				</div>
-			</div>
+			<div class="video_box">
+			    <div class="embed-responsive embed-responsive-16by9">
+			      <iframe src="//www.youtube.com/embed/zpOULjyy-n8?rel=0" allowfullscreen="">
+			      </iframe>
+			    </div>
+			</div>			
 		</div>	
-	<%elsif user_signed_in? and current_user.plan_id == "pro"%>
-	Upgrade more than a pro plan
-	<%elsif reviewer_signed_in?%>
-		<div class="row blue title_up" id="concept">
-			<h3 class="center title_sub">Why are you a reviewer ?</h3>
+
+		<div class="row center pad-button">
+			<%= link_to 'Become a Manager', new_user_registration_path, class: "btn btn-main" %>
+		</div>
+
+		<div class="row">
+			<%= render "navbar"%>
+		</div>
+
+		<div class="row blue" id="concept">
+			<h3 class="center title_sub">Concept</h3>
 			<div class="row center pad">
-				<div class="col-xs-6">
-					<i class="fa fa-check-square-o fa-5x"></i>
-					<p>You are trusted</p>
+				<div class="col-xs-4">
+					<i class="fa fa-check-square-o fa-5x click" data-toggle="modal" data-target=".bs-example-modal-lg"></i>
+					<p>Review</p>
 				</div>
-				<div class="col-xs-6">
-					<i class="fa fa-area-chart fa-5x"></i>
-					<p>You have good records</p>
+				<div class="col-xs-4">
+					<i class="fa fa-area-chart fa-5x click" data-toggle="modal" data-target=".1"></i>
+					<p>Keep track</p>
+				</div>
+				<div class="col-xs-4">
+					<i class="fa fa-filter fa-5x click" data-toggle="modal" data-target=".2"></i>
+					<p>Filter</p>	
 				</div>
 			</div>
 			<div class="row center pad">
-				<div class="col-xs-6">
-					<i class="fa fa-flag fa-5x"></i>		
-					<p>You are aware</p>
+				<div class="col-xs-4">
+					<i class="fa fa-flag fa-5x click" data-toggle="modal" data-target=".3"></i>		
+					<p>Notice</p>
 				</div>
-				<div class="col-xs-6">
-					<i class="fa fa-comments fa-5x"></i>
-					<p>You communicate well</p>		
+				<div class="col-xs-4">
+					<i class="fa fa-comments fa-5x click" data-toggle="modal" data-target=".4"></i>
+					<p>Feedback</p>		
+				</div>
+				<div class="col-xs-4">
+					<i class="fa fa-users fa-5x click" data-toggle="modal" data-target=".5"></i>	
+					<p>Delegate</p>		
 				</div>					
 			</div>
 		</div>
 
-	<%else%>
-		<div class="center title_sub">
-			<h3>Pricing</h3>
-			<small>(Monthly subscription)</small>
+		<div class="row redi" id="functioning">
+			<h3 class="center title_sub">Get started !</h3>
+			<div class="col-xs-offset-2 col-xs-8 col-xs-offset-2 pad-bot2">
+				<i class="fa fa-arrow-circle-right fa-3x pad-right"></i> 
+				<p class="p-work"><%= link_to "Sign up for a free account", new_user_registration_path, class: "text-deco-none"%></p>
+			</div>
+			<div class="col-xs-offset-2 col-xs-8 col-xs-offset-2 pad-bot2">
+				<i class="fa fa-arrow-circle-right fa-3x pad-right"></i> 
+				<p class="p-work">Add employees</p>		
+			</div>
+			<div class="col-xs-offset-2 col-xs-8 col-xs-offset-2 pad-bot2">
+				<i class="fa fa-arrow-circle-right fa-3x pad-right"></i> 
+				<p class="p-work">Add reviewers with or with no restrictions</p>
+			</div>
+			<div class="col-xs-offset-2 col-xs-8 col-xs-offset-2 pad-bot2">
+				<i class="fa fa-arrow-circle-right fa-3x pad-right"></i> 
+				<p class="p-work">Start reviewing and analize results over time</p>		
+			</div>
+			<div class="col-xs-offset-2 col-xs-8 col-xs-offset-2 pad-bot2">
+				<i class="fa fa-arrow-circle-right fa-3x pad-right"></i> 
+				<p class="p-work">Keep valuable people</p>
+			</div>	
+			<div class="col-xs-offset-2 col-xs-8 col-xs-offset-2 pad-bot2">
+				<i class="fa fa-arrow-circle-right fa-3x pad-right"></i> 
+				<p class="p-work">Empower your reviewers</p>
+			</div>						
 		</div>
-		<div class="row">
-			<div class="col-xs-4">
-				<div class="border-price-plan">
-					<section>
-						<div class="container-img pad-bot">
-							<i class="fa fa-user fa-5x black"></i>
-						</div>
-					</section>
-					<section class="pad-bot">
-						<%= link_to "Free", new_user_registration_path, class: "btn btn-success"%>
-					</section>
-					<section>
-						<ul class="plan-features">
-							<li class="price">0 Euro</li>
-							<li>1 Reviewer</li>
-							<li>5 employees</li>
-							<li>Forever free</li>
-						</ul>
-					</section>
-				</div>
+		
+		<div class="row" id="pricing"> 
+			<div class="center title_sub">
+				<h3>Pricing</h3>
+				<small>(Monthly subscription)</small>
 			</div>
-			<div class="col-xs-4">
-				<div class="border-price-plan">
-					<section>
-						<div class="container-img pad-bot">
-							<i class="fa fa-user fa-5x black"></i>
-							<i class="fa fa-user fa-5x black"></i>
-						</div>
-					</section>
-					<section class="pad-bot">
-						<%= link_to "Basic", new_basic_path, class: "btn btn-success"%>
-					</section>
-					<section>
-						<ul class="plan-features">
-							<li class="price">29 Euro</li>
-							<li>5 Reviewers</li>
-							<li>25 employees</li>
-							<li>Support</li>
-						</ul>
-					</section>
+			<div class="row">
+				<div class="col-xs-4">
+					<div class="border-price-plan">
+						<section>
+							<div class="container-img pad-bot">
+								<i class="fa fa-user fa-5x black"></i>
+							</div>
+						</section>
+						<section class="pad-bot">
+							<%= link_to "Free", new_user_registration_path, class: "btn btn-success"%>
+						</section>
+						<section>
+							<ul class="plan-features">
+								<li class="price">0 Euro</li>
+								<li>1 Reviewer</li>
+								<li>5 employees</li>
+								<li>Forever free</li>
+							</ul>
+						</section>
+					</div>
 				</div>
-			</div>
-			<div class="col-xs-4">
-				<div class="border-price-plan">
-					<section>
-						<div class="container-img pad-bot">
-							<i class="fa fa-users fa-5x black"></i>
-						</div>
-					</section>
-					<section class="pad-bot">
-						<%= link_to "Pro", new_pro_path, class: "btn btn-success"%>
-					</section>
-					<section>
-						<ul class="plan-features">
-							<li class="price">49 Euro</li>
-							<li>10 Reviewers</li>
-							<li>50 employees</li>
-							<li>Support</li>
-						</ul>
-					</section>
+				<div class="col-xs-4">
+					<div class="border-price-plan">
+						<section>
+							<div class="container-img pad-bot">
+								<i class="fa fa-user fa-5x black"></i>
+								<i class="fa fa-user fa-5x black"></i>
+							</div>
+						</section>
+						<section class="pad-bot">
+							<%= link_to "Basic", new_basic_path, class: "btn btn-success"%>
+						</section>
+						<section>
+							<ul class="plan-features">
+								<li class="price">29 Euro</li>
+								<li>5 Reviewers</li>
+								<li>25 employees</li>
+								<li>Support</li>
+							</ul>
+						</section>
+					</div>
+				</div>
+				<div class="col-xs-4">
+					<div class="border-price-plan">
+						<section>
+							<div class="container-img pad-bot">
+								<i class="fa fa-users fa-5x black"></i>
+							</div>
+						</section>
+						<section class="pad-bot">
+							<%= link_to "Pro", new_pro_path, class: "btn btn-success"%>
+						</section>
+						<section>
+							<ul class="plan-features">
+								<li class="price">49 Euro</li>
+								<li>10 Reviewers</li>
+								<li>50 employees</li>
+								<li>Support</li>
+							</ul>
+						</section>
+					</div>
 				</div>
 			</div>
 		</div>
-	<%end%>	
-</div>
+	</div>
+<%end%>
 
+<%if user_signed_in? or reviewer_signed_in?%>
+	<%if user_signed_in?%>
+		<div class="container-fluid dotted-line">
+			<div class="row pad-top">
+				<div class="row center pad">
+					<div class="col-xs-6">
+						<i class="fa fa-users fa-5x"></i>
+						<p>Empower</p>
+					</div>
+					<div class="col-xs-6">
+						<i class="fa fa-eye fa-5x"></i>
+						<p>Monitor</p>
+					</div>
+				</div>
+				<div class="row center pad">
+					<div class="col-xs-6">
+						<i class="fa fa-line-chart fa-5x"></i>
+						<p>Feedback</p>
+					</div>
+					<div class="col-xs-6">
+						<i class="fa fa-coffee fa-5x"></i>					
+						<p>Peace of mind</p>		
+					</div>					
+				</div>
+			</div>
+		</div>
+		<div class="container-fluid" id="pricing">
+			<div class="center title_sub">
+				<h3>Upgrade</h3>
+				<small>(Monthly subscription)</small>
+			</div>
+			<% if current_user.plan_id == nil%>
+				<div class="row">
+					<div class="col-xs-6">
+						<div class="border-price-nil">
+							<section>
+								<div class="container-img pad-bot">
+									<i class="fa fa-user fa-5x black"></i>
+									<i class="fa fa-user fa-5x black"></i>
+								</div>
+							</section>
+							<section class="pad-bot">
+								<%= link_to "Basic", new_basic_path, class: "btn btn-success"%>
+							</section>
+							<section>
+								<ul class="plan-features">
+									<li class="price">29 Euro</li>
+									<li>5 Reviewers</li>
+									<li>25 employees</li>
+									<li>Support</li>
+								</ul>
+							</section>
+						</div>
+					</div>
+					<div class="col-xs-6">
+						<div class="border-price-nil">
+							<section>
+								<div class="container-img pad-bot">
+									<i class="fa fa-users fa-5x black"></i>
+								</div>
+							</section>
+							<section class="pad-bot">
+								<%= link_to "Pro", new_pro_path, class: "btn btn-success"%>
+							</section>
+							<section>
+								<ul class="plan-features">
+									<li class="price">49 Euro</li>
+									<li>10 Reviewers</li>
+									<li>50 employees</li>
+									<li>Support</li>
+								</ul>
+							</section>
+						</div>
+					</div>
+				</div>
+			<% elsif current_user.plan_id == "basic"%>
+				<div class="row">
+					<div class="col-xs-12">
+						<div class="border-price-basic">
+							<section>
+								<div class="container-img pad-bot">
+									<i class="fa fa-users fa-5x black"></i>
+								</div>
+							</section>
+							<section class="pad-bot">
+								<%= link_to "Pro", new_pro_path, class: "btn btn-success"%>
+							</section>
+							<section>
+								<ul class="plan-features">
+									<li class="price">49 Euro</li>
+									<li>10 Reviewers</li>
+									<li>50 employees</li>
+									<li>Support</li>
+								</ul>
+							</section>
+						</div>
+					</div>
+				</div>
+			<% else%>
+				<p class="text-success">Tailor-made upgrade available soon !</p>
+			<% end %>
+		</div>
+	<%else%>
+		<div class="container-fluid">
+			<div class="row pad-top">
+				<h3 class="center title_sub">Why are you a reviewer ?</h3>
+				<div class="row center pad">
+					<div class="col-xs-6">
+						<i class="fa fa-smile-o fa-5x"></i>
+						<p>You are trusted</p>
+					</div>
+					<div class="col-xs-6">
+							<i class="fa fa-thumbs-up fa-5x"></i>
+							<p>You are awesome</p>
+					</div>
+				</div>
+				<div class="row center pad">
+					<div class="col-xs-6">
+							<i class="fa fa-check-square fa-5x"></i>
+							<p>You are aware</p>
+					</div>
+					<div class="col-xs-6">
+							<i class="fa fa-comments fa-5x"></i>
+							<p>You are communicative</p>		
+					</div>					
+				</div>
+			</div>
+		</div>
+	<%end%>
+<%end%>
+				
 <%= render "modals"%>
 
 

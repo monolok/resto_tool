@@ -1,3 +1,4 @@
+<%=console%>
 <div class="container-fluid pad-index">
   <div class="row center pad-bot" id="pad-bot-print-mini">
     <h3 class="center pad-bot2 click" data-toggle="modal" data-target=".bs-example-modal-sm">Your people</h3>
@@ -14,14 +15,59 @@
                   <%= c%><i class="fa fa-star"></i>
                 <%end%>
             <%else%>
-              <% if current_reviewer.vl == 0%>
-                <%= link_to employees_path(pom: "#{c}") do%>
-                  <%= c%><i class="fa fa-star"></i>
-                <%end%>
-              <%else%>
-                <%= link_to do%>
-                  <i class="fa fa-ban"></i>
-                <%end%>
+              <%case c%>
+                <%when 1%>
+                  <%if current_reviewer.vl == 1%>
+                    <%= link_to do%>
+                      <i class="fa fa-ban"></i>
+                    <%end%>                  
+                  <%else%>
+                    <%= link_to employees_path(pom: "#{c}") do%>
+                      <%= c%><i class="fa fa-star"></i>
+                    <%end%>
+                  <%end%>
+                <%when 2%>
+                  <%if current_reviewer.l == 1%>
+                    <%= link_to do%>
+                      <i class="fa fa-ban"></i>
+                    <%end%>                  
+                  <%else%>
+                    <%= link_to employees_path(pom: "#{c}") do%>
+                      <%= c%><i class="fa fa-star"></i>
+                    <%end%>
+                  <%end%>
+                <%when 3%>
+                  <%if current_reviewer.m == 1%>
+                    <%= link_to do%>
+                      <i class="fa fa-ban"></i>
+                    <%end%>                  
+                  <%else%>
+                    <%= link_to employees_path(pom: "#{c}") do%>
+                      <%= c%><i class="fa fa-star"></i>
+                    <%end%>
+                  <%end%>
+                <%when 4%>                      
+                  <%if current_reviewer.h == 1%>
+                    <%= link_to do%>
+                      <i class="fa fa-ban"></i>
+                    <%end%>                  
+                  <%else%>
+                    <%= link_to employees_path(pom: "#{c}") do%>
+                      <%= c%><i class="fa fa-star"></i>
+                    <%end%>
+                  <%end%>
+                <%when 5%>
+                  <%if current_reviewer.vh == 1%>
+                    <%= link_to do%>
+                      <i class="fa fa-ban"></i>
+                    <%end%>                  
+                  <%else%>
+                    <%= link_to employees_path(pom: "#{c}") do%>
+                      <%= c%><i class="fa fa-star"></i>
+                    <%end%>
+                  <%end%>
+                <%else%>
+                <%# END OF RUBY CASE STATEMENT%>
               <%end%>
             <%end%>
       </div>

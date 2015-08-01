@@ -28,7 +28,7 @@
       <%= link_to employee, method: :delete, data: { confirm: 'Are you sure?' } do %>
         <i class="fa fa-trash fa-2x"></i>
       <%end%>
-      <%= link_to employee_score_new_path(employee.id) do%>
+      <%= link_to employee_score_new_path(employee.id), data: { confirm: 'Before reviewing your people make sure: - Their job description is clear - They know who to report to - They have the ressources needed - Your expectations are doable' } do%>
         <i class="fa fa-check-square-o fa-2x"></i>
       <%end%>
     </div>
