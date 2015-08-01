@@ -1,7 +1,5 @@
-<%=console%>
 <div class="container-fluid pad-index">
-  <div class="row center pad-bot" id="pad-bot-print-mini">
-    <h3 class="center pad-bot2 click" data-toggle="modal" data-target=".bs-example-modal-sm">Your people</h3>
+  <div class="row center pad-bot pad-top" id="pad-bot-print-mini">
 
     <div class="border-cat">
       <%= link_to "All", employees_path%>     
@@ -133,45 +131,4 @@
   </div>
 <%end%>
 
-</div>
-
-<!-- Small modal -->
-<div class="modal fade bs-example-modal-sm" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" aria-hidden="true">
-  <div class="modal-dialog modal-sm">
-    <div class="modal-content">
-      <%if user_signed_in?%>
-        <%c = current_user%>
-        <div class="row pad-bot pad-top">
-          <div class="col-xs-offset-4">
-            <%case current_user.plan_id%> 
-              <%when nil%>
-                <div>People: <%= c.employees.count%></div>
-                <em>You can still add <%= 5 - c.employees.count%></em></br></br>
-                <div>Reviewer: <%= c.reviewers.count%></div>
-                <em>You can still add <%= 1- c.reviewers.count%></em>
-              <%when "basic"%>
-                <div>People: <%= c.employees.count%></div>
-                <em>You can still add <%= 25 - c.employees.count%></em></br></br>
-                <div>Reviewer: <%= c.reviewers.count%></div>
-                <em>You can still add <%= 5 - c.reviewers.count%></em>
-              <%when "pro"%>
-                <div>People: <%= c.employees.count%></div>
-                <em>You can still add <%= 50 - c.employees.count %></em></br></br>
-                <div>Reviewer: <%= c.reviewers.count%></div>
-                <em>You can still add <%= 10 - c.reviewers.count%></em>
-              <%else%>
-                <div>People: <%= c.employees.count%></div>
-                <em>Custom plan</em></br></br>
-                <div>Reviewer: <%= c.reviewers.count%></div>
-                <em>Custome plan</em>
-            <%end%>         
-          </div>
-        </div>
-      <%else%>
-        <%c = current_reviewer%>
-        <p>People: <%= c.user.employees.count%></p></br></br>
-        <p>Reviewer: <%= c.user.reviewers.count%></p>
-      <%end%>
-    </div>
-  </div>
 </div>

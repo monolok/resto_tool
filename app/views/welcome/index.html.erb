@@ -57,6 +57,29 @@
 					<p>Delegate</p>		
 				</div>					
 			</div>
+
+<!-- 			<div class="row pad-top">
+				<div class="row center pad">
+					<div class="col-xs-6">
+						<i class="fa fa-users fa-5x"></i>
+						<p>Empower</p>
+					</div>
+					<div class="col-xs-6">
+						<i class="fa fa-eye fa-5x"></i>
+						<p>Monitor</p>
+					</div>
+				</div>
+				<div class="row center pad">
+					<div class="col-xs-6">
+						<i class="fa fa-line-chart fa-5x"></i>
+						<p>Feedback</p>
+					</div>
+					<div class="col-xs-6">
+						<i class="fa fa-coffee fa-5x"></i>					
+						<p>Peace of mind</p>		
+					</div>					
+				</div>
+			</div> -->
 		</div>
 
 		<div class="row redi" id="functioning">
@@ -162,26 +185,50 @@
 <%if user_signed_in? or reviewer_signed_in?%>
 	<%if user_signed_in?%>
 		<div class="container-fluid dotted-line">
-			<div class="row pad-top">
-				<div class="row center pad">
-					<div class="col-xs-6">
-						<i class="fa fa-users fa-5x"></i>
-						<p>Empower</p>
-					</div>
-					<div class="col-xs-6">
-						<i class="fa fa-eye fa-5x"></i>
-						<p>Monitor</p>
-					</div>
+			<div class="center title_sub">
+				<h3>Quick view</h3>
+			</div>
+        	<%c = current_user%>
+			<div class="row center border-price-nil">
+				<div class="col-xs-6">
+					<section>
+						<ul class="plan-features">
+							<li class="price">Your People</li>
+							<li>People added: <%= c.employees.count%></li>
+							<%case current_user.plan_id%> 
+							<%when nil%>
+								<li>You can still add: <%= 5 - c.employees.count%></li>
+							<%when "basic"%>
+								<li>You can still add: <%= 25 - c.employees.count%></li>
+							<%when "pro"%>
+								<li>You can still add: <%= 50 - c.employees.count %></li>
+							<%else%>
+							    <li>Custom plan availale soon !</li>
+							<%end%>
+							<li>Exceptional People: </li>
+							<li>Problematic People: </li>								
+						</ul>
+					</section>
 				</div>
-				<div class="row center pad">
-					<div class="col-xs-6">
-						<i class="fa fa-line-chart fa-5x"></i>
-						<p>Feedback</p>
-					</div>
-					<div class="col-xs-6">
-						<i class="fa fa-coffee fa-5x"></i>					
-						<p>Peace of mind</p>		
-					</div>					
+				<div class="col-xs-6">
+					<section>
+						<ul class="plan-features">
+							<li class="price">Your Reviewers</li>
+							<li>Reviewer added: <%= c.reviewers.count%></li>
+							<%case current_user.plan_id%> 
+							<%when nil%>
+								<li>You can still add: <%= 1- c.reviewers.count%></li>
+							<%when "basic"%>
+								<li>You can still add: <%= 5 - c.reviewers.count%></li>
+							<%when "pro"%>
+								<li>You can still add: <%= 10 - c.reviewers.count%></li>
+							<%else%>
+								<li>Custom plan availale soon !</li>
+							<%end%>
+							<li>Latest review by: </li>
+							<li>When: </li>
+						</ul>
+					</section>
 				</div>
 			</div>
 		</div>
